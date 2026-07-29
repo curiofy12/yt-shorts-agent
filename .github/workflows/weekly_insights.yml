@@ -1,0 +1,37 @@
+name: Weekly Analytics & Insights
+
+on:
+  schedule:
+    - cron: "0 15 * * 1"   # Mondays 15:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Write credential files from secrets
+        run: |
+          echo '${{ secrets.YOUTUBE_CLIENT_SECRET }}' > client_secret.json
+          echo '${{ secrets.YOUTUBE_TOKEN }}' > token.json
+
+      - name: Run weekly report
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python src/weekly_report.py
+
+      - name: Commit dashboard + log updates
+        run: |
+          git config user.name "yt-agent-bot"
+          git config user.email "actions@github.com"
+          git add data/posts_log.json data/latest_insights.md dashboard.html
+          git diff --staged --quiet || git commit -m "Weekly insights: $(date -u +%Y-%m-%d)"
+          git push

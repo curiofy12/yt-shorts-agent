@@ -1,0 +1,8 @@
+client_secret.json
+token.json
+.env
+workdir/
+__pycache__/
+*.pyc
+test_clips/
+test_narration.mp3
