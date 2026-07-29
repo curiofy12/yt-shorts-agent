@@ -38,7 +38,7 @@ def upload_short(video_path, title, description, tags, category_id="22"):
             "categoryId": category_id,
         },
         "status": {
-            "privacyStatus": "private",  # set to "private" while testing
+            "privacyStatus": "public",  # set to "private" while testing
             "selfDeclaredMadeForKids": False,
         },
     }
