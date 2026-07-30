@@ -6,7 +6,7 @@ uses Microsoft's neural voices). Swap VOICE for any voice from
 import asyncio
 import edge_tts
 
-VOICE = "en-US-GuyNeural"  # try en-US-AriaNeural, en-GB-RyanNeural, etc.
+VOICE = "en-US-ChristopherNeural"  # try en-US-AriaNeural, en-GB-RyanNeural, etc.
 
 
 async def _synthesize(text: str, output_path: str, voice: str = VOICE):
