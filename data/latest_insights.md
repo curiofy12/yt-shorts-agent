@@ -1,53 +1,71 @@
 # YouTube Shorts Growth Report
 
-**Sample size note:** 13 videos total, with 5 showing zero views — those are almost certainly still in indexing/processing delay given their very recent post times (Aug 2–3), not necessarily content failures. All zero-view videos are excluded from performance analysis below. Meaningful conclusions are limited with only 8 data points, so treat directional signals as hypotheses to test, not confirmed rules.
+**Data note:** 20 videos in the sample, posted over ~8 days. Several of the most recent videos (Aug 8–10) show zero views/watch time — this almost certainly reflects indexing delay rather than true zero performance. Those 7 videos are **excluded from performance analysis** below. All conclusions rest on the remaining 13 videos, which is a small but workable sample for directional signals.
 
 ---
 
 ## 1. What's Working
 
-**"Misunderstood history" and mystery topics are driving the highest raw views.**
-- `_9ART6dRAQw` (Boston Tea Party) — **1,024 views**, 487 min watched, 49s avg duration
-- `qQ1ggbiVtgM` (Ghost Ship) — **654 views**, 382 min watched, 60s avg duration
-- `LWDD_c0R9ZU` (Ocean Sound) — **861 views**, 319 min watched, 41s avg duration
+### Physics / Space topics dominate on both views and retention
 
-These three account for roughly **1,188 of the ~1,617 total minutes watched** across all analyzed videos (~73% of total watch time), despite being only 3 of the 8 active videos.
+The top performers by average view duration are all physics or space:
 
-**The "you've been lied to" / correction hook format correlates with high view counts.**
-Both high-view videos that use it — Boston Tea Party (*"You've been lied to about the Boston Tea Party your entire life"*) and the space fact (*"You are moving through space right now at over a million miles per hour"*) — pulled 1,024 and 932 views respectively. The hook positions the viewer as someone who's been wronged by conventional wisdom, which appears to drive clicks.
+| Video | Topic | Avg View Duration | Views |
+|---|---|---|---|
+| S_CDA0sZoeU | Physics (time dilation) | **79 sec** | 918 |
+| Ow7RPjXJ5L0 | Ocean mystery | **62 sec** | 1,029 |
+| PZ8YDL2T8y8 | Psychology/memory | **61 sec** | 399 |
+| Vd8s6uXL21A | Space (speed) | **59 sec** | 1,044 |
 
-**The Ghost Ship video achieved the highest average view duration among high-view videos: 60 seconds.** Its hook (*"crew gone, sails up, food still hot"*) is purely sensory and concrete — no abstract concept, just a vivid scene. This may be why viewers stayed longest.
+S_CDA0sZoeU is the standout: 79-second average view duration with 918 views and 775 estimated minutes watched — the highest watch time in the set by a significant margin. Its near-identical repost (W3IRX6dZe34, same topic, slightly tweaked hook) got only 200 views and 52 seconds — suggesting the original post had a distribution advantage, likely from time of day or early engagement momentum, not a meaningfully different hook.
 
-**Evening posting times appear consistently on the stronger videos:**
-- Boston Tea Party: 22:58 UTC → 1,024 views
-- Ghost Ship: 20:49 UTC → 654 views
-- Space fact: 20:49 UTC → 932 views
+### "Concrete + specific" hooks retain better than vague ones
 
-This is a pattern worth noting, though the sample is too small to call it causal.
+The hooks that name a **specific, verifiable fact** tend to hold attention longer:
+
+- *"Your body produces enough heat in 30 minutes to boil half a liter of water"* — specific claim, but retention collapsed (15 sec; see underperforming section)
+- *"The faster you move through space, the slower you move through time — and that's not a metaphor"* — specific + challenges prior belief → 79 sec retention
+- *"Someone predicted the internet in 1909 — and got it almost exactly right"* → 44 sec, 848 views, 3 subs
+
+The pattern: specificity alone isn't enough. Specificity **plus a knowledge gap** ("why can't you feel it?", "how does that work?") is what sustains watch time.
+
+### Ocean mystery and "surprising animal ability" drove top view counts
+
+- Ow7RPjXJ5L0 (ocean mystery): 1,029 views, 62-sec retention
+- Zlk4_iMtU6g (mantis shrimp colors): 1,199 views — the highest view count in the set
+- Vd8s6uXL21A (space speed): 1,044 views
+
+These three topics all combine **inherent strangeness** with **personal relevance** ("you can't imagine it," "you can't feel it"). That framing appears consistently in the better-performing hooks.
 
 ---
 
 ## 2. What's Underperforming
 
-**Psychology/cognitive topics are getting views but hemorrhaging retention.**
-- `cpEGryiTLew` (Cognitive Bias) — only **40 views**, but a remarkable **97s avg duration** — the highest of any video. People who find it, stay. The problem is almost no one finds it.
-- `pwOERT4GH-4` (Memory Rewriting) — **40 views**, 38s avg duration, 0 subs
-- `Cp9nwxOJFh0` (Body Replacement) — **286 views** but only **21s avg duration** — by far the worst retention of any video. People are clicking off almost immediately.
+### "Human body" topic has a severe retention problem
 
-The body replacement video is a specific concern: 286 views suggests decent distribution, but 21s average duration means the hook may be overpromising something the content doesn't immediately deliver.
+Both posted human-body videos show critically low average view duration:
 
-**The 1909 internet prediction video severely underperformed: 32 views, 36s duration, 0 subs.** The hook (*"Someone predicted the internet in 1909"*) is accurate but abstract — "someone" and "1909" don't create immediate visceral stakes. The title's subtitle (*"And the Danger of Depending On It"*) adds a theme that may actually dilute the intrigue.
+- asj-6wdFgaI (*body heat / boiling water*): **15 seconds**, 257 views
+- aZwbaXB9bzk (*body replaces itself*): **17 seconds**, 669 views
 
-**The early-morning post on the physics video (`lNi_KqONlPg`, posted 05:23 UTC) logged only 142 views** — the lowest among videos with any traction. Content quality may not differ from the space fact video (932 views, similar topic), but the posting time diverges sharply. Directional signal, not proof.
+Even aZwbaXB9bzk, which drew 669 views, lost almost everyone immediately — only 85 minutes watched across those 669 viewers. The hooks for this topic tend to front-load the payoff ("you're basically a different person"), which may resolve the curiosity loop before the viewer has reason to keep watching.
 
----
+### Cognitive bias topic is inconsistent and trending down
 
-## 3. Three Concrete Changes to Try Next
+Three cognitive bias videos were posted:
 
-**① Shorten and sensorify your hooks — specifically for the underperforming topic categories.**
-The Ghost Ship hook works because it's a list of concrete images: *"crew gone, sails up, food still hot."* The cognitive bias hook (*"Your brain is lying to you right now"*) is abstract. For psychology topics especially, try opening with a specific, vivid scenario instead of a conceptual claim. Example reframe: instead of *"Your brain is lying to you,"* try *"You just remembered something that never actually happened — and you're completely sure it did."*
+- vB7cqgFX1A0: 206 views, **26 sec** retention
+- 6M0NMfdgiX8: 35 views, **21 sec** retention
+- ZAEc3qz8OZ0: 0 views (excluded, likely delay)
 
-**② Stop posting between 05:00–10:00 UTC until you have more data to test it.**
-Three of your four highest-view videos (932, 1,024, 654) posted between 20:49–22:58 UTC. Your lowest-traction video with similar topic matter posted at 05:23 UTC. The correlation isn't proven, but there's no upside to risking new content in a window that has zero wins so far.
+Views and retention both declined across successive posts. The hook *"Your brain is lying to you right now — and you have no idea"* was used nearly identically across all three. Audience may have already seen it; the algorithm may be suppressing repeated hooks to overlapping audiences.
 
-**③ Investigate and fix the body replacement video's content gap
+### Historical event topic badly underperformed on reach
+
+- lavKj5-fOTw (*Great Wall*): **15 views**, 63-sec retention
+
+The retention is actually strong (63 sec), which suggests the content itself held attention — but almost no one was served the video. This is likely an **algorithmic distribution failure**, not a content quality problem. Worth retesting this topic with a different posting time or hook structure.
+
+### Psychology/memory duplicate shows diminishing returns
+
+The memory video was posted twice (Acf0O9yl2RE → 71 views, 38 sec; PZ8YDL2T8y8 → 399 
