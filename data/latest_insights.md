@@ -1,71 +1,49 @@
 # YouTube Shorts Growth Report
+**Dataset: 20 videos | Posted: Aug 11–18, 2026**
 
-**Data note:** 20 videos in the sample, posted over ~8 days. Several of the most recent videos (Aug 8–10) show zero views/watch time — this almost certainly reflects indexing delay rather than true zero performance. Those 7 videos are **excluded from performance analysis** below. All conclusions rest on the remaining 13 videos, which is a small but workable sample for directional signals.
+> ⚠️ **Sample size caveat:** 20 videos across ~8 days is a thin dataset. Several topic categories have only 1–2 data points. Treat directional findings as hypotheses to test, not confirmed patterns. The two most recent videos (Aug 18) show 0 views and are almost certainly still processing — they're excluded from performance analysis below.
 
 ---
 
 ## 1. What's Working
 
-### Physics / Space topics dominate on both views and retention
+### 🏆 Top performers by views and retention:
 
-The top performers by average view duration are all physics or space:
+| Video | Topic | Views | Avg Duration | Subs |
+|---|---|---|---|---|
+| QChZWxeQMMg | Human body (impossible fact) | 683 | **78s** | 4 |
+| 1oZZix7A7p8 | Unsolved mystery | 1,031 | **69s** | 2 |
+| NagjJh7RDZI | Ocean mystery | 787 | **63s** | 1 |
+| 07InkcPb16s | Strange physics | 343 | **61s** | 2 |
+| Wrm6CrfBOjg | Animal ability | 676 | **60s** | 4 |
 
-| Video | Topic | Avg View Duration | Views |
-|---|---|---|---|
-| S_CDA0sZoeU | Physics (time dilation) | **79 sec** | 918 |
-| Ow7RPjXJ5L0 | Ocean mystery | **62 sec** | 1,029 |
-| PZ8YDL2T8y8 | Psychology/memory | **61 sec** | 399 |
-| Vd8s6uXL21A | Space (speed) | **59 sec** | 1,044 |
+**Three clear signals emerge:**
 
-S_CDA0sZoeU is the standout: 79-second average view duration with 918 views and 775 estimated minutes watched — the highest watch time in the set by a significant margin. Its near-identical repost (W3IRX6dZe34, same topic, slightly tweaked hook) got only 200 views and 52 seconds — suggesting the original post had a distribution advantage, likely from time of day or early engagement momentum, not a meaningfully different hook.
+**A) High retention correlates with mystery/open-loop formats.**
+The unsolved mystery video (1oZZix7A7p8, 69s avg) and ocean mystery (NagjJh7RDZI, 63s avg) both kept viewers well above the dataset median of ~49s. The hooks on both opened a gap the viewer needed to close: *"no crew, no explanation, never solved"* and *"heard across half the planet — scientists still don't fully understand it."* These are structural retention hooks, not just attention-grabbers.
 
-### "Concrete + specific" hooks retain better than vague ones
+**B) The human body topic has a wild variance — but its peak is the dataset's best retention.**
+QChZWxeQMMg (78s avg, 4 subs) dramatically outperformed the other two human body videos (2lXNnSOPDQQ: 17 views/49s; GcbEzowFX0Q: 60 views/42s). The key difference appears to be the title specificity: *"Your Skeleton From 10 Years Ago No Longer Exists Inside You"* is concrete and visceral, vs. the generic *"Your Body Replaces Itself"* used on the other two. That one title reframe correlated with 11–40× more views and the highest avg duration in the dataset.
 
-The hooks that name a **specific, verifiable fact** tend to hold attention longer:
+**C) Animal ability videos are reliable volume drivers.**
+Three videos on this topic averaged **970 views** (6CE7f9gVyRY: 1,132 | 0AzdKvA34OE: 1,103 | Wrm6CrfBOjg: 676), making it the highest-performing topic category by raw views. All used the identical hook, so the hook isn't the differentiator here — the topic itself appears to have strong algorithmic or audience pull.
 
-- *"Your body produces enough heat in 30 minutes to boil half a liter of water"* — specific claim, but retention collapsed (15 sec; see underperforming section)
-- *"The faster you move through space, the slower you move through time — and that's not a metaphor"* — specific + challenges prior belief → 79 sec retention
-- *"Someone predicted the internet in 1909 — and got it almost exactly right"* → 44 sec, 848 views, 3 subs
-
-The pattern: specificity alone isn't enough. Specificity **plus a knowledge gap** ("why can't you feel it?", "how does that work?") is what sustains watch time.
-
-### Ocean mystery and "surprising animal ability" drove top view counts
-
-- Ow7RPjXJ5L0 (ocean mystery): 1,029 views, 62-sec retention
-- Zlk4_iMtU6g (mantis shrimp colors): 1,199 views — the highest view count in the set
-- Vd8s6uXL21A (space speed): 1,044 views
-
-These three topics all combine **inherent strangeness** with **personal relevance** ("you can't imagine it," "you can't feel it"). That framing appears consistently in the better-performing hooks.
+**D) Evening posts (roughly 19:00–21:00 UTC) show up on the stronger performers.** QChZWxeQMMg (05:29 UTC, 683 views) is an exception, but 1oZZix7A7p8, NagjJh7RDZI, 6CE7f9gVyRY, and sXEfWQgMQX4 all posted in the 18:00–21:00 UTC window with strong results. This is a weak signal given the sample — but worth noting.
 
 ---
 
 ## 2. What's Underperforming
 
-### "Human body" topic has a severe retention problem
+### 🔻 Bottom performers:
 
-Both posted human-body videos show critically low average view duration:
+| Video | Topic | Views | Avg Duration | Subs |
+|---|---|---|---|---|
+| 2lXNnSOPDQQ | Human body | 17 | 49s | 0 |
+| AhflKO3QYto | Psychology/memory | 40 | 40s | 0 |
+| 4KN-mbiX1mE | Psychology/memory | 31 | 37s | 0 |
+| -0LlsAjInKM | Psychology/memory | 50 | 36s | 0 |
+| GcbEzowFX0Q | Human body | 60 | 42s | 0 |
 
-- asj-6wdFgaI (*body heat / boiling water*): **15 seconds**, 257 views
-- aZwbaXB9bzk (*body replaces itself*): **17 seconds**, 669 views
+**A) The psychology/memory topic is consistently failing.** Four videos on this topic averaged just **38 views** and **37s avg duration** — the lowest retention in the dataset. The hook format ("Your memories are lying to you") is also nearly identical across all four versions, and none broke through. This topic may be oversaturated on the platform, or the hook format isn't differentiated enough to stop the scroll. Zero subscribers gained across all four videos is a hard signal.
 
-Even aZwbaXB9bzk, which drew 669 views, lost almost everyone immediately — only 85 minutes watched across those 669 viewers. The hooks for this topic tend to front-load the payoff ("you're basically a different person"), which may resolve the curiosity loop before the viewer has reason to keep watching.
-
-### Cognitive bias topic is inconsistent and trending down
-
-Three cognitive bias videos were posted:
-
-- vB7cqgFX1A0: 206 views, **26 sec** retention
-- 6M0NMfdgiX8: 35 views, **21 sec** retention
-- ZAEc3qz8OZ0: 0 views (excluded, likely delay)
-
-Views and retention both declined across successive posts. The hook *"Your brain is lying to you right now — and you have no idea"* was used nearly identically across all three. Audience may have already seen it; the algorithm may be suppressing repeated hooks to overlapping audiences.
-
-### Historical event topic badly underperformed on reach
-
-- lavKj5-fOTw (*Great Wall*): **15 views**, 63-sec retention
-
-The retention is actually strong (63 sec), which suggests the content itself held attention — but almost no one was served the video. This is likely an **algorithmic distribution failure**, not a content quality problem. Worth retesting this topic with a different posting time or hook structure.
-
-### Psychology/memory duplicate shows diminishing returns
-
-The memory video was posted twice (Acf0O9yl2RE → 71 views, 38 sec; PZ8YDL2T8y8 → 399 
+**B) Repeated hooks with no variation are flat-lining.** The memory topic ran the same essential hook structure four times with tiny word-swaps. Performance
