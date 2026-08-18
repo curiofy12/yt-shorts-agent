@@ -36,7 +36,7 @@ def save_log(log):
 
 def run():
     log = load_log()
-    recent_topics = [entry["topic"] for entry in log[-20:]]
+    recent_topics = [entry["topic"] for entry in log[-60:]]
 
     print("[main] picking topic...")
     topic = pick_topic(recent_topics)
