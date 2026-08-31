@@ -1,55 +1,64 @@
-# YouTube Shorts Performance Report
-**Sample window:** Aug 16–23, 2026 | **Total videos:** 20 | **Note on data quality:** 7 of 20 videos show 0 views — these are almost certainly too recent to have data (all posted Aug 22–23). They are excluded from performance analysis. The remaining 13 videos form the working dataset, which is still a small sample. Treat directional findings as hypotheses, not conclusions.
+# YouTube Shorts Growth Report
+**Dataset: 20 videos | Posted: Aug 23–31, 2026**
+
+---
+
+> ⚠️ **Sample Size Warning:** This is 20 videos, several of which have zero views likely due to being too recently posted to have meaningful data. The 13 videos with measurable stats form the real basis for this analysis. Patterns are directional, not conclusive — treat them as hypotheses, not proven rules.
 
 ---
 
 ## 1. What's Working
 
-### Top performers by views:
-| Video | Views | Avg Duration | Min Watched |
-|---|---|---|---|
-| Mantis Shrimp (niQAxyWETmM) | 1,119 | 61s | 651 |
-| Boiling River (TD0KERWIrg8) | 1,046 | 72s | 723 |
-| Wegener/Continental Drift (tntYy4Hzmvk) | 801 | 62s | 478 |
-| Fibonacci/Nature (\_wsteX6Ylzo) | 270 | 44s | 114 |
-| Zipper Origin (KCv2hq9ziyI) | 194 | 39s | 70 |
+### High-Retention Storytelling Formats
+The standout metric is **average view duration**, and the top performers all share a specific format: a named human protagonist or a single dramatic event with stakes.
 
-**Three patterns are visible in the top performers:**
+| Video | Topic | Views | Avg Duration | Minutes Watched |
+|---|---|---|---|---|
+| Milgram Experiment | Psych experiment | 210 | **129 sec** | 228 |
+| Volcano | Record natural event | 549 | **64 sec** | 346 |
+| Fish Rain | Weather phenomenon | 122 | **62 sec** | 76 |
+| WW3 Man | Historical event | 969 | 34 sec | 375 |
 
-**A) High retention + high views go together — and the threshold appears to be ~60s avg duration.**
-The three breakout videos (Shrimp, Boiling River, Continental Drift) all held viewers for 61–72 seconds. Every video below 50s avg duration stayed under 200 views. The correlation here is notable even in a small sample.
+The **Milgram video (129 sec avg duration) is the single most-watched short in terms of retention** — viewers who clicked stayed for over 2 minutes. This strongly suggests that content with immediate moral tension ("most people pushed the button") drives completion far above average.
 
-**B) The "shouldn't be possible / defies explanation" framing is the strongest hook pattern.**
-The top 3 hooks all use explicit impossibility or institutional doubt as the draw:
-- *"a trick physics says shouldn't work"* → 1,119 views, 61s retention
-- *"nobody can fully explain why"* → 1,046 views, 72s retention
-- *"Scientists laughed at him… proven completely right"* → 801 views, 62s retention
+The **Volcano (64 sec)** and **Fish Rain (62 sec)** also punch well above the dataset average (~43 sec for videos with views), suggesting that "impossible but real" natural phenomenon framing holds attention effectively.
 
-This framing creates a specific tension (reality vs. expectation) that generic curiosity hooks don't. Compare to *"Your brain is lying to you"* (cognitive bias video): 13 views, despite a similar structure. The difference may be specificity — the boiling river and shrimp are concrete, vivid, and verifiable-sounding. "Your brain is lying" is a vague, overused phrase.
+### High-View Reach Topics
+The three highest view-count videos:
+- **Bullet Train / Kingfisher bird** — 978 views, 43 sec avg
+- **WW3 / Stanislav Petrov** — 969 views, 34 sec avg
+- **Lincoln-Kennedy coincidences** — 636 views, 49 sec avg
 
-**C) Nature/geography/animal topics are outperforming psychology and technology topics at this stage.**
-The three >800-view videos span animal behavior, geography, and science history. The two psychology-framed videos (cognitive bias: 13 views; memory: 36 views) are near the bottom of the dataset.
+These three share a common hook structure: **a specific, concrete, verifiable claim stated as fact in the first sentence.** Compare:
+- ✅ *"Two presidents were assassinated exactly 100 years apart"* — specific, falsifiable, urgent
+- ✅ *"Nature solved this problem millions of years before humans even tried"* — creates a curiosity gap immediately
+- ✅ *"One phone call in 1983 stopped a nuclear war"* — specific date, high stakes, unknown outcome
+
+### Best Combined Performer
+**The Volcano** (549 views, 64 sec avg, 346 min watched) has the best balance of reach *and* retention among all videos. The hook — *"heard from outer space"* — is a concrete superlative that gives viewers a clear reason to stay.
 
 ---
 
 ## 2. What's Underperforming
 
-### Bottom performers (excluding zero-data videos):
-| Video | Views | Avg Duration | Min Watched |
+### Low Views + Low Retention
+| Video | Views | Avg Duration | Issue |
 |---|---|---|---|
-| Cognitive Bias (4XIB4lw5Sxo) | 13 | 57s | 4 |
-| Submarine Cables (MRuT9OzTNCw) | 183 | **24s** | 47 |
-| Monarch Migration (VQXZ7A24Pzs) | 98 | **29s** | 29 |
-| Memory Rewrite (E1rnQ2ACZTo) | 36 | 37s | 13 |
-| Lighthouse Economics (up_aLvVuK0k) | 32 | 45s | 14 |
+| Psych trick (advertisers) | 9 | 21 sec | Near-zero reach |
+| Slime mold / subway | 24 | 30 sec | Low reach, moderate drop-off |
+| Sleep / brain cleaning | 99 | 34 sec | Weak hook |
+| Bacteria / Nobel Prize | 132 | 33 sec | Below-average retention |
 
-**A) The submarine cable video is the clearest warning sign in the dataset.**
-183 views is decent, but a **24-second average duration** means most viewers are leaving in the first half. The hook (*"cables on the ocean floor carrying 99% of the internet"*) states the fact immediately — there may be no tension or payoff left to wait for. The title and hook say the same thing; there's no gap to fill.
+**The advertiser psychology video (9 views, 21 sec) is the clearest failure in the dataset.** The hook — *"Advertisers use one simple trick"* — is one of the most overused formats on the internet and likely triggers immediate scroll fatigue. The topic is also high-competition with minimal novelty angle.
 
-**B) The Monarch migration video has similar early-drop symptoms (29s avg).**
-The hook — *"Millions of animals vanish every year — scientists still can't fully explain how"* — is structurally close to the Boiling River hook, but vague where that one was visceral. "Vanish" and "can't explain" aren't as sensory or alarming as "boils you alive."
+**The slime mold video (24 views, 30 sec)** suffers from a hook that opens with a *question* rather than a statement: *"What does a slime mold have to do with the Tokyo subway?"* Questions as hooks generally underperform against declarative claims in Shorts — viewers need a reason to stay, not a prompt to think.
 
-**C) The cognitive bias video (13 views, 57s duration) is an anomaly worth flagging carefully.**
-It has the *best* retention rate in the dataset by one measure (57s held), but almost no one found it. This suggests a distribution/click problem, not a content quality problem. The hook (*"Your brain is lying to you right now"*) is a worn-out framing that may not be earning clicks despite the video itself potentially being solid. Very small sample — don't over-read this.
+**The sleep video (99 views, 34 sec)** has a reasonably strong hook but underperforms — this is likely a topic saturation issue. Brain/sleep content is extremely crowded, and without a more specific or counterintuitive angle, it doesn't differentiate.
 
-**D) Psychology topics (cognitive bias, memory, brain myth) are
+### Five Videos With Zero Views
+Videos posted Aug 29–31 all show 0 views across survival reflexes, strange laws, mantis shrimp, Frederick Douglass, space silence, and idiom origins. **These are likely too new to evaluate** (posting recency may explain this entirely), but it's worth noting that several of these hooks are notably weaker:
+- *"Your body can survive things your brain doesn't even know about yet"* — vague, no specific claim
+- *"Space is completely silent — or is it actually not?"* — question hook, low stakes framing
+- *"You say this phrase every week — but its origin will genuinely shock you"* — generic shock-claim with no specificity
+
+If these continue to underperform after 48–72 hours, the hook quality is
