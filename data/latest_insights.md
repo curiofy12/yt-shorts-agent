@@ -1,64 +1,59 @@
 # YouTube Shorts Growth Report
-**Dataset: 20 videos | Posted: Aug 23–31, 2026**
 
----
-
-> ⚠️ **Sample Size Warning:** This is 20 videos, several of which have zero views likely due to being too recently posted to have meaningful data. The 13 videos with measurable stats form the real basis for this analysis. Patterns are directional, not conclusive — treat them as hypotheses, not proven rules.
+**Sample size note:** 20 videos, posted over ~7 days. Several of the most recent videos (iNwctma2lxU, KDWON3h--Xo, AblawXFjzVg) show 0 views/0 watch time, which almost certainly reflects data delay rather than true performance — they're excluded from analysis where noted. That leaves 17 videos with usable data. This is a small sample; patterns are directional signals, not statistically robust conclusions.
 
 ---
 
 ## 1. What's Working
 
-### High-Retention Storytelling Formats
-The standout metric is **average view duration**, and the top performers all share a specific format: a named human protagonist or a single dramatic event with stakes.
+### Ancient/Historical Mystery Topics Dominate on Every Metric
+The top 4 videos by views all cover ancient civilizations, lost technology, or historical decoding:
 
-| Video | Topic | Views | Avg Duration | Minutes Watched |
-|---|---|---|---|---|
-| Milgram Experiment | Psych experiment | 210 | **129 sec** | 228 |
-| Volcano | Record natural event | 549 | **64 sec** | 346 |
-| Fish Rain | Weather phenomenon | 122 | **62 sec** | 76 |
-| WW3 Man | Historical event | 969 | 34 sec | 375 |
+| Video | Topic | Views | Avg Duration (sec) |
+|---|---|---|---|
+| bsTS-OQHFVg | Lost civilization | 1,022 | **79** |
+| lLhCzBlNTUg | Ancient invention (computer) | 1,017 | 65 |
+| quh0-wDJYNU | Ancient mystery (Rosetta Stone) | 976 | **80** |
+| tcGqUYxbuFE | Ancient mystery (Antikythera) | 992 | 63 |
 
-The **Milgram video (129 sec avg duration) is the single most-watched short in terms of retention** — viewers who clicked stayed for over 2 minutes. This strongly suggests that content with immediate moral tension ("most people pushed the button") drives completion far above average.
+These four average **~1,002 views and ~72 seconds avg view duration** — by far the strongest cohort. The retention on bsTS and quh0 (79s and 80s respectively) suggests viewers are watching close to or through the full video on those two.
 
-The **Volcano (64 sec)** and **Fish Rain (62 sec)** also punch well above the dataset average (~43 sec for videos with views), suggesting that "impossible but real" natural phenomenon framing holds attention effectively.
+### Hooks Grounded in a Concrete, Unresolved Puzzle Retain Better
+The three highest-retention videos (79s, 80s, 65s) all lead with an unresolved historical puzzle framed around scale or impossibility:
+- *"A entire civilization vanished overnight — and we still don't fully know why."* → 79s
+- *"This ancient script stumped the smartest minds for over 1,300 years."* → 80s
+- *"This 2,000-year-old device could calculate the future — and we barely understand it."* → 65s
 
-### High-View Reach Topics
-The three highest view-count videos:
-- **Bullet Train / Kingfisher bird** — 978 views, 43 sec avg
-- **WW3 / Stanislav Petrov** — 969 views, 34 sec avg
-- **Lincoln-Kennedy coincidences** — 636 views, 49 sec avg
+The common thread: **a specific, named gap in human knowledge** ("we still don't know," "we barely understand"). That framing appears to drive completion better than generic brain/bias hooks.
 
-These three share a common hook structure: **a specific, concrete, verifiable claim stated as fact in the first sentence.** Compare:
-- ✅ *"Two presidents were assassinated exactly 100 years apart"* — specific, falsifiable, urgent
-- ✅ *"Nature solved this problem millions of years before humans even tried"* — creates a curiosity gap immediately
-- ✅ *"One phone call in 1983 stopped a nuclear war"* — specific date, high stakes, unknown outcome
-
-### Best Combined Performer
-**The Volcano** (549 views, 64 sec avg, 346 min watched) has the best balance of reach *and* retention among all videos. The hook — *"heard from outer space"* — is a concrete superlative that gives viewers a clear reason to stay.
+### Late-Night Posting (~9–11pm UTC) Correlates With the Top View Counts
+The four 900–1,000+ view videos were posted at 21:34, 23:14, 01:55, and 21:42 UTC. This may reflect time-zone targeting or simply that those topics are stronger — **don't over-index on this without more data**, but it's worth tracking.
 
 ---
 
 ## 2. What's Underperforming
 
-### Low Views + Low Retention
-| Video | Views | Avg Duration | Issue |
+### Psychology/Cognitive Bias Topic Is Consistently Weak
+Five videos covered cognitive bias, brain myths, or memory — and they collectively underperform badly:
+
+| Video | Topic | Views | Avg Duration (sec) |
 |---|---|---|---|
-| Psych trick (advertisers) | 9 | 21 sec | Near-zero reach |
-| Slime mold / subway | 24 | 30 sec | Low reach, moderate drop-off |
-| Sleep / brain cleaning | 99 | 34 sec | Weak hook |
-| Bacteria / Nobel Prize | 132 | 33 sec | Below-average retention |
+| V13FYsnjh8c | Brain myth (10%) | 62 | 26 |
+| ydB2ATSmvyw | Cognitive bias | 19 | 30 |
+| ddEzVhhbCKg | Psych experiment (Milgram) | 63 | 46 |
+| abgFlFzRBis | Cognitive bias | 166 | 22 |
+| f9HUYz1bLY8 | Cognitive bias | 55 | 63 |
+| VXyK6j2C3OU | Memory | 181 | 25 |
 
-**The advertiser psychology video (9 views, 21 sec) is the clearest failure in the dataset.** The hook — *"Advertisers use one simple trick"* — is one of the most overused formats on the internet and likely triggers immediate scroll fatigue. The topic is also high-competition with minimal novelty angle.
+Average across these: **~91 views, ~35s avg duration.** That's roughly **10x fewer views and half the retention** of the ancient mystery cluster. The cognitive bias hook ("Your brain is lying to you right now") was reused nearly verbatim across multiple videos (ydB2ATSmvyw, abgFlFzRBis, f9HUYz1bLY8) with no measurable improvement — in fact ydB2ATSmvyw got only 19 views.
 
-**The slime mold video (24 views, 30 sec)** suffers from a hook that opens with a *question* rather than a statement: *"What does a slime mold have to do with the Tokyo subway?"* Questions as hooks generally underperform against declarative claims in Shorts — viewers need a reason to stay, not a prompt to think.
+**f9HUYz1bLY8 is a partial exception** — 63s avg duration despite only 55 views. The content may be retaining whoever watches, but it's not getting distributed. This hints the problem may be at the hook/click level rather than content quality for that specific video.
 
-**The sleep video (99 views, 34 sec)** has a reasonably strong hook but underperforms — this is likely a topic saturation issue. Brain/sleep content is extremely crowded, and without a more specific or counterintuitive angle, it doesn't differentiate.
+### "Hidden Pattern" and Technology Infrastructure Topics Also Underdelivered
+- nMvBwlteeYo (city math): 152 views, 59s duration — decent retention but very low reach
+- wm3uljniRpM (ocean internet cables): 117 views, **25s duration** — both low reach and low retention
+- lQKOYAokqRs (space/starlight): 133 views, 35s duration
 
-### Five Videos With Zero Views
-Videos posted Aug 29–31 all show 0 views across survival reflexes, strange laws, mantis shrimp, Frederick Douglass, space silence, and idiom origins. **These are likely too new to evaluate** (posting recency may explain this entirely), but it's worth noting that several of these hooks are notably weaker:
-- *"Your body can survive things your brain doesn't even know about yet"* — vague, no specific claim
-- *"Space is completely silent — or is it actually not?"* — question hook, low stakes framing
-- *"You say this phrase every week — but its origin will genuinely shock you"* — generic shock-claim with no specificity
+These aren't catastrophic but they're clearly in a second tier. The space and infrastructure topics in particular show weak retention, suggesting the content doesn't deliver on the hook's promise fast enough.
 
-If these continue to underperform after 48–72 hours, the hook quality is
+### Duplicate/
