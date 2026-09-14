@@ -1,59 +1,63 @@
 # YouTube Shorts Growth Report
 
-**Sample size note:** 20 videos, posted over ~7 days. Several of the most recent videos (iNwctma2lxU, KDWON3h--Xo, AblawXFjzVg) show 0 views/0 watch time, which almost certainly reflects data delay rather than true performance — they're excluded from analysis where noted. That leaves 17 videos with usable data. This is a small sample; patterns are directional signals, not statistically robust conclusions.
+**Sample size note:** This is 20 videos spanning roughly one week, with several showing 0 views (likely still in YouTube's distribution queue or suppressed at upload). The 0-view videos (UzM1pw9Nq2E, xIDdpSZEDLc, Hai2-zHyLMs) are excluded from performance analysis since they haven't received meaningful impressions yet. The Lincoln video (LZwDjc3BaOc, 3 views) is treated as a distribution failure, not a content signal. That leaves 16 videos — a small but usable sample for directional patterns.
 
 ---
 
 ## 1. What's Working
 
-### Ancient/Historical Mystery Topics Dominate on Every Metric
-The top 4 videos by views all cover ancient civilizations, lost technology, or historical decoding:
+**High-retention mystery/science hooks with a concrete, impossible-sounding claim perform best.**
 
-| Video | Topic | Views | Avg Duration (sec) |
+The top three videos by average view duration are:
+
+| Video | Topic | Avg Duration | Views |
 |---|---|---|---|
-| bsTS-OQHFVg | Lost civilization | 1,022 | **79** |
-| lLhCzBlNTUg | Ancient invention (computer) | 1,017 | 65 |
-| quh0-wDJYNU | Ancient mystery (Rosetta Stone) | 976 | **80** |
-| tcGqUYxbuFE | Ancient mystery (Antikythera) | 992 | 63 |
+| Ocean sound mystery | Science/mystery | **68s** | 1,182 |
+| Mathematical pattern in nature | Math/science | **71s** | 282 |
+| Speed of light/physics | Physics | **64s** | 448 |
 
-These four average **~1,002 views and ~72 seconds avg view duration** — by far the strongest cohort. The retention on bsTS and quh0 (79s and 80s respectively) suggests viewers are watching close to or through the full video on those two.
+All three hooks share a structural pattern: they state something that sounds physically impossible but is provably real ("a sound picked up thousands of miles away," "you're always moving at the speed of light," "this one number appears in sunflowers, hurricanes, and your DNA"). These aren't vague teasers — they deliver a specific, verifiable claim in the hook itself, which appears to reward viewers who stay to understand *why* it's true.
 
-### Hooks Grounded in a Concrete, Unresolved Puzzle Retain Better
-The three highest-retention videos (79s, 80s, 65s) all lead with an unresolved historical puzzle framed around scale or impossibility:
-- *"A entire civilization vanished overnight — and we still don't fully know why."* → 79s
-- *"This ancient script stumped the smartest minds for over 1,300 years."* → 80s
-- *"This 2,000-year-old device could calculate the future — and we barely understand it."* → 65s
+**Views and retention aren't perfectly correlated — and that's worth noting.**
 
-The common thread: **a specific, named gap in human knowledge** ("we still don't know," "we barely understand"). That framing appears to drive completion better than generic brain/bias hooks.
+The bird fire video (xIv0BvX4eic) earned 1,108 views but only 39s avg duration, while the ocean sound video got similar views (1,182) *and* 68s retention. The ship vanishing video (985 views, 47s) also performed well on views. Mystery/unexplained topics clearly pull clicks, but science-explanation topics appear to hold viewers longer once they arrive.
 
-### Late-Night Posting (~9–11pm UTC) Correlates With the Top View Counts
-The four 900–1,000+ view videos were posted at 21:34, 23:14, 01:55, and 21:42 UTC. This may reflect time-zone targeting or simply that those topics are stronger — **don't over-index on this without more data**, but it's worth tracking.
+**The ~1am posting slot has not been a consistent drag** — several strong videos (ocean sound, ship mystery) posted near midnight/1am and performed well. Not enough variance in post times here to draw a firm conclusion on timing.
 
 ---
 
 ## 2. What's Underperforming
 
-### Psychology/Cognitive Bias Topic Is Consistently Weak
-Five videos covered cognitive bias, brain myths, or memory — and they collectively underperform badly:
+**Vague or generic hooks with no concrete specificity are the clearest pattern among weak videos.**
 
-| Video | Topic | Views | Avg Duration (sec) |
+The bottom performers by views (excluding 0-view pending videos):
+
+| Video | Topic | Avg Duration | Views |
 |---|---|---|---|
-| V13FYsnjh8c | Brain myth (10%) | 62 | 26 |
-| ydB2ATSmvyw | Cognitive bias | 19 | 30 |
-| ddEzVhhbCKg | Psych experiment (Milgram) | 63 | 46 |
-| abgFlFzRBis | Cognitive bias | 166 | 22 |
-| f9HUYz1bLY8 | Cognitive bias | 55 | 63 |
-| VXyK6j2C3OU | Memory | 181 | 25 |
+| Animal migration | Animal | **23s** | 49 |
+| Everyday object origin | Object origin | **19s** | 59 |
+| Psychological trick | Psychology | **26s** | 61 |
+| $3M fish / economics | Economics | **24s** | 109 |
 
-Average across these: **~91 views, ~35s avg duration.** That's roughly **10x fewer views and half the retention** of the ancient mystery cluster. The cognitive bias hook ("Your brain is lying to you right now") was reused nearly verbatim across multiple videos (ydB2ATSmvyw, abgFlFzRBis, f9HUYz1bLY8) with no measurable improvement — in fact ydB2ATSmvyw got only 19 views.
+The psychological trick hook ("Advertisers are manipulating you right now and you don't even feel it") is generic — viewers have seen this framing hundreds of times on the platform. There's no specific claim to anchor curiosity. Similarly, "You use this every single day — but its invention was a total accident" doesn't name the object, which can feel like a bait-and-switch rather than genuine intrigue.
 
-**f9HUYz1bLY8 is a partial exception** — 63s avg duration despite only 55 views. The content may be retaining whoever watches, but it's not getting distributed. This hints the problem may be at the hook/click level rather than content quality for that specific video.
+The animal migration hook ("every year, millions of animals vanish — and science still can't fully explain how") is also vague — it could describe any migration. Compare it to the bird fire hook ("This tiny bird just set itself on fire — and it's completely intentional"), which names a specific, shocking, visual behavior. The specificity gap is stark.
 
-### "Hidden Pattern" and Technology Infrastructure Topics Also Underdelivered
-- nMvBwlteeYo (city math): 152 views, 59s duration — decent retention but very low reach
-- wm3uljniRpM (ocean internet cables): 117 views, **25s duration** — both low reach and low retention
-- lQKOYAokqRs (space/starlight): 133 views, 35s duration
+**The economics topic (109 views, 24s)** and **hidden city math topic (110 views, 50s)** suggest abstract/structural topics need extra work to hook a broad audience. The city math hook ("every city on Earth follows the same secret math — and no one planned it") is actually decent but apparently wasn't pulled by the algorithm into broad distribution.
 
-These aren't catastrophic but they're clearly in a second tier. The space and infrastructure topics in particular show weak retention, suggesting the content doesn't deliver on the hook's promise fast enough.
+**Short average view durations (19–26s) on the weak videos** suggest viewers are bouncing within the first few seconds, meaning the hook itself — not the body of the video — is the problem.
 
-### Duplicate/
+---
+
+## 3. Three Concrete Changes to Try Next
+
+**① Make every hook name a specific thing, number, or event — not a category.**
+
+Weak pattern: *"You use this every single day — but its invention was a total accident."*
+Stronger pattern: *"The microwave was invented because a radar engineer's chocolate bar melted in his pocket."*
+
+The ocean sound (68s retention, 1,182 views) and bird fire (1,108 views) videos both name something concrete in the first sentence. Apply this to every hook going forward. Before posting, ask: *could this hook describe five different videos? If yes, it's too vague.*
+
+**② Double down on science/physics explanation topics — they're showing both views AND retention.**
+
+Ocean sound mystery: 1,182 views / 68s. Speed of light: 448 views / 64s. Fibonacci/math: 282 views / 71s. These three have the highest average view durations in the dataset by a significant margin. The psychology, economics,
