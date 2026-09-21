@@ -1,63 +1,50 @@
 # YouTube Shorts Growth Report
+**Sample: 20 videos | Posted: Sep 14–21, 2026**
 
-**Sample size note:** This is 20 videos spanning roughly one week, with several showing 0 views (likely still in YouTube's distribution queue or suppressed at upload). The 0-view videos (UzM1pw9Nq2E, xIDdpSZEDLc, Hai2-zHyLMs) are excluded from performance analysis since they haven't received meaningful impressions yet. The Lincoln video (LZwDjc3BaOc, 3 views) is treated as a distribution failure, not a content signal. That leaves 16 videos — a small but usable sample for directional patterns.
+> ⚠️ **Sample size caveat:** This is 20 videos over roughly one week. Many patterns below are suggestive, not statistically reliable. Treat these as hypotheses to test, not confirmed rules. Several videos also show 0 views, which likely reflects processing delay or indexing lag rather than true performance — those are excluded from retention/engagement analysis below.
 
 ---
 
 ## 1. What's Working
 
-**High-retention mystery/science hooks with a concrete, impossible-sounding claim perform best.**
+### High-View Videos
+The top performers by raw views among processed videos:
 
-The top three videos by average view duration are:
-
-| Video | Topic | Avg Duration | Views |
+| Video | Views | Avg Duration | Topic |
 |---|---|---|---|
-| Ocean sound mystery | Science/mystery | **68s** | 1,182 |
-| Mathematical pattern in nature | Math/science | **71s** | 282 |
-| Speed of light/physics | Physics | **64s** | 448 |
+| Math paper / biology (kdjTGpS2j2E) | 901 | 34s | Unexpected science connection |
+| Fish rain (d8y8FgrjpiE) | 994 | 30s | Impossible weather phenomenon |
+| Lincoln-Kennedy (6SEr4SSAcXw) | 887 | 59s | Historical coincidence |
+| Illegal to die (nIukdAzIT-0) | 886 | 58s | Strange law |
+| Fruit was "poison" (ZrDYi28fMTk) | 271 | **87s** | Food history |
 
-All three hooks share a structural pattern: they state something that sounds physically impossible but is provably real ("a sound picked up thousands of miles away," "you're always moving at the speed of light," "this one number appears in sunflowers, hurricanes, and your DNA"). These aren't vague teasers — they deliver a specific, verifiable claim in the hook itself, which appears to reward viewers who stay to understand *why* it's true.
+**Key observation — high views don't always mean high retention:**
+- The fish rain and math/biology videos both cracked 900+ views but averaged only 30–34 seconds of watch time — suggesting strong click-through but weaker completion.
+- The highest *retention* videos (by avg view duration) are actually **lower-view** entries: "Fruit was poison" (87s), "Roman storm/sneeze" (87s), "Lincoln-Kennedy v1" (59s), "Illegal to die" (58s), and "1909 internet prediction" (66s).
 
-**Views and retention aren't perfectly correlated — and that's worth noting.**
-
-The bird fire video (xIv0BvX4eic) earned 1,108 views but only 39s avg duration, while the ocean sound video got similar views (1,182) *and* 68s retention. The ship vanishing video (985 views, 47s) also performed well on views. Mystery/unexplained topics clearly pull clicks, but science-explanation topics appear to hold viewers longer once they arrive.
-
-**The ~1am posting slot has not been a consistent drag** — several strong videos (ocean sound, ship mystery) posted near midnight/1am and performed well. Not enough variance in post times here to draw a firm conclusion on timing.
+### Formats and hooks that correlate with better retention:
+- **Concrete, specific hooks with a named subject** perform better on duration. *"People used to think this fruit would KILL you"* (87s) and *"It is technically still illegal to die in this town"* (58s) are more specific than vague "hidden survival mode" type hooks.
+- **Historical/strange-law topics** show both decent views (886–887) *and* strong duration (58–59s) — the best combination in this dataset. The "illegal to die" and Lincoln-Kennedy v1 videos are the closest to a balanced win.
+- **The "unexpected connection" topic** drove the highest single-video view count (901, math/biology) and also performed well in its earlier iteration (heartbeat/stars: 90 views, 55s). The hook format — "X solved Y and had no idea" — appears to generate curiosity clicks.
 
 ---
 
 ## 2. What's Underperforming
 
-**Vague or generic hooks with no concrete specificity are the clearest pattern among weak videos.**
+### Zero-view videos (likely processing lag, but worth flagging)
+Three videos posted Sep 20–21 show 0 views and 0 watch time: Space silence (tP2Wca1Qb2o), Rule of Thumb (Y4tpBvS1Ir8), Lost civilization (J9mYvD7HdlI). These were posted most recently and may not have indexed yet — **do not optimize against these until data populates.**
 
-The bottom performers by views (excluding 0-view pending videos):
-
-| Video | Topic | Avg Duration | Views |
+### Genuinely weak performers among processed videos:
+| Video | Views | Avg Duration | Issue |
 |---|---|---|---|
-| Animal migration | Animal | **23s** | 49 |
-| Everyday object origin | Object origin | **19s** | 59 |
-| Psychological trick | Psychology | **26s** | 61 |
-| $3M fish / economics | Economics | **24s** | 109 |
+| Spider web / bulletproof vest (h_qTqmWoDaQ) | 4 | 19s | Near-zero reach AND retention |
+| Roman storm/sneeze (UGtYM-vgkkg) | 13 | 87s | Tiny reach despite great retention |
+| Brain myth (R7kLrGlAbr0) | 114 | 29s | Low retention for a debunking format |
+| Microwave accident (udkgkNL5eos) | 287 | 27s | High views, very low duration |
+| Lincoln-Kennedy v2 (YmpdTBRfpP4) | 21 | 41s | Repeat topic tanked hard |
 
-The psychological trick hook ("Advertisers are manipulating you right now and you don't even feel it") is generic — viewers have seen this framing hundreds of times on the platform. There's no specific claim to anchor curiosity. Similarly, "You use this every single day — but its invention was a total accident" doesn't name the object, which can feel like a bait-and-switch rather than genuine intrigue.
+**Specific problems to call out:**
 
-The animal migration hook ("every year, millions of animals vanish — and science still can't fully explain how") is also vague — it could describe any migration. Compare it to the bird fire hook ("This tiny bird just set itself on fire — and it's completely intentional"), which names a specific, shocking, visual behavior. The specificity gap is stark.
-
-**The economics topic (109 views, 24s)** and **hidden city math topic (110 views, 50s)** suggest abstract/structural topics need extra work to hook a broad audience. The city math hook ("every city on Earth follows the same secret math — and no one planned it") is actually decent but apparently wasn't pulled by the algorithm into broad distribution.
-
-**Short average view durations (19–26s) on the weak videos** suggest viewers are bouncing within the first few seconds, meaning the hook itself — not the body of the video — is the problem.
-
----
-
-## 3. Three Concrete Changes to Try Next
-
-**① Make every hook name a specific thing, number, or event — not a category.**
-
-Weak pattern: *"You use this every single day — but its invention was a total accident."*
-Stronger pattern: *"The microwave was invented because a radar engineer's chocolate bar melted in his pocket."*
-
-The ocean sound (68s retention, 1,182 views) and bird fire (1,108 views) videos both name something concrete in the first sentence. Apply this to every hook going forward. Before posting, ask: *could this hook describe five different videos? If yes, it's too vague.*
-
-**② Double down on science/physics explanation topics — they're showing both views AND retention.**
-
-Ocean sound mystery: 1,182 views / 68s. Speed of light: 448 views / 64s. Fibonacci/math: 282 views / 71s. These three have the highest average view durations in the dataset by a significant margin. The psychology, economics,
+- **Repeating the Lincoln-Kennedy topic** was a clear mistake. Version 1 got 887 views; the repeat (YmpdTBRfpP4) got 21 views — a 98% drop. YouTube's algorithm likely suppressed it as near-duplicate content, and the audience had already seen it.
+- **The spider web hook is the weakest in the dataset.** *"This terrifying natural phenomenon accidentally gave us one of the most useful inventions ever made"* is vague, long, and doesn't name the subject. 4 views and 19 seconds confirm it didn't hold anyone.
+- **The microwave video's hook is misaligned with the title.** The hook says *"thrown in the trash before anyone realized what it was"* — that's not what the story is about (a melted candy bar). The mismatch may be causing viewers to feel misled, explaining the 27s avg duration despite 287
