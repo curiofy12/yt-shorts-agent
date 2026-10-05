@@ -1,58 +1,51 @@
 # YouTube Shorts Growth Report
-### Dataset: 20 videos, Sept 21–28, 2026
+**Sample period:** Sep 28 – Oct 5, 2026 | **n = 20 videos**
 
-> **Sample size caveat:** This is a small dataset (20 videos, several with zero views likely due to indexing lag rather than performance failure). Patterns are directionally useful but not statistically conclusive. Treat everything below as informed hypotheses, not proven rules.
+> ⚠️ **Honest caveat on sample size:** 20 videos is a small dataset, and the three most recent posts (Oct 4–5) show 0 views — almost certainly because they haven't had time to index or circulate yet. They're excluded from performance analysis below. All patterns here are directional signals, not statistically proven conclusions.
 
 ---
 
 ## 1. What's Working
 
-**Ancient mystery / history topics are your clear leaders.**
+### High-retention physics/space topics with declarative hooks dominate
+The top performers by both views and average view duration are all in the hard-science/space lane, and they all open with a direct, specific, verifiable claim stated as fact:
 
-| Video | Topic | Views | Avg Duration | Min Watched |
-|---|---|---|---|---|
-| cBmyRDayGVA | Ancient mystery (Rosetta Stone) | 1,875 | 81s | 1,504 |
-| t-6ZlhKvYqY | Surreal place on Earth | 971 | 48s | 527 |
-| ZfN0Pj66-EI | Misunderstood history | 999 | 55s | 502 |
-| Tf68OrT1x3g | Ancient invention | 945 | 59s | 606 |
+| Video | Topic | Views | Avg View Duration |
+|---|---|---|---|
+| `cxJqxf1GIKs` | Mind-bending space fact | 977 | **76 sec** |
+| `wppE0FvjFHY` | Animal behavior | 456 | **71 sec** |
+| `dp7NuYdMeNM` | Strange physics law | 405 | **61 sec** |
+| `fVijusOMElY` | Radical historical figure | 899 | 61 sec |
+| `c7jIKluBa2o` | Scientific theory proven late | 874 | 62 sec |
 
-These four videos account for roughly **3,139 of your total ~4,200 tracked minutes watched** — the vast majority of your watch time output.
+The space fact (`cxJqxf1GIKs`) achieved the highest avg view duration in the set at **76 seconds** alongside the highest views. Its hook — *"You are moving through space right now at over a million miles per hour"* — is a single, precise, immediately verifiable claim. The mantis shrimp/bullet shrimp (`wppE0FvjFHY`) follows the same pattern: one absurd physical claim, stated flatly.
 
-**The top retention performer is `cBmyRDayGVA` (Rosetta Stone) at 81 seconds average view duration**, tied with `NMuY4fZCCYk` (illegal to die town, also 81s) and `o_bB-kxmNfQ` (blue volcano, 90s). What these three share: **concrete, specific subjects** rather than abstract category framing. The hooks name or strongly imply a single real thing.
+### "Vindication" narrative structure consistently pulls above average
+Three videos using a *"experts laughed, then were proven wrong"* arc all landed in the top half:
+- `c7jIKluBa2o` (continental drift): 874 views, 62 sec AVD, 3 subs gained
+- `fVijusOMElY` (Tesla): 899 views, 61 sec AVD, 3 subs gained
+- `M1_tGVMAYJQ` (bacteria/Nobel): only 3 views — but this is almost certainly a distribution failure (posted at 2:38 AM, only 2 hours after a prior video), not a content failure. The format itself tests well elsewhere.
 
-**The blue volcano video (`o_bB-kxmNfQ`) has the highest average view duration at 90 seconds** despite only 171 views — suggesting the content holds attention extremely well once someone clicks. It's punching above its weight on retention.
+### Geography/anomaly topics punch above their weight for views
+`kZBTgSw5nSk` (hidden Amazon river): 961 views, 55 sec AVD — strong performance with a hook that makes a physically counterintuitive claim ("flows UPHILL").
 
-**Hook pattern that correlates with higher performance:** Hooks that contain a **specific, verifiable-sounding detail** ("cracked it in a single afternoon," "2,000-year-old text," "boils, smells like sulfur") tend to outperform hooks that are **generic mystery framings** ("you have no idea," "you don't even notice").
+### Subscriber conversion correlates with longer AVD + "hidden truth" framing
+All 4 videos that gained subs had AVDs of 61 sec or higher *or* used "you were never told the full story" framing. Zero subs were gained on any video with AVD below 51 sec.
 
 ---
 
 ## 2. What's Underperforming
 
-**Psychology / cognitive bias topics are consistently weak across the board.**
+### "Trick/secret/hidden" hooks without a concrete specific claim underperform
+| Video | Hook | Views | Avg View Duration |
+|---|---|---|---|
+| `O15Pf6GpZrw` | "Your brain is being hacked right now" | 45 | 28 sec |
+| `-__mmsfL1JI` | "Every city follows the same secret math" | 162 | 38 sec |
+| `HzFhxcBKw-E` | "You're essentially blind compared to this animal" | 966 | **38 sec** |
 
-| Video | Topic | Views | Avg Duration | Min Watched |
-|---|---|---|---|---|
-| SUfistZFUnk | Cognitive bias | 39 | 23s | 6 |
-| pEnVEe0R_iA | Memory psychology | 52 | 39s | 16 |
-| 19VeWSrnhQ4 | Psychology experiment | 155 | 44s | 68 |
-| IBU7YihjluE | Phrase origin | 256 | 27s | 74 |
+`HzFhxcBKw-E` is the clearest red flag in the dataset: 966 views but only **38 sec AVD** — nearly identical to the low-view urban math video. The hook is vague ("essentially blind") compared to `wppE0FvjFHY`'s hook ("punches faster than a bullet"). High impressions did not convert to watch time, suggesting the hook pulled clicks but the content or pacing failed to hold them. Notably, the follow-up on the same mantis shrimp topic (`M9ycOycF9ww`, 112 views, 46 sec AVD) confirms audience fatigue and/or topic saturation from posting the same subject twice in ~36 hours.
 
-The three most recent psychology-adjacent videos (`SUfistZFUnk`, `pEnVEe0R_iA`, and `19VeWSrnhQ4`) show **both low views and low retention** — a double failure. These aren't just getting fewer clicks; people who do watch are leaving early.
+### Psychology/advertising topic significantly underperformed
+`O15Pf6GpZrw` (advertiser psychological tricks): 45 views, **28 sec AVD** — the lowest AVD in the set among non-zero videos. "Your brain is being hacked" is a heavily saturated hook in this space; it may be triggering algorithmic skip or viewer fatigue. The topic itself hasn't been retested, so it's unclear if topic or hook is the failure point.
 
-**"Your brain is lying to you" hooks are overused and appear to be burning out.** Three separate videos use near-identical hook framing:
-- *"Your brain is lying to you right now"* (SUfistZFUnk)
-- *"Your brain is actively lying to you every single day"* (pEnVEe0R_iA)
-- *"Scientists paid people to lie — and it completely backfired"* (19VeWSrnhQ4)
-
-All three underperform. This framing may be oversaturated in the niche, or your audience simply doesn't respond to it.
-
-**The zipper video (`ipENiilvJxY`) has the worst retention of any video with meaningful views: 30 seconds average duration, 33 minutes watched from 112 views.** The hook — *"The thing in your pocket right now"* — is vague and the connection to zippers isn't obvious, which likely caused early drop-off once the reveal felt mundane.
-
-**The Rosetta Stone repeat (`nUUtn2kHm9U`) cratered at 20 views and 22s duration**, despite the first Rosetta Stone video being your best performer. This is a meaningful data point: re-covering the same subject quickly penalizes you, likely via reduced algorithmic distribution and audience recognition.
-
----
-
-## 3. Three Concrete Changes to Try Next
-
-**① Stop rotating "brain lying to you" hooks immediately.**
-You've used variations of this hook three times in five days and all three underperformed (39, 52, and 155 views; 23–44s duration). If you continue covering psychology topics, the hook needs a completely different structure — lead with the specific experiment or finding, not the abstract "your brain deceives you" frame. Example rewrite for a memory video: *"In 1974, a psychologist
+### Strange/quirky laws
