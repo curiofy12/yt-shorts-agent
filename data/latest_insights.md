@@ -1,51 +1,50 @@
 # YouTube Shorts Growth Report
-**Sample period:** Sep 28 – Oct 5, 2026 | **n = 20 videos**
-
-> ⚠️ **Honest caveat on sample size:** 20 videos is a small dataset, and the three most recent posts (Oct 4–5) show 0 views — almost certainly because they haven't had time to index or circulate yet. They're excluded from performance analysis below. All patterns here are directional signals, not statistically proven conclusions.
+**Sample:** 20 videos | **Period:** Oct 6–12, 2026 | **⚠️ Caveat up front:** This is a small sample (most videos under 200 views), and three of the most recent videos show zero views — almost certainly due to data delay rather than actual zero performance. Treat all patterns here as directional hypotheses, not confirmed conclusions.
 
 ---
 
 ## 1. What's Working
 
-### High-retention physics/space topics with declarative hooks dominate
-The top performers by both views and average view duration are all in the hard-science/space lane, and they all open with a direct, specific, verifiable claim stated as fact:
+**Ocean mystery topic is the clear standout.**
+The two "ocean sound" videos (nwn7Qua9wcA, o2MdH8iuv88) generated 1,137 and 1,519 views respectively — 5–10× the median of the rest of the dataset. Combined watch time: ~2,309 minutes. These are the only two videos that meaningfully broke out of the sub-200 range.
 
-| Video | Topic | Views | Avg View Duration |
-|---|---|---|---|
-| `cxJqxf1GIKs` | Mind-bending space fact | 977 | **76 sec** |
-| `wppE0FvjFHY` | Animal behavior | 456 | **71 sec** |
-| `dp7NuYdMeNM` | Strange physics law | 405 | **61 sec** |
-| `fVijusOMElY` | Radical historical figure | 899 | 61 sec |
-| `c7jIKluBa2o` | Scientific theory proven late | 874 | 62 sec |
+**High retention correlates with "unexplained mystery" framing and cross-domain surprise.**
+- Ocean mystery #1: 95 sec avg view duration
+- Ocean mystery #2: 81 sec avg view duration
+- Black hole / cancer connection (sItA_Yuiick): **185 sec avg view duration** — the highest in the dataset, though only 35 views (likely limited distribution, not a retention failure)
+- Lighthouse economics (A51P2Ow8qjU): 92 sec avg view duration with 173 views
 
-The space fact (`cxJqxf1GIKs`) achieved the highest avg view duration in the set at **76 seconds** alongside the highest views. Its hook — *"You are moving through space right now at over a million miles per hour"* — is a single, precise, immediately verifiable claim. The mantis shrimp/bullet shrimp (`wppE0FvjFHY`) follows the same pattern: one absurd physical claim, stated flatly.
+These three share a common hook structure: **two seemingly unrelated things collide in a surprising way** ("what do black holes and cancer cells have in common?", "a sound crossed half the ocean"). Retention is measurably better (80–185 sec) compared to the dataset median of ~43 sec.
 
-### "Vindication" narrative structure consistently pulls above average
-Three videos using a *"experts laughed, then were proven wrong"* arc all landed in the top half:
-- `c7jIKluBa2o` (continental drift): 874 views, 62 sec AVD, 3 subs gained
-- `fVijusOMElY` (Tesla): 899 views, 61 sec AVD, 3 subs gained
-- `M1_tGVMAYJQ` (bacteria/Nobel): only 3 views — but this is almost certainly a distribution failure (posted at 2:38 AM, only 2 hours after a prior video), not a content failure. The format itself tests well elsewhere.
-
-### Geography/anomaly topics punch above their weight for views
-`kZBTgSw5nSk` (hidden Amazon river): 961 views, 55 sec AVD — strong performance with a hook that makes a physically counterintuitive claim ("flows UPHILL").
-
-### Subscriber conversion correlates with longer AVD + "hidden truth" framing
-All 4 videos that gained subs had AVDs of 61 sec or higher *or* used "you were never told the full story" framing. Zero subs were gained on any video with AVD below 51 sec.
+**The hook formula "X happened — and you've never heard his name / we still don't know why" appears linked to stronger retention.**
+The nuclear war video (znpBwDLYHf0, 42 sec), the ocean videos (81–95 sec), and the lighthouse video (92 sec) all use a "hidden truth / unresolved mystery" close. The sleep video (LXgUj5ncpsU) also held 75 sec despite only 34 views.
 
 ---
 
 ## 2. What's Underperforming
 
-### "Trick/secret/hidden" hooks without a concrete specific claim underperform
-| Video | Hook | Views | Avg View Duration |
-|---|---|---|---|
-| `O15Pf6GpZrw` | "Your brain is being hacked right now" | 45 | 28 sec |
-| `-__mmsfL1JI` | "Every city follows the same secret math" | 162 | 38 sec |
-| `HzFhxcBKw-E` | "You're essentially blind compared to this animal" | 966 | **38 sec** |
+**Low views AND low retention: the worst combination.**
+- 10% brain myth (xwEluQd284U): 65 views, **27 sec** avg duration — second-lowest retention in the dataset
+- Post-it Note (gLbcZRBtKp4): 137 views but only **31 sec** avg duration
+- Deadly fruit (\_\_gWbU\_Djdk): 104 views, **33 sec** avg duration
+- Zipper origin (cEaQaxOfUTA): 84 views, **36 sec** avg duration
 
-`HzFhxcBKw-E` is the clearest red flag in the dataset: 966 views but only **38 sec AVD** — nearly identical to the low-view urban math video. The hook is vague ("essentially blind") compared to `wppE0FvjFHY`'s hook ("punches faster than a bullet"). High impressions did not convert to watch time, suggesting the hook pulled clicks but the content or pacing failed to hold them. Notably, the follow-up on the same mantis shrimp topic (`M9ycOycF9ww`, 112 views, 46 sec AVD) confirms audience fatigue and/or topic saturation from posting the same subject twice in ~36 hours.
+These are all recognizable, well-known stories ("Post-it Note was an accident," "10% brain myth is false"). The audience may already know the answer before the video starts, killing the reason to keep watching. The brain myth hook in particular **restates a debunked claim the viewer already knows is wrong** — there's no open loop to resolve.
 
-### Psychology/advertising topic significantly underperformed
-`O15Pf6GpZrw` (advertiser psychological tricks): 45 views, **28 sec AVD** — the lowest AVD in the set among non-zero videos. "Your brain is being hacked" is a heavily saturated hook in this space; it may be triggering algorithmic skip or viewer fatigue. The topic itself hasn't been retested, so it's unclear if topic or hook is the failure point.
+**Lincoln-Kennedy coincidences (jnw2kHHWUqg): 7 views.**
+This is the lowest-performing video with actual data (not delayed). The topic is extremely common online — high competition, low novelty. The hook doesn't introduce anything new or unexpected. Retention at 53 sec is actually decent, suggesting the problem is distribution/click-through, not the content itself.
 
-### Strange/quirky laws
+**Human survival reflex (JZUZ3goIyLY): 119 views, 42 sec retention.**
+The hook ("your body can survive things your brain thinks are impossible") is vague — it doesn't name or tease a specific ability, giving viewers little reason to commit. Compare this to the ocean hook, which names a concrete, specific phenomenon.
+
+**Recency flag:** Videos posted Oct 11–12 (BnCciDG5UeU, lFvBiH3DDFY, LP3H13HDQgk) all show 0 views. Given the posting timestamps are within the last 24–48 hours of this data pull, this is most likely a data delay. **Do not draw conclusions from these yet.**
+
+---
+
+## 3. Three Concrete Changes to Try Next
+
+**① Lead with a specific, unresolved mystery — not a myth-busting format.**
+The myth-busting videos (brain myth: 27 sec, deadly fruit: 33 sec) underperformed on retention compared to the mystery/unexplained format (ocean: 81–95 sec, lighthouse: 92 sec). For the next 5 videos, frame the hook as "we still don't know why X" or "X shouldn't be possible — but it happened" rather than "you think X, but actually Y." Open loops outperform closed ones in this data.
+
+**② Make hooks more concrete and specific — replace vague with visceral.**
+The weakest hooks ("your body can survive things your brain thinks are impossible," "people used to think this common fruit would kill you dead") are abstract or generic. The
