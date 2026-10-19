@@ -1,50 +1,60 @@
 # YouTube Shorts Growth Report
-**Sample:** 20 videos | **Period:** Oct 6–12, 2026 | **⚠️ Caveat up front:** This is a small sample (most videos under 200 views), and three of the most recent videos show zero views — almost certainly due to data delay rather than actual zero performance. Treat all patterns here as directional hypotheses, not confirmed conclusions.
+**Dataset: 20 videos | Posted: Oct 11–19, 2026**
+
+> ⚠️ **Sample size caveat:** 20 videos is a small dataset. Several patterns below are suggestive, not statistically conclusive. Treat all findings as hypotheses to test, not confirmed rules. Also note: the 5 most recent videos (Oct 18–19) show 0 views — likely a data delay, not actual zero performance. They are excluded from performance analysis.
 
 ---
 
 ## 1. What's Working
 
-**Ocean mystery topic is the clear standout.**
-The two "ocean sound" videos (nwn7Qua9wcA, o2MdH8iuv88) generated 1,137 and 1,519 views respectively — 5–10× the median of the rest of the dataset. Combined watch time: ~2,309 minutes. These are the only two videos that meaningfully broke out of the sub-200 range.
+### Ancient/Historical Mystery Format — Consistently High Views + Solid Retention
+The clearest repeatable winner is the **"ancient object/mystery that defies modern understanding"** topic category:
 
-**High retention correlates with "unexplained mystery" framing and cross-domain surprise.**
-- Ocean mystery #1: 95 sec avg view duration
-- Ocean mystery #2: 81 sec avg view duration
-- Black hole / cancer connection (sItA_Yuiick): **185 sec avg view duration** — the highest in the dataset, though only 35 views (likely limited distribution, not a retention failure)
-- Lighthouse economics (A51P2Ow8qjU): 92 sec avg view duration with 173 views
+| Video | Views | Avg Duration | Est. Minutes Watched |
+|---|---|---|---|
+| "2,000-Year-Old Computer" (ZNKNDTowWTo) | 893 | 61s | 577 |
+| "2,000-Year-Old Computer" (fJEmNI0lhM0) | 1,138 | 46s | 634 |
+| "Stone Silent for 1,400 Years" (Us7FWwPaNEQ) | 1,280 | 58s | 725 |
 
-These three share a common hook structure: **two seemingly unrelated things collide in a surprising way** ("what do black holes and cancer cells have in common?", "a sound crossed half the ocean"). Retention is measurably better (80–185 sec) compared to the dataset median of ~43 sec.
+These three are the top performers by both views **and** total minutes watched. Notably, two of them are on the **same topic** (Antikythera Mechanism) and both performed well independently — suggesting strong audience demand for this subject, not just a lucky spike.
 
-**The hook formula "X happened — and you've never heard his name / we still don't know why" appears linked to stronger retention.**
-The nuclear war video (znpBwDLYHf0, 42 sec), the ocean videos (81–95 sec), and the lighthouse video (92 sec) all use a "hidden truth / unresolved mystery" close. The sleep video (LXgUj5ncpsU) also held 75 sec despite only 34 views.
+### Hook Pattern: Specific Concrete Detail + "Still Can't Explain It"
+The high performers share a hook structure: **a specific tangible fact + a knowledge gap or contradiction**:
+- *"This object is over 2,000 years old — and scientists still can't fully explain how it worked."* → 893 views, 61s avg
+- *"This stone sat silent for 1,400 years — until one discovery unlocked every secret inside it."* → 1,280 views, 58s avg
+- *"Your body replaces itself so completely, you're basically a different person every few years."* → 855 views, 52s avg
+
+By contrast, vague hooks underperform (see Section 2).
+
+### Human Body / Biology — High Views, Accessible Topic
+"Your Body Replaces Itself" (o4oTLAsfmQA): **855 views**, 52s avg duration. This is the only body/biology video in the set but it outperformed most others, suggesting this topic category has traction worth exploring further.
+
+### Historical Near-Miss Stories — Strong Views, Lower Retention
+"Soviet Officer Who Stopped WW3" (dnxMfTKVsLg): **767 views** but only 40s avg duration. High reach, but viewers may be dropping before the end — the story hook is compelling but the payoff or pacing may not be sustaining watch time.
 
 ---
 
 ## 2. What's Underperforming
 
-**Low views AND low retention: the worst combination.**
-- 10% brain myth (xwEluQd284U): 65 views, **27 sec** avg duration — second-lowest retention in the dataset
-- Post-it Note (gLbcZRBtKp4): 137 views but only **31 sec** avg duration
-- Deadly fruit (\_\_gWbU\_Djdk): 104 views, **33 sec** avg duration
-- Zipper origin (cEaQaxOfUTA): 84 views, **36 sec** avg duration
+### Psychology / Cognitive Bias / Memory — Extremely Low Views
+Three psychology-adjacent videos were posted and all cratered:
 
-These are all recognizable, well-known stories ("Post-it Note was an accident," "10% brain myth is false"). The audience may already know the answer before the video starts, killing the reason to keep watching. The brain myth hook in particular **restates a debunked claim the viewer already knows is wrong** — there's no open loop to resolve.
+| Video | Views | Avg Duration |
+|---|---|---|
+| "Cognitive Bias" (AglGOhIt-hk) | 18 | **1,815s** ⚠️ |
+| "Memory" (QfWaQyqATDM) | 3 | 10s |
 
-**Lincoln-Kennedy coincidences (jnw2kHHWUqg): 7 views.**
-This is the lowest-performing video with actual data (not delayed). The topic is extremely common online — high competition, low novelty. The hook doesn't introduce anything new or unexpected. Retention at 53 sec is actually decent, suggesting the problem is distribution/click-through, not the content itself.
+> ⚠️ **Data anomaly:** AglGOhIt-hk shows 1,815 seconds average view duration with 18 views and 151 minutes watched. This is almost certainly a **data error** (151 min ÷ 18 views = ~8.4 min avg, not 30 min). Do not treat the duration figure as meaningful. What is meaningful: **18 views** is a near-total distribution failure — the algorithm likely didn't serve this at all.
 
-**Human survival reflex (JZUZ3goIyLY): 119 views, 42 sec retention.**
-The hook ("your body can survive things your brain thinks are impossible") is vague — it doesn't name or tease a specific ability, giving viewers little reason to commit. Compare this to the ocean hook, which names a concrete, specific phenomenon.
+The psychology topics are not connecting at the discovery stage. Whether this is the topic, the hook, or timing is unclear with this sample, but the pattern across both videos is consistent enough to flag.
 
-**Recency flag:** Videos posted Oct 11–12 (BnCciDG5UeU, lFvBiH3DDFY, LP3H13HDQgk) all show 0 views. Given the posting timestamps are within the last 24–48 hours of this data pull, this is most likely a data delay. **Do not draw conclusions from these yet.**
+### Internet/Technology "Clever Fact" Format — Failing on Retention AND Views
+- "Internet Weighs a Strawberry" (UzraEdqIuNg): **56 views**, only **22s avg duration**
+- "Common Phrase Origin" (fS-nD8SYd2k): **24 views**, **24s avg duration**
 
----
+Both have very low views *and* the worst retention rates in the dataset. The hooks feel like trivia rather than stakes — viewers aren't compelled to stay. The "here's a quirky fact" structure isn't working.
 
-## 3. Three Concrete Changes to Try Next
-
-**① Lead with a specific, unresolved mystery — not a myth-busting format.**
-The myth-busting videos (brain myth: 27 sec, deadly fruit: 33 sec) underperformed on retention compared to the mystery/unexplained format (ocean: 81–95 sec, lighthouse: 92 sec). For the next 5 videos, frame the hook as "we still don't know why X" or "X shouldn't be possible — but it happened" rather than "you think X, but actually Y." Open loops outperform closed ones in this data.
-
-**② Make hooks more concrete and specific — replace vague with visceral.**
-The weakest hooks ("your body can survive things your brain thinks are impossible," "people used to think this common fruit would kill you dead") are abstract or generic. The
+### Vague or Generic Hooks — Correlation with Lower Performance
+Compare these two hooks on similar "misconception" topics:
+- *"You think you know Thomas Jefferson — you don't."* → **73 views** (JuDrKw123Tg)
+- *"You've been lied to about the Great Wall of China your entire life."* → **279 views** (DXsrYq
