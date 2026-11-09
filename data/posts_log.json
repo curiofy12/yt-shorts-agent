@@ -22,9 +22,9 @@
     "posted_at": "2026-07-30T20:49:12.712633+00:00",
     "stats": {
       "video_id": "d1NPH26bLp0",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "average_view_duration_sec": 5,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -37,7 +37,7 @@
     "posted_at": "2026-07-30T22:56:55.236804+00:00",
     "stats": {
       "video_id": "kNg7v3MiSNk",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -97,7 +97,7 @@
     "posted_at": "2026-08-01T07:54:44.517279+00:00",
     "stats": {
       "video_id": "LWDD_c0R9ZU",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -233,8 +233,8 @@
     "stats": {
       "video_id": "vB7cqgFX1A0",
       "views": 1,
-      "estimated_minutes_watched": 1,
-      "average_view_duration_sec": 75,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 10,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -457,7 +457,7 @@
     "posted_at": "2026-08-10T00:14:23.237517+00:00",
     "stats": {
       "video_id": "BbaffJj7b1o",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -502,9 +502,9 @@
     "posted_at": "2026-08-11T04:20:54.126690+00:00",
     "stats": {
       "video_id": "Ex7CHVXLdeI",
-      "views": 2,
+      "views": 1,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 24,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -787,9 +787,9 @@
     "posted_at": "2026-08-18T22:08:46.488404+00:00",
     "stats": {
       "video_id": "4XIB4lw5Sxo",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 21,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -817,7 +817,7 @@
     "posted_at": "2026-08-18T23:14:44.363948+00:00",
     "stats": {
       "video_id": "_wsteX6Ylzo",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -847,9 +847,9 @@
     "posted_at": "2026-08-19T23:59:46.625425+00:00",
     "stats": {
       "video_id": "0LR5g9WyLdI",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 2,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -907,9 +907,9 @@
     "posted_at": "2026-08-21T17:25:05.450373+00:00",
     "stats": {
       "video_id": "TD0KERWIrg8",
-      "views": 1,
-      "estimated_minutes_watched": 1,
-      "average_view_duration_sec": 63,
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -1027,7 +1027,7 @@
     "posted_at": "2026-08-23T23:55:19.267009+00:00",
     "stats": {
       "video_id": "1GMn19jg698",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -1072,7 +1072,7 @@
     "posted_at": "2026-08-24T23:58:56.807969+00:00",
     "stats": {
       "video_id": "I8nNT8cyriM",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -1237,9 +1237,9 @@
     "posted_at": "2026-08-30T01:19:02.889021+00:00",
     "stats": {
       "video_id": "5Ua3oHD5nrQ",
-      "views": 2,
+      "views": 4,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 3,
+      "average_view_duration_sec": 1,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -1372,9 +1372,9 @@
     "posted_at": "2026-09-02T01:00:20.733366+00:00",
     "stats": {
       "video_id": "ClTlEwF8GIM",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 13,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -1417,9 +1417,9 @@
     "posted_at": "2026-09-03T01:07:56.407573+00:00",
     "stats": {
       "video_id": "ddEzVhhbCKg",
-      "views": 5,
-      "estimated_minutes_watched": 5,
-      "average_view_duration_sec": 349,
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -1447,7 +1447,7 @@
     "posted_at": "2026-09-03T21:42:02.618115+00:00",
     "stats": {
       "video_id": "tcGqUYxbuFE",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -1657,7 +1657,7 @@
     "posted_at": "2026-09-08T21:42:26.756956+00:00",
     "stats": {
       "video_id": "REeQVxPEnfo",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -1672,7 +1672,7 @@
     "posted_at": "2026-09-09T01:10:43.750707+00:00",
     "stats": {
       "video_id": "a16fsLL1G9o",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -1822,9 +1822,9 @@
     "posted_at": "2026-09-12T18:22:13.592682+00:00",
     "stats": {
       "video_id": "rYHC8M_xkXk",
-      "views": 3,
-      "estimated_minutes_watched": 1,
-      "average_view_duration_sec": 34,
+      "views": 13,
+      "estimated_minutes_watched": 6,
+      "average_view_duration_sec": 52,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -1837,7 +1837,7 @@
     "posted_at": "2026-09-12T21:14:47.851862+00:00",
     "stats": {
       "video_id": "HC1hHcRvId4",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -1942,9 +1942,9 @@
     "posted_at": "2026-09-15T01:22:10.829449+00:00",
     "stats": {
       "video_id": "6SEr4SSAcXw",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "average_view_duration_sec": 4,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -1957,9 +1957,9 @@
     "posted_at": "2026-09-15T19:45:09.933137+00:00",
     "stats": {
       "video_id": "h_qTqmWoDaQ",
-      "views": 0,
-      "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "views": 4,
+      "estimated_minutes_watched": 3,
+      "average_view_duration_sec": 217,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -2032,9 +2032,9 @@
     "posted_at": "2026-09-17T01:28:45.773500+00:00",
     "stats": {
       "video_id": "UXjUyq6VrQw",
-      "views": 0,
-      "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "views": 4,
+      "estimated_minutes_watched": 1,
+      "average_view_duration_sec": 34,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -2092,7 +2092,7 @@
     "posted_at": "2026-09-18T19:05:06.095124+00:00",
     "stats": {
       "video_id": "YmpdTBRfpP4",
-      "views": 2,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -2122,9 +2122,9 @@
     "posted_at": "2026-09-19T01:08:08.981003+00:00",
     "stats": {
       "video_id": "d8y8FgrjpiE",
-      "views": 0,
-      "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "views": 2,
+      "estimated_minutes_watched": 1,
+      "average_view_duration_sec": 69,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -2137,7 +2137,7 @@
     "posted_at": "2026-09-19T18:38:08.273008+00:00",
     "stats": {
       "video_id": "nIukdAzIT-0",
-      "views": 2,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -2152,9 +2152,9 @@
     "posted_at": "2026-09-19T21:20:00.150052+00:00",
     "stats": {
       "video_id": "wZSKD4rqtpk",
-      "views": 2,
-      "estimated_minutes_watched": 1,
-      "average_view_duration_sec": 75,
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -2197,7 +2197,7 @@
     "posted_at": "2026-09-20T21:17:05.935167+00:00",
     "stats": {
       "video_id": "Y4tpBvS1Ir8",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -2212,9 +2212,9 @@
     "posted_at": "2026-09-21T01:03:12.135008+00:00",
     "stats": {
       "video_id": "J9mYvD7HdlI",
-      "views": 0,
-      "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "views": 1,
+      "estimated_minutes_watched": 1,
+      "average_view_duration_sec": 95,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -2272,7 +2272,7 @@
     "posted_at": "2026-09-22T19:49:43.139120+00:00",
     "stats": {
       "video_id": "Tf68OrT1x3g",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -2392,7 +2392,7 @@
     "posted_at": "2026-09-25T01:18:17.378225+00:00",
     "stats": {
       "video_id": "IBU7YihjluE",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -2407,7 +2407,7 @@
     "posted_at": "2026-09-25T20:06:12.842050+00:00",
     "stats": {
       "video_id": "nUUtn2kHm9U",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -2452,7 +2452,7 @@
     "posted_at": "2026-09-26T19:16:00.968516+00:00",
     "stats": {
       "video_id": "ZfN0Pj66-EI",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -2557,9 +2557,9 @@
     "posted_at": "2026-09-28T23:45:11.639243+00:00",
     "stats": {
       "video_id": "O15Pf6GpZrw",
-      "views": 2,
+      "views": 0,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 1,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -2587,7 +2587,7 @@
     "posted_at": "2026-09-29T20:40:29.063902+00:00",
     "stats": {
       "video_id": "ipPhxql1gKI",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -2632,9 +2632,9 @@
     "posted_at": "2026-09-30T20:48:24.549635+00:00",
     "stats": {
       "video_id": "fVijusOMElY",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 7,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -2647,7 +2647,7 @@
     "posted_at": "2026-09-30T22:55:28.962876+00:00",
     "stats": {
       "video_id": "HzFhxcBKw-E",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -2737,7 +2737,7 @@
     "posted_at": "2026-10-02T22:51:08.861201+00:00",
     "stats": {
       "video_id": "kZBTgSw5nSk",
-      "views": 4,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -2752,9 +2752,9 @@
     "posted_at": "2026-10-03T01:55:47.133854+00:00",
     "stats": {
       "video_id": "c7jIKluBa2o",
-      "views": 5,
+      "views": 1,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 12,
+      "average_view_duration_sec": 46,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -2782,7 +2782,7 @@
     "posted_at": "2026-10-03T22:04:06.544378+00:00",
     "stats": {
       "video_id": "FrLxS4vSu4I",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -2797,7 +2797,7 @@
     "posted_at": "2026-10-04T02:35:21.014472+00:00",
     "stats": {
       "video_id": "dx3fa9VSpC4",
-      "views": 2,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -2812,9 +2812,9 @@
     "posted_at": "2026-10-04T19:24:56.491920+00:00",
     "stats": {
       "video_id": "QAIOQfEV1-o",
-      "views": 2,
-      "estimated_minutes_watched": 1,
-      "average_view_duration_sec": 100,
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -2827,9 +2827,9 @@
     "posted_at": "2026-10-04T22:15:29.977607+00:00",
     "stats": {
       "video_id": "82SQW4uTGs0",
-      "views": 9,
+      "views": 2,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 1,
+      "average_view_duration_sec": 13,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -2842,9 +2842,9 @@
     "posted_at": "2026-10-05T01:52:33.752370+00:00",
     "stats": {
       "video_id": "_sE4w4Wz9gk",
-      "views": 9,
-      "estimated_minutes_watched": 1,
-      "average_view_duration_sec": 16,
+      "views": 3,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 17,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -2872,9 +2872,9 @@
     "posted_at": "2026-10-06T00:36:26.696898+00:00",
     "stats": {
       "video_id": "pQaGLyViTZk",
-      "views": 2,
-      "estimated_minutes_watched": 1,
-      "average_view_duration_sec": 76,
+      "views": 1,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -2902,7 +2902,7 @@
     "posted_at": "2026-10-06T20:59:52.443043+00:00",
     "stats": {
       "video_id": "A51P2Ow8qjU",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -2947,7 +2947,7 @@
     "posted_at": "2026-10-07T21:17:43.642397+00:00",
     "stats": {
       "video_id": "xwEluQd284U",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -2962,9 +2962,9 @@
     "posted_at": "2026-10-07T23:34:59.792452+00:00",
     "stats": {
       "video_id": "znpBwDLYHf0",
-      "views": 2,
+      "views": 1,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 6,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3007,9 +3007,9 @@
     "posted_at": "2026-10-08T23:47:10.812283+00:00",
     "stats": {
       "video_id": "jnw2kHHWUqg",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "average_view_duration_sec": 20,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3022,7 +3022,7 @@
     "posted_at": "2026-10-09T03:00:18.016170+00:00",
     "stats": {
       "video_id": "o2MdH8iuv88",
-      "views": 2,
+      "views": 1,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -3037,9 +3037,9 @@
     "posted_at": "2026-10-09T21:06:40.821311+00:00",
     "stats": {
       "video_id": "m5yni7izdBQ",
-      "views": 2,
+      "views": 3,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 11,
+      "average_view_duration_sec": 28,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3112,9 +3112,9 @@
     "posted_at": "2026-10-11T01:43:17.063791+00:00",
     "stats": {
       "video_id": "dkPREV7lHwY",
-      "views": 2,
+      "views": 1,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "average_view_duration_sec": 55,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3128,8 +3128,8 @@
     "stats": {
       "video_id": "BnCciDG5UeU",
       "views": 1,
-      "estimated_minutes_watched": 1,
-      "average_view_duration_sec": 82,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 6,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3142,9 +3142,9 @@
     "posted_at": "2026-10-11T22:43:31.964651+00:00",
     "stats": {
       "video_id": "lFvBiH3DDFY",
-      "views": 0,
-      "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "views": 3,
+      "estimated_minutes_watched": 2,
+      "average_view_duration_sec": 165,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3174,7 +3174,7 @@
       "video_id": "o4oTLAsfmQA",
       "views": 2,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "average_view_duration_sec": 14,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3202,7 +3202,7 @@
     "posted_at": "2026-10-14T20:13:37.394695+00:00",
     "stats": {
       "video_id": "P8nUQsLrEPk",
-      "views": 3,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -3232,9 +3232,9 @@
     "posted_at": "2026-10-15T01:26:49.075972+00:00",
     "stats": {
       "video_id": "n6CzDywOlZg",
-      "views": 3,
-      "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 35,
+      "views": 2,
+      "estimated_minutes_watched": 1,
+      "average_view_duration_sec": 40,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3247,9 +3247,9 @@
     "posted_at": "2026-10-15T19:56:01.560973+00:00",
     "stats": {
       "video_id": "JuDrKw123Tg",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "average_view_duration_sec": 8,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3262,9 +3262,9 @@
     "posted_at": "2026-10-15T22:02:37.246968+00:00",
     "stats": {
       "video_id": "aDTbeRQyfxI",
-      "views": 3,
-      "estimated_minutes_watched": 1,
-      "average_view_duration_sec": 26,
+      "views": 1,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3307,9 +3307,9 @@
     "posted_at": "2026-10-16T21:58:44.937338+00:00",
     "stats": {
       "video_id": "fS-nD8SYd2k",
-      "views": 38,
-      "estimated_minutes_watched": 8,
-      "average_view_duration_sec": 31,
+      "views": 20,
+      "estimated_minutes_watched": 2,
+      "average_view_duration_sec": 22,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3322,9 +3322,9 @@
     "posted_at": "2026-10-17T01:20:09.417112+00:00",
     "stats": {
       "video_id": "Us7FWwPaNEQ",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "average_view_duration_sec": 7,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3337,9 +3337,9 @@
     "posted_at": "2026-10-17T18:24:34.954831+00:00",
     "stats": {
       "video_id": "AglGOhIt-hk",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 10,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3382,9 +3382,9 @@
     "posted_at": "2026-10-18T18:34:48.323883+00:00",
     "stats": {
       "video_id": "aoRdexbqiUI",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 2,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3397,9 +3397,9 @@
     "posted_at": "2026-10-18T21:18:15.060356+00:00",
     "stats": {
       "video_id": "uknlzmroxfk",
-      "views": 10,
+      "views": 1,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 10,
+      "average_view_duration_sec": 23,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3427,9 +3427,9 @@
     "posted_at": "2026-10-19T21:02:15.941400+00:00",
     "stats": {
       "video_id": "u1Gxxprp4xk",
-      "views": 3,
-      "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 11,
+      "views": 1,
+      "estimated_minutes_watched": 1,
+      "average_view_duration_sec": 60,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3457,7 +3457,7 @@
     "posted_at": "2026-10-20T01:46:30.419020+00:00",
     "stats": {
       "video_id": "Ys0sDCKHwo0",
-      "views": 2,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -3487,7 +3487,7 @@
     "posted_at": "2026-10-20T22:08:35.005879+00:00",
     "stats": {
       "video_id": "wxLPAdaGpUk",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -3502,7 +3502,7 @@
     "posted_at": "2026-10-21T01:34:04.796315+00:00",
     "stats": {
       "video_id": "YJihR6tK9jY",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -3517,7 +3517,7 @@
     "posted_at": "2026-10-21T20:09:10.322493+00:00",
     "stats": {
       "video_id": "vDlEt_rRZbc",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -3547,7 +3547,7 @@
     "posted_at": "2026-10-22T01:25:17.467532+00:00",
     "stats": {
       "video_id": "33o99seqOtQ",
-      "views": 0,
+      "views": 1,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -3592,9 +3592,9 @@
     "posted_at": "2026-10-23T02:03:53.765626+00:00",
     "stats": {
       "video_id": "37S8ILZ2sZk",
-      "views": 9,
-      "estimated_minutes_watched": 8,
-      "average_view_duration_sec": 169,
+      "views": 10,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 6,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3607,9 +3607,9 @@
     "posted_at": "2026-10-23T19:59:29.735353+00:00",
     "stats": {
       "video_id": "bbE4fp4-aXY",
-      "views": 1,
-      "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "views": 3,
+      "estimated_minutes_watched": 3,
+      "average_view_duration_sec": 206,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3622,9 +3622,9 @@
     "posted_at": "2026-10-23T21:55:57.880973+00:00",
     "stats": {
       "video_id": "zu_A7OWSfM0",
-      "views": 1,
+      "views": 3,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 34,
+      "average_view_duration_sec": 8,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3637,9 +3637,9 @@
     "posted_at": "2026-10-24T01:54:49.473667+00:00",
     "stats": {
       "video_id": "aQ8q90Mtwe8",
-      "views": 2,
-      "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "views": 3,
+      "estimated_minutes_watched": 1,
+      "average_view_duration_sec": 58,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3652,10 +3652,10 @@
     "posted_at": "2026-10-24T18:50:33.405066+00:00",
     "stats": {
       "video_id": "x5XGSLcdZRQ",
-      "views": 5,
-      "estimated_minutes_watched": 3,
-      "average_view_duration_sec": 46,
-      "subscribers_gained": 1,
+      "views": 2,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
+      "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
   },
@@ -3682,7 +3682,7 @@
     "posted_at": "2026-10-25T01:04:06.816732+00:00",
     "stats": {
       "video_id": "sB7tuHLXQyw",
-      "views": 1,
+      "views": 0,
       "estimated_minutes_watched": 0,
       "average_view_duration_sec": 0,
       "subscribers_gained": 0,
@@ -3697,9 +3697,9 @@
     "posted_at": "2026-10-25T18:57:06.404317+00:00",
     "stats": {
       "video_id": "O0PscDktLVE",
-      "views": 12,
-      "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 6,
+      "views": 4,
+      "estimated_minutes_watched": 1,
+      "average_view_duration_sec": 77,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3712,9 +3712,9 @@
     "posted_at": "2026-10-25T21:24:58.733372+00:00",
     "stats": {
       "video_id": "hSaG3m9lqso",
-      "views": 5,
+      "views": 1,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 7,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3727,9 +3727,9 @@
     "posted_at": "2026-10-26T01:34:15.776877+00:00",
     "stats": {
       "video_id": "KvgXUNLCOk0",
-      "views": 17,
-      "estimated_minutes_watched": 6,
-      "average_view_duration_sec": 45,
+      "views": 3,
+      "estimated_minutes_watched": 1,
+      "average_view_duration_sec": 37,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3742,9 +3742,9 @@
     "posted_at": "2026-10-26T21:04:59.223206+00:00",
     "stats": {
       "video_id": "A-F1eP58qH0",
-      "views": 49,
-      "estimated_minutes_watched": 21,
-      "average_view_duration_sec": 52,
+      "views": 4,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 11,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3757,9 +3757,9 @@
     "posted_at": "2026-10-26T23:03:57.884751+00:00",
     "stats": {
       "video_id": "2jtMO6NxPzE",
-      "views": 10,
-      "estimated_minutes_watched": 3,
-      "average_view_duration_sec": 30,
+      "views": 1,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 22,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3772,9 +3772,9 @@
     "posted_at": "2026-10-27T01:59:19.920067+00:00",
     "stats": {
       "video_id": "EehuHnd72YU",
-      "views": 26,
-      "estimated_minutes_watched": 7,
-      "average_view_duration_sec": 42,
+      "views": 1,
+      "estimated_minutes_watched": 1,
+      "average_view_duration_sec": 68,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3787,9 +3787,9 @@
     "posted_at": "2026-10-27T20:39:35.810439+00:00",
     "stats": {
       "video_id": "c9eRbXMJZ4s",
-      "views": 43,
-      "estimated_minutes_watched": 12,
-      "average_view_duration_sec": 30,
+      "views": 5,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 10,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3802,9 +3802,9 @@
     "posted_at": "2026-10-27T22:53:53.012815+00:00",
     "stats": {
       "video_id": "IBRLvW2TxoI",
-      "views": 53,
-      "estimated_minutes_watched": 15,
-      "average_view_duration_sec": 33,
+      "views": 1,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3817,9 +3817,9 @@
     "posted_at": "2026-10-28T02:14:48.265696+00:00",
     "stats": {
       "video_id": "a-hN4trwVLs",
-      "views": 6,
-      "estimated_minutes_watched": 1,
-      "average_view_duration_sec": 79,
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3832,9 +3832,9 @@
     "posted_at": "2026-10-28T20:56:20.033396+00:00",
     "stats": {
       "video_id": "2mpseMVpNhc",
-      "views": 26,
-      "estimated_minutes_watched": 2,
-      "average_view_duration_sec": 14,
+      "views": 1,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3847,9 +3847,9 @@
     "posted_at": "2026-10-28T23:05:43.481865+00:00",
     "stats": {
       "video_id": "TOWnmRcQnVs",
-      "views": 27,
-      "estimated_minutes_watched": 3,
-      "average_view_duration_sec": 23,
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3862,9 +3862,9 @@
     "posted_at": "2026-10-29T02:22:54.893856+00:00",
     "stats": {
       "video_id": "oo3Vy8rXvTY",
-      "views": 48,
-      "estimated_minutes_watched": 15,
-      "average_view_duration_sec": 34,
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3877,9 +3877,9 @@
     "posted_at": "2026-10-29T21:05:24.696704+00:00",
     "stats": {
       "video_id": "lMI8Zk_3lRs",
-      "views": 16,
-      "estimated_minutes_watched": 5,
-      "average_view_duration_sec": 65,
+      "views": 3,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 9,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3892,9 +3892,9 @@
     "posted_at": "2026-10-29T23:10:52.490382+00:00",
     "stats": {
       "video_id": "H7ZkckRAcL4",
-      "views": 30,
-      "estimated_minutes_watched": 9,
-      "average_view_duration_sec": 37,
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3907,9 +3907,9 @@
     "posted_at": "2026-10-30T02:34:24.726881+00:00",
     "stats": {
       "video_id": "jbmS3Z68ceU",
-      "views": 251,
-      "estimated_minutes_watched": 108,
-      "average_view_duration_sec": 44,
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3922,9 +3922,9 @@
     "posted_at": "2026-10-30T20:41:43.130943+00:00",
     "stats": {
       "video_id": "M1pmoTmovhw",
-      "views": 14,
-      "estimated_minutes_watched": 1,
-      "average_view_duration_sec": 23,
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3937,9 +3937,9 @@
     "posted_at": "2026-10-30T22:55:53.401713+00:00",
     "stats": {
       "video_id": "mmtxZh-mH5o",
-      "views": 44,
-      "estimated_minutes_watched": 17,
-      "average_view_duration_sec": 57,
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3952,9 +3952,9 @@
     "posted_at": "2026-10-31T02:15:09.321750+00:00",
     "stats": {
       "video_id": "pJpFfirZHPw",
-      "views": 6,
+      "views": 1,
       "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 12,
+      "average_view_duration_sec": 2,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3967,9 +3967,9 @@
     "posted_at": "2026-10-31T19:55:02.305400+00:00",
     "stats": {
       "video_id": "gJU1rE9VeNQ",
-      "views": 47,
-      "estimated_minutes_watched": 7,
-      "average_view_duration_sec": 18,
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3982,9 +3982,9 @@
     "posted_at": "2026-10-31T22:14:10.029585+00:00",
     "stats": {
       "video_id": "SU_dBeu7ItU",
-      "views": 47,
-      "estimated_minutes_watched": 18,
-      "average_view_duration_sec": 69,
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -3997,9 +3997,9 @@
     "posted_at": "2026-11-01T02:07:18.448528+00:00",
     "stats": {
       "video_id": "kKs7zgr8_s4",
-      "views": 9,
-      "estimated_minutes_watched": 4,
-      "average_view_duration_sec": 59,
+      "views": 2,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 11,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -4012,9 +4012,9 @@
     "posted_at": "2026-11-01T20:29:46.240619+00:00",
     "stats": {
       "video_id": "n5ioE7vtTSw",
-      "views": 0,
-      "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "views": 10,
+      "estimated_minutes_watched": 1,
+      "average_view_duration_sec": 16,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -4027,9 +4027,9 @@
     "posted_at": "2026-11-01T22:42:57.774803+00:00",
     "stats": {
       "video_id": "h-NCQQPJUpU",
-      "views": 0,
-      "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "views": 7,
+      "estimated_minutes_watched": 1,
+      "average_view_duration_sec": 54,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -4042,9 +4042,9 @@
     "posted_at": "2026-11-02T02:17:45.902326+00:00",
     "stats": {
       "video_id": "uu7vghqHf2Y",
-      "views": 0,
-      "estimated_minutes_watched": 0,
-      "average_view_duration_sec": 0,
+      "views": 32,
+      "estimated_minutes_watched": 7,
+      "average_view_duration_sec": 31,
       "subscribers_gained": 0,
       "estimated_revenue_usd": "N/A (not monetized or data delayed)"
     }
@@ -4055,7 +4055,14 @@
     "title": "A 2,000-Year-Old Computer Was Pulled From the Ocean",
     "hook": "This 2,000-year-old device could calculate the future \u2014 and we barely understand it.",
     "posted_at": "2026-11-03T04:04:02.555124+00:00",
-    "stats": null
+    "stats": {
+      "video_id": "nV-UZGKHGGc",
+      "views": 42,
+      "estimated_minutes_watched": 110,
+      "average_view_duration_sec": 316,
+      "subscribers_gained": 0,
+      "estimated_revenue_usd": "N/A (not monetized or data delayed)"
+    }
   },
   {
     "video_id": "xRdLAItqr4Q",
@@ -4063,7 +4070,14 @@
     "title": "You're Legally Banned From Dying in This Norwegian Town",
     "hook": "It is literally illegal to die in this town.",
     "posted_at": "2026-11-03T21:47:52.183200+00:00",
-    "stats": null
+    "stats": {
+      "video_id": "xRdLAItqr4Q",
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
+      "subscribers_gained": 0,
+      "estimated_revenue_usd": "N/A (not monetized or data delayed)"
+    }
   },
   {
     "video_id": "aoJb11l5buY",
@@ -4071,7 +4085,14 @@
     "title": "Your Body Replaces Itself But One Part Stays Forever \u2014 Here's Why",
     "hook": "Your body replaces itself so completely, you are literally not the same person you were seven years ago.",
     "posted_at": "2026-11-04T00:00:53.592491+00:00",
-    "stats": null
+    "stats": {
+      "video_id": "aoJb11l5buY",
+      "views": 21,
+      "estimated_minutes_watched": 7,
+      "average_view_duration_sec": 38,
+      "subscribers_gained": 0,
+      "estimated_revenue_usd": "N/A (not monetized or data delayed)"
+    }
   },
   {
     "video_id": "ftK_c4fqMWM",
@@ -4079,7 +4100,14 @@
     "title": "The Brain Myth Everyone Still Believes (But Science Proved Wrong)",
     "hook": "You only use 10% of your brain \u2014 and that's completely wrong.",
     "posted_at": "2026-11-04T03:07:07.951647+00:00",
-    "stats": null
+    "stats": {
+      "video_id": "ftK_c4fqMWM",
+      "views": 9,
+      "estimated_minutes_watched": 2,
+      "average_view_duration_sec": 25,
+      "subscribers_gained": 0,
+      "estimated_revenue_usd": "N/A (not monetized or data delayed)"
+    }
   },
   {
     "video_id": "VEweKvdqAiE",
@@ -4087,7 +4115,14 @@
     "title": "The Most Powerful Eruption Ever Recorded Changed Earth's Atmosphere",
     "hook": "This single volcanic eruption changed the sky for two years straight.",
     "posted_at": "2026-11-04T22:09:47.647952+00:00",
-    "stats": null
+    "stats": {
+      "video_id": "VEweKvdqAiE",
+      "views": 14,
+      "estimated_minutes_watched": 3,
+      "average_view_duration_sec": 25,
+      "subscribers_gained": 0,
+      "estimated_revenue_usd": "N/A (not monetized or data delayed)"
+    }
   },
   {
     "video_id": "Q3_9grDlpgU",
@@ -4095,7 +4130,14 @@
     "title": "The Disturbing Story Behind 'Rule of Thumb' \u2014 And Why It's Probably Wrong",
     "hook": "You say this phrase every week \u2014 but its origin will genuinely disturb you.",
     "posted_at": "2026-11-05T22:30:59.467760+00:00",
-    "stats": null
+    "stats": {
+      "video_id": "Q3_9grDlpgU",
+      "views": 2,
+      "estimated_minutes_watched": 1,
+      "average_view_duration_sec": 34,
+      "subscribers_gained": 0,
+      "estimated_revenue_usd": "N/A (not monetized or data delayed)"
+    }
   },
   {
     "video_id": "C0LNPnNtqqc",
@@ -4103,7 +4145,14 @@
     "title": "How Monarch Butterflies Find a Place They've Never Been",
     "hook": "Every year, millions of animals vanish \u2014 and science still can't fully explain how.",
     "posted_at": "2026-11-06T00:04:14.806473+00:00",
-    "stats": null
+    "stats": {
+      "video_id": "C0LNPnNtqqc",
+      "views": 10,
+      "estimated_minutes_watched": 1,
+      "average_view_duration_sec": 11,
+      "subscribers_gained": 0,
+      "estimated_revenue_usd": "N/A (not monetized or data delayed)"
+    }
   },
   {
     "video_id": "i9ZtNNFeBy0",
@@ -4111,7 +4160,14 @@
     "title": "The Ghost Ship With Dinner Still On The Table \u2014 Never Solved",
     "hook": "A ship was found sailing perfectly intact \u2014 with no crew, no bodies, and dinner still warm on the table.",
     "posted_at": "2026-11-06T03:22:25.843161+00:00",
-    "stats": null
+    "stats": {
+      "video_id": "i9ZtNNFeBy0",
+      "views": 15,
+      "estimated_minutes_watched": 2,
+      "average_view_duration_sec": 19,
+      "subscribers_gained": 0,
+      "estimated_revenue_usd": "N/A (not monetized or data delayed)"
+    }
   },
   {
     "video_id": "E42dfTQZtR0",
@@ -4119,7 +4175,14 @@
     "title": "This Place on Earth Looks Like It Shouldn't Exist \u2014 But It's Very Real",
     "hook": "There's a place on Earth where the trees grow sideways and the ground breathes \u2014 and scientists still can't fully explain it.",
     "posted_at": "2026-11-06T21:28:45.922605+00:00",
-    "stats": null
+    "stats": {
+      "video_id": "E42dfTQZtR0",
+      "views": 22,
+      "estimated_minutes_watched": 8,
+      "average_view_duration_sec": 30,
+      "subscribers_gained": 0,
+      "estimated_revenue_usd": "N/A (not monetized or data delayed)"
+    }
   },
   {
     "video_id": "tfnSTUfu7qY",
@@ -4127,7 +4190,14 @@
     "title": "He Drank Bacteria to Prove His Theory \u2014 Then Won the Nobel Prize",
     "hook": "Scientists laughed at him. Then they gave him the Nobel Prize.",
     "posted_at": "2026-11-07T02:40:48.385813+00:00",
-    "stats": null
+    "stats": {
+      "video_id": "tfnSTUfu7qY",
+      "views": 19,
+      "estimated_minutes_watched": 8,
+      "average_view_duration_sec": 35,
+      "subscribers_gained": 0,
+      "estimated_revenue_usd": "N/A (not monetized or data delayed)"
+    }
   },
   {
     "video_id": "jgb99opBg2o",
@@ -4135,7 +4205,14 @@
     "title": "It's Sunny But It's Raining \u2014 Here's the Wild Reason Why",
     "hook": "It's sunny, blue skies \u2014 and it's raining. How is that even possible?",
     "posted_at": "2026-11-07T20:08:31.426359+00:00",
-    "stats": null
+    "stats": {
+      "video_id": "jgb99opBg2o",
+      "views": 6,
+      "estimated_minutes_watched": 2,
+      "average_view_duration_sec": 34,
+      "subscribers_gained": 0,
+      "estimated_revenue_usd": "N/A (not monetized or data delayed)"
+    }
   },
   {
     "video_id": "XzXEmIa9gTg",
@@ -4143,7 +4220,14 @@
     "title": "Your Body Has a Hidden Survival Mode You Never Use",
     "hook": "Your body has a hidden survival mode \u2014 and almost nobody activates it.",
     "posted_at": "2026-11-07T22:36:27.590049+00:00",
-    "stats": null
+    "stats": {
+      "video_id": "XzXEmIa9gTg",
+      "views": 13,
+      "estimated_minutes_watched": 7,
+      "average_view_duration_sec": 48,
+      "subscribers_gained": 0,
+      "estimated_revenue_usd": "N/A (not monetized or data delayed)"
+    }
   },
   {
     "video_id": "ZZWkJyDAYB8",
@@ -4151,7 +4235,14 @@
     "title": "The Ancient Mystery That Took 1,000 Years to Solve \u2014 The Rosetta Stone",
     "hook": "This ancient text stumped the world's smartest minds for over a thousand years.",
     "posted_at": "2026-11-08T02:18:10.071116+00:00",
-    "stats": null
+    "stats": {
+      "video_id": "ZZWkJyDAYB8",
+      "views": 1161,
+      "estimated_minutes_watched": 899,
+      "average_view_duration_sec": 89,
+      "subscribers_gained": 2,
+      "estimated_revenue_usd": "N/A (not monetized or data delayed)"
+    }
   },
   {
     "video_id": "pxWpTN4_0RI",
@@ -4159,7 +4250,14 @@
     "title": "The Bias That Controls Every Decision You Make (And You Don't Notice It)",
     "hook": "Your brain is lying to you right now \u2014 and you have no idea.",
     "posted_at": "2026-11-08T22:46:15.242022+00:00",
-    "stats": null
+    "stats": {
+      "video_id": "pxWpTN4_0RI",
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
+      "subscribers_gained": 0,
+      "estimated_revenue_usd": "N/A (not monetized or data delayed)"
+    }
   },
   {
     "video_id": "DmarvgYGNMM",
@@ -4167,6 +4265,13 @@
     "title": "Your Brain Rewrites Your Memories Every Time You Remember Them",
     "hook": "Your brain is literally rewriting your memories right now \u2014 and you have no idea.",
     "posted_at": "2026-11-09T02:37:24.180268+00:00",
-    "stats": null
+    "stats": {
+      "video_id": "DmarvgYGNMM",
+      "views": 0,
+      "estimated_minutes_watched": 0,
+      "average_view_duration_sec": 0,
+      "subscribers_gained": 0,
+      "estimated_revenue_usd": "N/A (not monetized or data delayed)"
+    }
   }
 ]

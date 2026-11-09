@@ -1,59 +1,55 @@
 # YouTube Shorts Growth Report
-**Sample period:** Oct 26 – Nov 2, 2026 | **n = 20 videos**
+**Sample: 20 videos | Period: Oct 31 – Nov 9, 2026**
 
-> ⚠️ **Honest caveat up front:** With 20 videos and view counts ranging from 0–251, most of which sit under 50 views, this dataset is too small and too young to draw statistically reliable conclusions. Several of the Nov 1–2 videos likely just haven't been indexed/distributed yet. Everything below is directional signal, not confirmed fact. Treat it as hypothesis-generation, not proof.
+> ⚠️ **Sample size caveat:** 20 videos is a small dataset, and several posts have 0 views, likely due to data delay rather than true zero performance. One video (Rosetta Stone) is a significant outlier that heavily skews any averages. Treat all patterns as *hypotheses to test*, not confirmed conclusions.
 
 ---
 
 ## 1. What's Working
 
-**High-stakes historical narrative is the clear standout.**
-- `jbmS3Z68ceU` ("One Man Who Stopped Nuclear War") — **251 views, 108 min watched, 44s avg duration** — is the only video that broke out meaningfully. The hook leads with a hyper-specific, visceral detail ("torpedo missed by 200 feet") rather than a vague promise. Stakes are existential (nuclear war). The subject is a real, named human story.
+**Ancient/historical mystery format is the standout performer.**
+The Rosetta Stone video (`ZZWkJyDAYB8`) massively outperformed everything else: **1,161 views, 899 estimated minutes watched, 89-second avg view duration, and the only 2 subscribers gained** in the entire dataset. No other video broke 50 views. This isn't a small edge — it's a different category of result entirely.
 
-**High retention outliers (avg view duration) are worth noting:**
-- Lighthouse/economics (`a-hN4trwVLs`): **79s avg duration** (only 6 views — almost certainly shown to a tiny test audience, but the retention of those who watched is striking)
-- Lighthouse remake (`lMI8Zk_3lRs`): **65s avg duration**, 16 views
-- Animal vision (`SU_dBeu7ItU`): **69s avg duration**, 47 views
-- Ocean mystery (`mmtxZh-mH5o`): **57s avg duration**, 44 views
-- Accidental invention (`kKs7zgr8_s4`): **59s avg duration**, 9 views
+**High avg view duration correlates with specific topic types.**
+Setting aside the Rosetta Stone outlier, the next-strongest retention numbers are:
+- *Ancient computer* (`nV-UZGKHGGc`): 316-sec avg duration (42 views, 110 min watched) — though 316 seconds for a Short is unusual and may indicate a data anomaly or that this was closer to a long-form video; worth verifying the actual video length
+- *Hidden city math* (`h-NCQQPJUpU`): 54-sec avg duration (7 views)
+- *Hidden survival mode* (`XzXEmIa9gg`): 48-sec avg duration (13 views)
+- *Nobel Prize bacteria* (`tfnSTUfu7qY`): 35-sec avg duration (19 views)
 
-The pattern among high-retention videos: **concrete, sensory subjects** (a sound, an animal's vision, a physical object) or **"sounds impossible but is real"** framing. These may hold viewers longer once they click, even if distribution hasn't pushed them broadly yet.
+The pattern across these better-retention videos: **"secret/hidden knowledge" framing** combined with either history, science, or the human body. Hooks that set up a genuine mystery or capability tend to hold attention longer than hooks that debunk or correct a belief.
 
-**Topics with relatively balanced views + retention:**
-- Physics/Einstein (`EehuHnd72YU`): 26 views, 42s — solid retention for its reach
-- Brain myth (`oo3Vy8rXvTY`): 48 views, 34s — respectable across both metrics
-- Language fact (`IBRLvW2TxoI`): 53 views, 33s — highest view count among non-breakout videos
+**The "civilization vanished" topic drove the second-most views.**
+*Bronze Age Collapse* (`uu7vghqHf2Y`): 32 views, 31-sec avg duration — the second-highest view count among videos with real data, suggesting the **lost civilization/historical collapse** format has reach potential.
 
 ---
 
 ## 2. What's Underperforming
 
-**Worst performers by combined views + retention:**
+**Myth-debunking hooks are pulling weak numbers.**
+- *10% brain myth* (`ftK_c4fqMWM`): 9 views, 25-sec duration
+- *Rule of Thumb origin* (`Q3_9grDlpgU`): 2 views, 34-sec duration
+- *Cognitive bias* (`pxWpTN4_0RI`): 0 views (may be delayed)
+- *Memory rewriting* (`DmarvgYGNMM`): 0 views (may be delayed)
 
-| Video | Views | Avg Duration | Problem |
-|---|---|---|---|
-| Spider web (`pJpFfirZHPw`) | 6 | **12s** | Extremely low retention AND reach |
-| Sleep fact (`2mpseMVpNhc`) | 26 | **14s** | People are clicking then immediately leaving |
-| Zipper (`gJU1rE9VeNQ`) | 47 | **18s** | Decent reach, terrible retention |
-| Lincoln-Kennedy (`M1pmoTmovhw`) | 14 | **23s** | Low on both |
-| Survival reflex (`TOWnmRcQnVs`) | 27 | **23s** | Weak retention |
-| Acid lake (`2jtMO6NxPzE`) | 10 | **30s** | Low reach |
+The debunking format ("that's completely wrong," "you have no idea") appears less engaging than the mystery/revelation format, at least in terms of initial reach. These hooks may also feel familiar — the 10% brain myth is extremely well-known, reducing novelty.
 
-**The sleep and zipper videos are the most concerning signal.** Both have hooks that feel familiar — "your brain does something wild while you sleep" and "this was invented to solve a different problem" are formats viewers have seen many times. The 14s and 18s avg durations suggest viewers are bouncing almost immediately after the hook, which means the hook is either over-promising or the topic feels too generic to sustain interest.
+**Animal/migration topics underperformed relative to expectations.**
+- *Monarch butterflies* (`C0LNPnNtqqc`): 10 views, **11-sec avg duration** — one of the worst retention figures in the set. The hook ("millions of animals vanish") is generic and doesn't name the specific animal, which the title does. Mismatch between hook vagueness and topic specificity may be hurting it.
+- *Animal color vision* (`SU_dBeu7ItU`): 0 views (possible data delay, but posted earliest)
 
-**The three Nov 1–2 videos (0 views each) are likely just too new** to evaluate — not necessarily content failures. Flag them for re-check in 72 hours before drawing conclusions.
+**"Strange laws" format flopped.**
+*Illegal to die in Norway* (`xRdLAItqr4Q`): 0 views. This topic is widely circulated on the internet already — low novelty likely killed distribution before it started. The hook is blunt and the fact is familiar.
+
+**Ghost ship underdelivered given strong premise.**
+*Mary Celeste-style ghost ship* (`i9ZtNNFeBy0`): 15 views, only 19-sec avg duration. The hook is actually strong ("dinner still warm on the table"), but retention is poor — the content likely didn't sustain the promise of the hook, or the pacing dropped off quickly.
 
 ---
 
 ## 3. Three Concrete Changes to Try Next
 
-**① Lead with a specific number, name, or physical detail — not a vague claim.**
+**① Double down on ancient history / unsolved mystery framing — but go specific in the hook.**
+The Rosetta Stone hook worked because it named a *concrete, universal struggle* ("stumped the world's smartest minds for over a thousand years"). The ghost ship hook named a vivid detail ("dinner still warm"). Lead every hook with the single most specific, jaw-dropping detail — not a vague tease. Test: replace "this civilization vanished overnight" with the actual name + one specific bizarre detail in the first 1.5 seconds.
 
-The breakout video hook: *"One torpedo missed by 200 feet and saved the entire world."* — every word is specific.
-Compare to the sleep hook: *"You're not actually unconscious when you sleep — your brain is doing something wild."* — this tells us nothing concrete.
-
-**Action:** Before publishing any hook, ask: *can I replace a vague word ("something wild," "incredible," "completely different") with a specific fact, number, or sensory detail?* If yes, do it.
-
-**② Don't re-post the same topic with a slightly different title on back-to-back days.**
-
-The lighthouse economic concept appeared twice within 24 hours (`a-hN4trwVLs` Oct 28, `lMI8Zk_3lRs` Oct 29). Both got very low views. Even
+**② Retire or reframe the debunking format.**
+"That's completely wrong" and "you have
