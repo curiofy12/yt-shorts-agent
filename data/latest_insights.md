@@ -1,65 +1,49 @@
-# YouTube Shorts Growth Report
-**Sample: 20 videos | Posted: Nov 8–16, 2026**
+# YouTube Shorts Performance Report
+**Dataset: 20 videos, Nov 13–23, 2026**
 
-> ⚠️ **Sample size caveat:** With 20 videos and highly variable view counts (0–1,194), no single pattern is statistically reliable. The observations below are directional signals worth testing, not proven conclusions. Additionally, the last 3 videos (Nov 15–16) show 0 views each — this likely reflects indexing delay or distribution lag rather than content failure, so they're excluded from performance analysis where noted.
+> ⚠️ **Sample size caveat:** This is 20 videos from a 10-day window, with most showing very low absolute view counts. Several videos also show 0 views and 0 watch time, which likely reflects data pipeline delays rather than true zero performance (note the two most recent posts from Nov 23 both show zeroes). Treat all conclusions as directional hypotheses, not confirmed patterns.
 
 ---
 
 ## 1. What's Working
 
-**High-view videos cluster around a specific format: a concrete, verifiable claim about something familiar being wrong or hidden.**
+**Mind-bending space/physics framing is the clear top performer.**
+`yfL4ACB7jLg` ("You're Traveling Over a Million MPH") scored **537 views and an avg view duration of 82 seconds** — by far the highest view count and the longest retention in the dataset. The hook ("you can't feel a single thing") pairs a verifiable personal fact with a paradox. This is the only video breaking 500 views with strong retention.
 
-The top 5 by views all share this structure:
+**High-stakes historical narrative drives exceptional retention.**
+`lm09lmzyWoM` ("The Man Who Accidentally Saved the World in 1983") had only **31 views** but recorded **144 seconds average view duration** — the highest retention figure in the entire dataset, and notably higher than videos with 10–17x more views. The hook ("One phone call in 1983 saved every person alive today") is specific, stakes-loaded, and personal. Retention suggests the content itself is strong; the low view count is likely a distribution issue, not a content failure.
 
-| Video | Views | Avg Duration | Subs |
-|---|---|---|---|
-| Mantis shrimp senses | 1,194 | 51s | 1 |
-| Strange dying law | 1,176 | 47s | 1 |
-| Space not silent | 1,061 | 56s | 4 |
-| Undersea internet cables | 1,006 | 60s | 3 |
-| Pistol shrimp plasma | 1,106 | 45s | 1 |
+**Lost civilization / mystery topics pull solid mid-tier numbers.**
+`prOF4BB6cjk` ("Lost Inca City") earned **501 views at 65 seconds avg duration**. The hook names a specific scale ("100,000 people") and a specific year (1911), which grounds the mystery concretely.
 
-What these share: **immediately falsifiable everyday assumptions** ("space is silent," "you can see the wall from space") or **visceral, specific visual hooks** ("punches faster than a bullet," "cables on the ocean floor right now"). The specificity is doing work — not just "surprising fact" but *this shrimp, this town, this cable*.
+**Animal behavior topics show consistent above-average retention.**
+`eYk-P8CjTwA` (pistol shrimp, 58 sec avg) and `7KlTPmJgNmQ` (mantis shrimp, 58 sec avg) both hit **58 seconds** retention at 5 and 160 views respectively. Two data points, same topic category, same retention — worth noting.
 
-**Two topics stood out for watch time efficiency (views × duration):**
+**"You think you know X — you don't" challenger framing works for history.**
+`yd961rN1oBw` (Thomas Jefferson) reached **355 views / 39 sec** and was one of only **two videos to gain subscribers** (1 sub). Not elite retention, but solid distribution.
 
-- **Undersea cables** (nFbBE_tzBRc): 1,006 views × 60s avg = highest combined score among non-animal videos. The hook leads with a concrete number ("99% of the internet") which may anchor curiosity immediately.
-- **Accidental invention** (IhWgGhkPoRg): Only 387 views but 77s avg duration — solid retention suggesting viewers who found it stayed. Same for the **ancient computer** (cs2XdidjJGI) at 335 views and 78s.
+**The only subscriber-gaining videos:**
+- `DghvbDGPbP8` (poisonous fruit) — **483 views, 2 subs gained** (highest sub count in the set)
+- `yd961rN1oBw` (Thomas Jefferson) — **355 views, 1 sub**
 
-**Best retention videos (avg duration ≥ 75s):**
-
-| Video | Avg Duration | Views |
-|---|---|---|
-| Great Wall myth | **97s** | 57 |
-| Sleep/brain cleaning (v2) | **82s** | 135 |
-| Ancient computer | **78s** | 335 |
-| Accidental invention | **77s** | 387 |
-| Sleep/brain cleaning (v1) | **75s** | 596 |
-
-The Great Wall video has the **highest retention in the entire dataset at 97s** despite only 57 views — a notable disconnect suggesting the content holds attention well but didn't get distributed. This is worth revisiting (see Section 4).
-
-**Topics generating both reach and retention (the sweet spot):** Sleep brain-cleaning (Pb5n2vClaB0: 596 views, 75s) is the strongest balanced performer outside the top-view cluster.
+Both are topics with broad general curiosity appeal and hooks that challenge an assumption ("thought it would kill you," "you don't know him").
 
 ---
 
 ## 2. What's Underperforming
 
-**Three videos have essentially zero traction (excluding the likely-delayed Nov 15–16 posts):**
+**Duplicate/near-duplicate content is cannibalizing itself.**
+The "10% brain myth" topic was posted twice:
+- `i4DutCkaj-g` (Nov 15): **16 views, 27 sec**
+- `1CLfzJC4o2I` (Nov 20): **34 views, 22 sec**
 
-| Video | Views | Avg Duration |
-|---|---|---|
-| Cognitive bias decisions | 6 | 60s |
-| Ad psychology tricks | 5 | 72s |
-| Rosetta Stone | 11 | 50s |
+Both used the *identical hook*. Combined they reached 50 views with no subs and declining retention on the second post. The same duplication pattern appears in the sleep topic (`Pb5n2vClaB0` and `kIpsSqXfB74`, both 2 views, same hook) and the 1909 internet prediction (`Ea9IbL4NOWc` 4 views / 38 sec, `nGw2xVRrEAE` 23 views / 34 sec). Re-posting the same topic with a tweaked title but identical hook doesn't appear to unlock new distribution.
 
-**Common thread for the bottom performers:** The cognitive bias and ad psychology videos are topically *abstract and familiar*. "Your brain is lying to you" and "ads manipulate you" are things the audience has heard before — there's no new information promised in the hook, just a re-statement of something already widely known. The hook for cognitive bias (pxWpTN4_0RI) is nearly **identical word-for-word** to the memory video hook that got 477 views — but the memory video promised a *specific, novel mechanism* ("rewrites your memories every time"), while the bias video stays generic.
+**"Human body replacement" and sleep facts are flat.**
+`3OypwaloUy0` (body replaces itself) — **0 views**. The hook ("you are literally not the same person you were seven years ago") is a well-worn pop-science claim that's been widely circulated; novelty may be exhausted. The two sleep videos also stalled at **2 views each** despite a visually interesting premise. The hook ("your brain is literally eating itself") is provocative, but the identical hook across two different titles suggests a testing/posting process issue.
 
-**The Rosetta Stone** underperforms likely because the topic requires pre-existing investment in historical context. The hook doesn't deliver an immediate visceral payoff or personal relevance.
+**"Myth debunking" format underperforms relative to its view counts.**
+Both brain-myth videos got views but had the **lowest retention** among non-zero videos (22 and 27 seconds). Audiences may click on debunking content but lose interest once the myth is stated — if the payoff arrives too slowly, they drop.
 
-**The "debunking a myth you already know is a myth" format appears weak:** The 10% brain myth (0 views, though possibly delayed) and Great Wall myth (57 views despite 97s retention) both tackle misconceptions that are already fairly well-known as myths — the novelty gap may be smaller than topics where the audience *doesn't* know they're wrong.
-
-**The sleep topic was posted twice within 14 hours** (Pb5n2ClaB0 and kIpsSqXfB74) with the **identical hook word-for-word.** The second got 135 views vs. 596 for the first. While this could be coincidence or timing, posting duplicate hooks to the same audience pool in rapid succession is a likely drag.
-
----
-
-##
+**The psychology memory video is a mid-performer with weak retention.**
+`MlsNWSVcJNA` ("Brain
