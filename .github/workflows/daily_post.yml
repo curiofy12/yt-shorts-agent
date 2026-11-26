@@ -18,7 +18,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install ffmpeg and fonts
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core fontconfig
 
       - name: Install dependencies
         run: pip install -r requirements.txt
@@ -41,4 +41,5 @@ jobs:
           git config user.email "actions@github.com"
           git add data/posts_log.json
           git diff --staged --quiet || git commit -m "Log post from $(date -u +%Y-%m-%d)"
+          git pull --rebase origin main
           git push

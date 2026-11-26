@@ -50,7 +50,8 @@ def run():
 
     print("[main] generating voiceover...")
     audio_path = os.path.join(run_dir, "narration.mp3")
-    generate_voiceover(script["narration"], audio_path)
+    words = generate_voiceover(script["narration"], audio_path)
+    print(f"[main] got timings for {len(words)} words")
 
     print("[main] fetching stock clips...")
     clips_dir = os.path.join(run_dir, "clips")
@@ -58,7 +59,15 @@ def run():
 
     print("[main] assembling video...")
     video_path = os.path.join(run_dir, "short.mp4")
-    build_video(clip_paths, audio_path, script["caption_segments"], video_path)
+    hook_title = script.get("hook_title") or script["title"].split(":")[0][:40]
+    build_video(
+        clip_paths,
+        audio_path,
+        words=words,
+        hook_title=hook_title,
+        narration_text=script["narration"],
+        output_path=video_path,
+    )
 
     print("[main] uploading...")
     video_id = upload_short(

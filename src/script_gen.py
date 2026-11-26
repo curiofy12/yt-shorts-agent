@@ -15,6 +15,7 @@ Output ONLY valid JSON, no markdown fences, no preamble. Schema:
 
 {{
   "hook": "first 3 seconds, must stop the scroll",
+  "hook_title": "2-5 word on-screen headline shown at the top for the first 3 seconds, e.g. 'A RIVER UNDER THE OCEAN' — punchy, no punctuation except ? or !",
   "narration": "full narration script, {TARGET_DURATION_SECONDS} seconds when read aloud at natural pace (~130 wpm), written as plain spoken sentences",
   "caption_segments": ["short phrase 1", "short phrase 2", "..."],
   "visual_keywords": ["3-6 concrete search terms for stock footage matching the narration, e.g. 'ocean waves aerial', 'brain scan closeup'"],

@@ -31,6 +31,14 @@ if not FONT_PATH:
             FONT_PATH = _c
             break
 
+# Fonts used by the animated captions (Anton, OFL licensed, bundled in repo)
+FONTS_DIR = os.path.join(os.path.dirname(__file__), "assets", "fonts")
+
+# Background music: drop royalty-free tracks (mp3/wav/m4a) into music/ and
+# one is picked at random per video. 0.35 = noticeable, narration dominant.
+MUSIC_DIR = os.path.join(os.path.dirname(__file__), "music")
+MUSIC_VOLUME = 0.35
+
 YOUTUBE_SCOPES = [
     "https://www.googleapis.com/auth/youtube.upload",
     "https://www.googleapis.com/auth/youtube.readonly",
