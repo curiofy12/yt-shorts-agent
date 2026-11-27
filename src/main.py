@@ -13,7 +13,7 @@ from datetime import datetime, timezone
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import DATA_DIR, DRY_RUN, POSTS_LOG_PATH, VIDEO_STYLE, WORKDIR
 
-from trends import base_topic, pick_topic
+from trends import base_topic, pick_globe_topic, pick_topic
 from stats_store import load_stats
 from script_gen import generate_script
 from voiceover import generate_voiceover
@@ -21,6 +21,7 @@ from visuals import download_clips
 from assemble import build_video
 from illustrations import IllustrationError, generate_scenes
 from illustrated import build_illustrated_video
+from globe import build_globe_video
 from upload import get_authenticated_service, get_credentials, upload_short
 from engagement import after_upload
 
@@ -44,7 +45,10 @@ def run():
     recent_topics = [entry["topic"] for entry in log]
 
     print("[main] picking topic...")
-    topic = pick_topic(recent_topics, log=log, stats=stats)
+    if VIDEO_STYLE == "globe":
+        topic = pick_globe_topic(recent_topics)
+    else:
+        topic = pick_topic(recent_topics, log=log, stats=stats)
     print(f"[main] topic: {topic}")
 
     # Every title already made for this topic, so the new one is different
@@ -80,7 +84,14 @@ def run():
     video_path = os.path.join(run_dir, "short.mp4")
     hook_title = script.get("hook_title") or script["title"].split(":")[0][:40]
 
-    if style == "illustrated":
+    if style == "globe":
+        print("[main] assembling globe video...")
+        build_globe_video(
+            script["beats"], audio_path,
+            words=words, hook_title=hook_title,
+            narration_text=script["narration"], output_path=video_path,
+        )
+    elif style == "illustrated":
         print("[main] assembling illustrated video...")
         build_illustrated_video(
             image_paths, script["scenes"], audio_path,

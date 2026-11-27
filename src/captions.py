@@ -32,6 +32,10 @@ BAR_HEIGHT = 14
 BAR_COLOR = "&H0033D6FF&"
 
 LABEL_SIZE = 88
+
+BIG_SIZE = 330                  # big stat numbers ("4.3", "$15,000", "x3")
+BIG_Y = 740
+BIG_COLORS = ["&H0033D6FF&", "&H00FFFFFF&", "&H004D4DFF&"]  # yellow, white, red
 LABEL_Y = 900                   # place/date labels sit above the captions
 LABEL_SECONDS = 2.6
 # ---------------------------------------------------------------------------
@@ -137,7 +141,24 @@ def _label_events(labels, duration):
     return events
 
 
-def build_ass(words, hook_title: str, duration: float, output_path: str, labels=None):
+def _big_number_events(numbers, duration):
+    """numbers: list of (start, end, text). Pops in big, settles, fades out."""
+    events = []
+    for i, (start, end, text) in enumerate(numbers or []):
+        if not text or start >= duration:
+            continue
+        end = min(end, duration)
+        color = BIG_COLORS[i % len(BIG_COLORS)]
+        tags = (
+            f"{{\\an5\\pos({W // 2},{BIG_Y})\\c{color}"
+            "\\fscx20\\fscy20\\t(0,160,\\fscx112\\fscy112)\\t(160,260,\\fscx100\\fscy100)"
+            "\\fad(0,200)}"
+        )
+        events.append(f"Dialogue: 2,{_ts(start)},{_ts(end)},Big,,0,0,0,,{tags}{_clean(text)}")
+    return events
+
+
+def build_ass(words, hook_title: str, duration: float, output_path: str, labels=None, big_numbers=None):
     header = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -150,6 +171,7 @@ Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour,
 Style: Caption,{CAPTION_FONT},{CAPTION_SIZE},{TEXT_COLOR},{TEXT_COLOR},&H00000000&,&H80000000&,0,0,0,0,100,100,1,0,1,8,5,5,80,130,0,1
 Style: Hook,{CAPTION_FONT},{HOOK_SIZE},{HOOK_TEXT_COLOR},{HOOK_TEXT_COLOR},{HOOK_BOX_COLOR},{HOOK_BOX_COLOR},0,0,0,0,100,100,1,0,3,22,0,8,110,110,0,1
 Style: Label,{CAPTION_FONT},{LABEL_SIZE},{TEXT_COLOR},{TEXT_COLOR},&H00000000&,&H80000000&,0,0,0,0,100,100,3,0,1,6,3,5,80,80,0,1
+Style: Big,{CAPTION_FONT},{BIG_SIZE},&H00FFFFFF&,&H00FFFFFF&,&H00000000&,&H90000000&,0,0,0,0,100,100,2,0,1,12,7,5,40,40,0,1
 Style: Bar,Arial,20,{BAR_COLOR},{BAR_COLOR},&H00000000&,&H00000000&,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
 
 [Events]
@@ -159,6 +181,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         _progress_bar_event(duration)
         + _hook_event(hook_title, duration)
         + _label_events(labels, duration)
+        + _big_number_events(big_numbers, duration)
         + _caption_events(words)
     )
     with open(output_path, "w", encoding="utf-8") as f:

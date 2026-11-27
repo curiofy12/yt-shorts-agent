@@ -66,9 +66,73 @@ Output ONLY valid JSON, no markdown fences, no preamble. Schema:
 """
 
 
+def _globe_prompt():
+    from globe_data import REGIONS, icon_names
+    regions = ", ".join(REGIONS)
+    icons = ", ".join(icon_names())
+    return f"""You write scripts for a faceless YouTube Shorts series in the style of "Every second on Earth...": a satellite world map where the camera flies between regions while 3D icons pop onto the map and huge numbers fly in. Each beat is one striking, true statistic.
+Output ONLY valid JSON, no markdown fences, no preamble. Schema:
+
+{{
+{BASE_SCHEMA},
+  "beats": [
+    {{
+      "text": "the exact part of the narration spoken during this beat (usually one short sentence)",
+      "view": "where the camera goes, one of: {regions}",
+      "icon": "icon to scatter on the map, one of: {icons} (or empty string)",
+      "count": "how many copies of the icon pop onto the map, 1-30 (more = more dramatic)",
+      "big_number": "the stat shown huge on screen, max 8 characters, e.g. '4.3', '$15,000', 'x3', '1,100 T', or empty string",
+      "effect": "ripples (for earthquakes, impacts, signals) or none"
+    }}
+  ]
+}}
+
+{BASE_RULES}
+- 8-11 beats. Joined together in order, the beats' "text" fields must equal the narration exactly, word for word
+- open with a hook like "Every second on Earth..." or "In the next 30 seconds..." and then rapid-fire beats
+- ONLY use well-established, widely published figures (UN, WHO, NASA, USGS, World Bank, IEA and similar), rounded the way those sources round them. If you are not confident a figure is right, choose a different statistic. Say "about" or "roughly" where the figure is an estimate
+- keep the time unit consistent with the hook (per second, per minute, per day) and do the conversion correctly
+- choose a "view" that matches where the fact happens; use "world" for global facts and "space" only for facts about Earth's motion or space
+- never name brands, companies or real people; describe things generically ("a soda", "the world's richest people")
+- the big_number must match what the narration says in that beat"""
+
+
+FACT_CHECK_PROMPT = """You are a meticulous fact-checker for a YouTube Shorts channel. You'll get a JSON script of statistic "beats". For each beat, check the figure against widely published sources (UN, WHO, NASA, USGS, World Bank, IEA, etc.) as of your knowledge.
+- If a figure is right (allowing normal rounding), keep the beat unchanged.
+- If it's wrong or a per-second/per-day conversion is off, correct the number in BOTH "text" and "big_number".
+- If it can't be verified with confidence, rewrite the beat with a different, well-established statistic on the same theme, or remove the beat.
+- Keep "hook", "hook_title", "title" and the opening consistent with any changes.
+Return ONLY the full corrected JSON script in exactly the same schema, plus a top-level "fact_check_notes" string summarising what you changed (or "no changes")."""
+
+
+def _parse_json(text):
+    raw = text.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Script generator returned invalid JSON: {e}\nRaw: {raw}")
+
+
+def _fact_check(client, script):
+    msg = client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=4000,
+        system=FACT_CHECK_PROMPT,
+        messages=[{"role": "user", "content": json.dumps(script, ensure_ascii=False)}],
+    )
+    checked = _parse_json(msg.content[0].text)
+    print(f"[script] fact check: {checked.get('fact_check_notes', 'no notes')}")
+    return checked
+
+
 def generate_script(topic: str, avoid_titles=None, style: str = "stock") -> dict:
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-    system = ILLUSTRATED_PROMPT if style == "illustrated" else STOCK_PROMPT
+    if style == "illustrated":
+        system = ILLUSTRATED_PROMPT
+    elif style == "globe":
+        system = _globe_prompt()
+    else:
+        system = STOCK_PROMPT
 
     prompt = f"Topic for today's short: {topic}"
     if avoid_titles:
@@ -86,13 +150,28 @@ def generate_script(topic: str, avoid_titles=None, style: str = "stock") -> dict
         messages=[{"role": "user", "content": prompt}],
     )
 
-    raw = message.content[0].text.strip()
-    raw = raw.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+    script = _parse_json(message.content[0].text)
 
-    try:
-        script = json.loads(raw)
-    except json.JSONDecodeError as e:
-        raise ValueError(f"Script generator returned invalid JSON: {e}\nRaw: {raw}")
+    if style == "globe":
+        from globe_data import REGIONS, icon_names
+        script = _fact_check(client, script)
+        icons = set(icon_names())
+        beats = []
+        for b in script.get("beats", []):
+            if not b.get("text"):
+                continue
+            b["view"] = b.get("view") if b.get("view") in REGIONS else "world"
+            b["icon"] = b.get("icon") if b.get("icon") in icons else ""
+            try:
+                b["count"] = max(0, min(int(b.get("count") or 0), 30))
+            except (TypeError, ValueError):
+                b["count"] = 8
+            b["big_number"] = str(b.get("big_number") or "")[:10]
+            beats.append(b)
+        if len(beats) < 3:
+            raise ValueError("Script generator returned too few globe beats.")
+        script["beats"] = beats
+        script["narration"] = " ".join(b["text"].strip() for b in beats)
 
     if style == "illustrated":
         scenes = [s for s in script.get("scenes", []) if s.get("image_prompt")]

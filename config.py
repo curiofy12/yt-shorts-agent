@@ -45,6 +45,10 @@ if not FONT_PATH:
 # Fonts used by the animated captions (Anton, OFL licensed, bundled in repo)
 FONTS_DIR = os.path.join(os.path.dirname(__file__), "assets", "fonts")
 
+# "Every Second on Earth" style: NASA world map + Fluent 3D emoji icons
+MAP_DIR = os.path.join(os.path.dirname(__file__), "assets", "map")
+ICONS_DIR = os.path.join(os.path.dirname(__file__), "assets", "icons")
+
 # Background music: drop royalty-free tracks (mp3/wav/m4a) into music/ and
 # one is picked at random per video. 0.35 = noticeable, narration dominant.
 MUSIC_DIR = os.path.join(os.path.dirname(__file__), "music")

@@ -161,3 +161,33 @@ def pick_topic(recent_topics=None, log=None, stats=None):
 
 if __name__ == "__main__":
     print(pick_topic())
+
+
+# Topics for the "Every Second on Earth" (globe) series. These are framed
+# around measurable, well-documented global numbers.
+GLOBE_TOPICS = [
+    "what happens on Earth every single second",
+    "what happens around the world in one minute",
+    "how much food the whole world eats in one day",
+    "what the world's oceans do every second",
+    "the world's energy and fuel use, second by second",
+    "how much the planet's weather does in a single day: lightning, rain, storms",
+    "what happens to Earth's forests and wildlife every day",
+    "how much trash and plastic the world makes every second",
+    "how fast Earth is moving through space right now, in every direction",
+    "what happens inside your body every second, multiplied by everyone on Earth",
+    "how much water the world uses every second",
+    "the world's travel every day: flights, cars, ships",
+    "how many people are born, get married and celebrate birthdays every day",
+    "the world's animals by the numbers: how many chickens, cows, ants and fish there are",
+    "what the world spends money on every second",
+    "what happens to Earth's ice every day",
+    "how much the internet does every second: emails, searches, videos",
+    "natural disasters around the world in a typical year: earthquakes, volcanoes, storms",
+]
+
+
+def pick_globe_topic(recent_topics=None):
+    recent = set((recent_topics or [])[-12:])
+    available = [t for t in GLOBE_TOPICS if t not in recent] or GLOBE_TOPICS
+    return random.choice(available)

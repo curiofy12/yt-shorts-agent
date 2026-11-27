@@ -11,7 +11,7 @@ on:
       style:
         description: "Video style"
         type: choice
-        options: [stock, illustrated]
+        options: [stock, illustrated, globe]
         default: stock
       dry_run:
         description: "Test only: render the video but don't upload it"
