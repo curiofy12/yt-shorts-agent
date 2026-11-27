@@ -1,0 +1,96 @@
+{
+  "hook": "One man refused a direct order \u2014 and saved the world.",
+  "hook_title": "HE DISOBEYED TO SAVE US",
+  "narration": "In 1983, a Soviet early-warning system reported five American missiles heading toward the USSR. Protocol demanded an immediate nuclear strike back. Lieutenant Colonel Stanislav Petrov had sixty seconds to decide. Every alarm screamed launch. But something felt wrong \u2014 five missiles made no sense for a real attack. He reported it as a system error. He was right. The satellites had mistaken sunlight reflecting off clouds for missile plumes. One man's gut call stopped a nuclear war that night.",
+  "title": "The Soviet Officer Who Refused to Start World War III",
+  "description": "In 1983, Stanislav Petrov defied protocol and correctly identified a false nuclear alarm \u2014 a decision that likely prevented global catastrophe. His story remained classified for years. Learn why one man's instinct may have saved billions of lives. #history #coldwar #nuclearwar #stanisl\u0430\u0432petrov #didyouknow",
+  "tags": [
+    "cold war",
+    "nuclear war",
+    "Stanislav Petrov",
+    "1983",
+    "history facts",
+    "world war 3",
+    "Soviet Union",
+    "false alarm",
+    "military history",
+    "saved the world"
+  ],
+  "comment_question": "Would you have trusted your gut or followed orders? \ud83e\udd14",
+  "beats": [
+    {
+      "text": "In 1983, a Soviet early-warning system reported five American missiles heading toward the USSR.",
+      "search": "Soviet military bunker control room vintage",
+      "icon": "satellite",
+      "big_number": "",
+      "whoosh": false
+    },
+    {
+      "text": "Protocol demanded an immediate nuclear strike back.",
+      "search": "nuclear missile silo launch control",
+      "icon": "rocket",
+      "big_number": "",
+      "whoosh": false
+    },
+    {
+      "text": "Lieutenant Colonel Stanislav Petrov had sixty seconds to decide.",
+      "search": "military officer at radar console cold war",
+      "icon": "clock",
+      "big_number": "60 SEC",
+      "whoosh": false
+    },
+    {
+      "text": "Every alarm screamed launch.",
+      "search": "red alarm lights flashing warning system",
+      "icon": "explosion",
+      "big_number": "",
+      "whoosh": false
+    },
+    {
+      "text": "But something felt wrong \u2014 five missiles made no sense for a real attack.",
+      "search": "man thinking decision pressure closeup",
+      "icon": "brain",
+      "big_number": "5",
+      "whoosh": true
+    },
+    {
+      "text": "He reported it as a system error.",
+      "search": "military officer writing report at desk",
+      "icon": "paper",
+      "big_number": "",
+      "whoosh": false
+    },
+    {
+      "text": "He was right.",
+      "search": "computer screen error glitch malfunction",
+      "icon": "thumbs_up",
+      "big_number": "",
+      "whoosh": false
+    },
+    {
+      "text": "The satellites had mistaken sunlight reflecting off clouds for missile plumes.",
+      "search": "sunlight reflecting clouds aerial view satellite",
+      "icon": "sun",
+      "big_number": "",
+      "whoosh": true
+    },
+    {
+      "text": "One man's gut call stopped a nuclear war that night.",
+      "search": "earth from space peaceful night lights",
+      "icon": "earth_americas",
+      "big_number": "",
+      "whoosh": false
+    }
+  ],
+  "visual_keywords": [
+    "Soviet military bunker control room vintage",
+    "nuclear missile silo launch control",
+    "military officer at radar console cold war",
+    "red alarm lights flashing warning system",
+    "man thinking decision pressure closeup",
+    "military officer writing report at desk",
+    "computer screen error glitch malfunction",
+    "sunlight reflecting clouds aerial view satellite",
+    "earth from space peaceful night lights"
+  ]
+}
