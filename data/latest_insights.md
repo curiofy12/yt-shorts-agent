@@ -1,49 +1,58 @@
-# YouTube Shorts Performance Report
-**Dataset: 20 videos, Nov 13–23, 2026**
-
-> ⚠️ **Sample size caveat:** This is 20 videos from a 10-day window, with most showing very low absolute view counts. Several videos also show 0 views and 0 watch time, which likely reflects data pipeline delays rather than true zero performance (note the two most recent posts from Nov 23 both show zeroes). Treat all conclusions as directional hypotheses, not confirmed patterns.
+# YouTube Shorts Growth Report
+**Data window:** Aug 3 – Nov 27, 2026 | **Total videos:** 40
+**Note on sample size:** Several videos posted in the last 1–3 days (Nov 24–27) show 0 views and are almost certainly still in the distribution queue — they are excluded from performance analysis. Videos with fewer than ~100 views posted more than 3 days ago are flagged where relevant, but small counts make them unreliable signals on their own.
 
 ---
 
 ## 1. What's Working
 
-**Mind-bending space/physics framing is the clear top performer.**
-`yfL4ACB7jLg` ("You're Traveling Over a Million MPH") scored **537 views and an avg view duration of 82 seconds** — by far the highest view count and the longest retention in the dataset. The hook ("you can't feel a single thing") pairs a verifiable personal fact with a paradox. This is the only video breaking 500 views with strong retention.
+### High-Retention Formats (the clearest signal in this dataset)
+The most consistent pattern is that **"mystery/anomaly" framings hold viewers longest**, and several are logging average view percentages above 100% (meaning replays):
 
-**High-stakes historical narrative drives exceptional retention.**
-`lm09lmzyWoM` ("The Man Who Accidentally Saved the World in 1983") had only **31 views** but recorded **144 seconds average view duration** — the highest retention figure in the entire dataset, and notably higher than videos with 10–17x more views. The hook ("One phone call in 1983 saved every person alive today") is specific, stakes-loaded, and personal. Retention suggests the content itself is strong; the low view count is likely a distribution issue, not a content failure.
+| Video | Topic | Avg View % | Avg Duration |
+|---|---|---|---|
+| Great Wall myth (8Ewl6iBODEA) | Historical misunderstanding | **137%** | 97s |
+| Brain myth (i4DutCkaj-g replica, Pb5n2vCRSjQc) | Sleep fact | **117%** | 75s |
+| Ocean sound (o2MdH8iuv88) | Ocean mystery | **103%** | 85s |
+| Rosetta Stone (ZZWkJyDAYB8) | Ancient mystery | **115%** | 87s |
+| Ancient mystery (cBmyRDayGVA) | Ancient mystery | **101%** | 81s |
+| Space fact (yfL4ACB7jLg) | Mind-bending space | **110%** | 65s |
+| Psychology ads (Uwdg16Io5kM) | Psych trick | **114%** | 72s |
+| Sleep/brain (Pb5n2vClaB0) | Sleep fact | **117%** | 75s |
+| Brain cleaning (kIpsSqXfB74) | Sleep fact | **102%** | 79s |
+| Internet/cities (CIF2CxP7G_8) | Hidden pattern | **83%** | 73s |
 
-**Lost civilization / mystery topics pull solid mid-tier numbers.**
-`prOF4BB6cjk` ("Lost Inca City") earned **501 views at 65 seconds avg duration**. The hook names a specific scale ("100,000 people") and a specific year (1911), which grounds the mystery concretely.
+**The retention signal is strong and clear: formats with anomaly, contradiction, or myth-busting framing consistently exceed 100% average view percentage.** The ocean sound, Rosetta Stone, and sleep/brain videos all hit 80–117% retention despite varying view counts.
 
-**Animal behavior topics show consistent above-average retention.**
-`eYk-P8CjTwA` (pistol shrimp, 58 sec avg) and `7KlTPmJgNmQ` (mantis shrimp, 58 sec avg) both hit **58 seconds** retention at 5 and 160 views respectively. Two data points, same topic category, same retention — worth noting.
+### Views Leaders
+The top performers by raw views:
+- **Brine lake** (_sE4w4Wz9gk): 2,505 views — geographic anomaly, hook leads with the impossibility ("makes zero sense")
+- **Rosetta Stone v1** (cBmyRDayGVA): 1,954 views — ancient mystery, specific "one man cracked it in an afternoon" detail
+- **Ocean sound v1** (o2MdH8iuv88): 1,575 views — ocean mystery, enormous scale claim ("heard across half the planet")
+- **Ancient computer** (iNwctma2lxU): 1,498 views
 
-**"You think you know X — you don't" challenger framing works for history.**
-`yd961rN1oBw` (Thomas Jefferson) reached **355 views / 39 sec** and was one of only **two videos to gain subscribers** (1 sub). Not elite retention, but solid distribution.
+**Common hook structure in the top-view videos:** a specific, almost unbelievable claim delivered as a plain declarative statement, followed immediately by the contradiction ("makes zero sense," "shouldn't exist," "we still don't know").
 
-**The only subscriber-gaining videos:**
-- `DghvbDGPbP8` (poisonous fruit) — **483 views, 2 subs gained** (highest sub count in the set)
-- `yd961rN1oBw` (Thomas Jefferson) — **355 views, 1 sub**
-
-Both are topics with broad general curiosity appeal and hooks that challenge an assumption ("thought it would kill you," "you don't know him").
+### Topic Categories with Consistent Performance
+- **Ocean/geographic anomalies:** 3 videos averaging ~1,730 views and ~82% retention
+- **Ancient mysteries:** 3 eligible videos averaging ~1,496 views and ~96% retention
+- **Ocean mysteries:** 2 videos averaging ~1,374 views and ~94% retention
 
 ---
 
 ## 2. What's Underperforming
 
-**Duplicate/near-duplicate content is cannibalizing itself.**
-The "10% brain myth" topic was posted twice:
-- `i4DutCkaj-g` (Nov 15): **16 views, 27 sec**
-- `1CLfzJC4o2I` (Nov 20): **34 views, 22 sec**
+### Low Views AND Low Retention (dual failure)
+These are the clearest underperformers — not just low reach, but viewers who did land didn't stay:
 
-Both used the *identical hook*. Combined they reached 50 views with no subs and declining retention on the second post. The same duplication pattern appears in the sleep topic (`Pb5n2vClaB0` and `kIpsSqXfB74`, both 2 views, same hook) and the 1909 internet prediction (`Ea9IbL4NOWc` 4 views / 38 sec, `nGw2xVRrEAE` 23 views / 34 sec). Re-posting the same topic with a tweaked title but identical hook doesn't appear to unlock new distribution.
+| Video | Topic | Views | Avg View % | Avg Duration |
+|---|---|---|---|---|
+| Brain myth v2 (1CLfzJC4o2I) | Brain myth | 35 | **28%** | 21s |
+| Memory rewriting (MlsNWSVcJNA) | Psychology | 49 | **42%** | 29s |
+| Brain myth v1 (i4DutCkaj-g) | Brain myth | 307 | **40%** | 30s |
+| Internet predicted (nGw2xVRrEAE) | Tech prediction | 23 | **50%** | 34s |
+| Internet predicted v1 (Ea9IbL4NOWc) | Tech prediction | 52 | **56%** | 37s |
+| Tomato (DghvbDGPbP8) | Food/poison | 490 | **57%** | 33s |
+| River uphill (awh4tkChFho) | Geo anomaly | 1,113 | **58%** | 50s |
 
-**"Human body replacement" and sleep facts are flat.**
-`3OypwaloUy0` (body replaces itself) — **0 views**. The hook ("you are literally not the same person you were seven years ago") is a well-worn pop-science claim that's been widely circulated; novelty may be exhausted. The two sleep videos also stalled at **2 views each** despite a visually interesting premise. The hook ("your brain is literally eating itself") is provocative, but the identical hook across two different titles suggests a testing/posting process issue.
-
-**"Myth debunking" format underperforms relative to its view counts.**
-Both brain-myth videos got views but had the **lowest retention** among non-zero videos (22 and 27 seconds). Audiences may click on debunking content but lose interest once the myth is stated — if the payoff arrives too slowly, they drop.
-
-**The psychology memory video is a mid-performer with weak retention.**
-`MlsNWSVcJNA` ("Brain
+**The brain myth topic is a particular problem:** two versions of essentially
