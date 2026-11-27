@@ -81,7 +81,7 @@ Output ONLY valid JSON, no markdown fences, no preamble. Schema:
       "view": "where the camera goes, one of: {regions}",
       "icon": "icon to scatter on the map, one of: {icons} (or empty string)",
       "count": "how many copies of the icon pop onto the map, 1-30 (more = more dramatic)",
-      "big_number": "the stat shown huge on screen, max 8 characters, e.g. '4.3', '$15,000', 'x3', '1,100 T', or empty string",
+      "big_number": "the stat shown huge on screen, max 8 characters, use short units (K, M, B, T, %, km), e.g. '4.3', '$15,000', 'x3', '20 M', or empty string",
       "effect": "ripples (for earthquakes, impacts, signals) or none"
     }}
   ]
@@ -173,7 +173,10 @@ def generate_script(topic: str, avoid_titles=None, style: str = "stock") -> dict
                 b["count"] = max(0, min(int(b.get("count") or 0), 30))
             except (TypeError, ValueError):
                 b["count"] = 8
-            b["big_number"] = str(b.get("big_number") or "")[:10]
+            num = str(b.get("big_number") or "").strip()
+            while len(num) > 9 and " " in num:
+                num = num.rsplit(" ", 1)[0]  # "20 M tonnes" -> "20 M"
+            b["big_number"] = num[:9]
             beats.append(b)
         if len(beats) < 3:
             raise ValueError("Script generator returned too few globe beats.")

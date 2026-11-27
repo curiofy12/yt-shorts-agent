@@ -34,7 +34,10 @@ REGIONS = {
 }
 
 # Icons that belong in the water rather than on land
-SEA_ICONS = {"fish", "whale", "shark", "turtle", "ship", "wave", "water_drop", "plastic_bottle", "oil_barrel_sea"}
+SEA_ICONS = {"fish", "whale", "shark", "turtle", "ship", "wave", "water_drop", "plastic_bottle"}
+
+# Icons where impact ripples make sense (earthquakes need no icon at all)
+IMPACT_ICONS = {"volcano", "bomb", "explosion", "car_crash", "comet", "lightning", "storm", "tornado"}
 
 
 def icon_names():

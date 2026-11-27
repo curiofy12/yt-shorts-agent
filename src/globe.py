@@ -21,7 +21,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import ICONS_DIR, MAP_DIR, VIDEO_HEIGHT as H, VIDEO_WIDTH as W
 from assemble import _build_audio, _burn_captions
 from captions import build_ass
-from globe_data import REGIONS, SEA_ICONS
+from globe_data import IMPACT_ICONS, REGIONS, SEA_ICONS
 from illustrated import scene_times
 from voiceover import estimate_word_timings
 
@@ -66,6 +66,46 @@ class WorldMap:
         cy = min(max(cy, ch / 2), self.mh - ch / 2)
         cx = min(max(cx, cw / 2 - self.pad), self.mw + self.pad - cw / 2)
         return (cx - cw / 2, cy - ch / 2, cx + cw / 2, cy + ch / 2)
+
+
+class Earth3D:
+    """A shaded, slowly rotating globe drawn from the Blue Marble texture."""
+
+    def __init__(self, world, radius=430):
+        tex = world.image.crop((world.pad, 0, world.pad + world.mw, world.mh)).resize((2048, 1024))
+        self.tex = np.asarray(tex).astype(np.float32)
+        self.r = radius
+        yy, xx = np.mgrid[-radius:radius, -radius:radius].astype(np.float32) / radius
+        d2 = xx ** 2 + yy ** 2
+        self.mask = d2 <= 1.0
+        z = np.sqrt(np.clip(1 - d2, 0, 1))
+        tilt = math.radians(18)
+        # tilt the globe towards the viewer a little
+        y_t = yy * math.cos(tilt) - z * math.sin(tilt)
+        z_t = yy * math.sin(tilt) + z * math.cos(tilt)
+        self.lat = np.arcsin(np.clip(-y_t, -1, 1))
+        self.lon = np.arctan2(xx, z_t)
+        light = np.array([-0.55, -0.35, 0.76])
+        light /= np.linalg.norm(light)
+        shade = np.clip(xx * light[0] + yy * light[1] + z * light[2], 0, 1)
+        self.shade = (0.18 + 0.95 * shade)[..., None]
+        # soft blue atmosphere ring just outside the globe
+        d = np.sqrt(d2)
+        glow = np.clip(1 - (d - 1) / 0.12, 0, 1) * (d > 1)
+        self.glow = (glow ** 2 * 170).astype(np.uint8)
+
+    def render(self, t):
+        h, w = self.tex.shape[:2]
+        lon = self.lon + t * 0.12 - 0.6
+        u = ((lon / (2 * math.pi) + 0.5) % 1.0) * (w - 1)
+        v = (0.5 - self.lat / math.pi) * (h - 1)
+        rgb = self.tex[v.astype(np.int32), u.astype(np.int32)] * self.shade
+        rgb = np.clip(rgb, 0, 255).astype(np.uint8)
+        size = 2 * self.r
+        out = np.zeros((size, size, 4), dtype=np.uint8)
+        out[..., :3] = np.where(self.mask[..., None], rgb, np.array([110, 170, 255], np.uint8))
+        out[..., 3] = np.where(self.mask, 255, self.glow)
+        return Image.fromarray(out, "RGBA")
 
 
 def _camera_for(world, view):
@@ -125,6 +165,7 @@ def build_globe_video(beats, audio_path, words, hook_title, narration_text, outp
         words = estimate_word_timings(narration_text, total)
 
     world = WorldMap()
+    earth = Earth3D(world)
     icons = IconBank()
     vignette = _vignette()
     times = scene_times(beats, words, total)
@@ -143,8 +184,9 @@ def build_globe_video(beats, audio_path, words, hook_title, narration_text, outp
         n = int(b.get("count") or 0) if b.get("icon") else 0
         sea = b.get("icon") in SEA_ICONS
         pts = _scatter(world, box, n, sea, rng) if n else []
-        ripple_pts = pts[:3]
-        if b.get("effect") == "ripples" and not ripple_pts:
+        wants_ripples = b.get("effect") == "ripples" and (not b.get("icon") or b.get("icon") in IMPACT_ICONS)
+        ripple_pts = pts[:3] if wants_ripples else []
+        if wants_ripples and not ripple_pts:
             # No icons to anchor the ripples: put them near the view's centre
             ripple_pts = _scatter(world, box, 2, False, rng) or [(cam[0], cam[1])]
         span = max((end - start) * 0.55 - FLY_SECONDS * 0.5, 0.3)
@@ -154,7 +196,7 @@ def build_globe_video(beats, audio_path, words, hook_title, narration_text, outp
         plan.append({
             "start": start, "end": end, "from": prev_cam, "to": cam, "space": space,
             "icon": b.get("icon"), "pts": pts, "appear": appear, "sizes": sizes,
-            "ripples": (b.get("effect") == "ripples"), "ripple_pts": ripple_pts,
+            "ripples": wants_ripples, "ripple_pts": ripple_pts,
         })
         prev_cam = cam
 
@@ -180,6 +222,13 @@ def build_globe_video(beats, audio_path, words, hook_title, narration_text, outp
             dx = (t - p["start"]) * 12
             box = ((sw - cw) / 2 + dx, (sh - ch) / 2, (sw + cw) / 2 + dx, (sh + ch) / 2)
             frame = world.sky.resize((W, H), Image.BICUBIC, box=box)
+            frame = Image.eval(frame, lambda v: min(255, int(v * 2.2)))  # brighter stars
+            frame = frame.convert("RGBA")
+            globe_img = earth.render(t)
+            grow = 0.85 + 0.15 * _ease((t - p["start"]) / 1.2)
+            gs = int(globe_img.width * grow)
+            globe_img = globe_img.resize((gs, gs), Image.BILINEAR)
+            frame.alpha_composite(globe_img, ((W - gs) // 2, int(H * 0.47 - gs / 2)))
             # points were planned on the world view; map them to the screen proportionally
             view_box = world.window(*p["to"])
         else:
