@@ -68,8 +68,33 @@ def _ken_burns(clip, zoom_in: bool):
     return clip.transform(effect)
 
 
+def _normalize_clip(path, w, h):
+    """
+    Re-encode a downloaded stock clip into a clean, vertical, 30fps video
+    with only a picture track. Some Pexels files carry extra timecode/data
+    tracks that moviepy can't parse; this strips them. Pre-cropping here
+    also makes the moviepy pass faster.
+    """
+    out = os.path.splitext(path)[0] + "_clean.mp4"
+    if os.path.exists(out):
+        return out
+    vf = f"scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},fps=30,setsar=1"
+    cmd = [
+        _ffmpeg_binary(), "-y", "-loglevel", "error",
+        "-i", path,
+        "-map", "0:v:0", "-an", "-sn", "-dn",
+        "-map_metadata", "-1", "-map_chapters", "-1",
+        "-vf", vf,
+        "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
+        "-pix_fmt", "yuv420p",
+        out,
+    ]
+    subprocess.run(cmd, check=True)
+    return out
+
+
 def _prep_clip(path, target_duration, w, h, zoom_in):
-    clip = _fit_vertical(VideoFileClip(path, audio=False), w, h)
+    clip = _fit_vertical(VideoFileClip(_normalize_clip(path, w, h), audio=False), w, h)
     if clip.duration < target_duration:
         loops = int(target_duration // clip.duration) + 1
         clip = concatenate_videoclips([clip] * loops)
@@ -138,10 +163,23 @@ def build_video(clip_paths, audio_path, words, hook_title, narration_text, outpu
         print("[assemble] no word timings from TTS, estimating them instead.")
         words = estimate_word_timings(narration_text, total_duration)
 
-    per_clip = total_duration / len(clip_paths)
+    # Check which clips can actually be used before dividing up the time,
+    # so one bad download can't sink the whole video.
+    usable = []
+    for p in clip_paths:
+        try:
+            with VideoFileClip(_normalize_clip(p, VIDEO_WIDTH, VIDEO_HEIGHT), audio=False) as c:
+                if c.duration and c.duration > 0.5:
+                    usable.append(p)
+        except Exception as e:
+            print(f"[assemble] skipping unusable clip {os.path.basename(p)}: {e}")
+    if not usable:
+        raise ValueError("None of the downloaded stock clips could be used.")
+
+    per_clip = total_duration / len(usable)
     prepped = [
         _prep_clip(p, per_clip, VIDEO_WIDTH, VIDEO_HEIGHT, zoom_in=(i % 2 == 0))
-        for i, p in enumerate(clip_paths)
+        for i, p in enumerate(usable)
     ]
     video = concatenate_videoclips(prepped, method="chain").with_duration(total_duration)
     video = video.with_audio(_build_audio(narration, total_duration))
