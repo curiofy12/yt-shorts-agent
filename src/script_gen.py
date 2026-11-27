@@ -102,11 +102,18 @@ FACT_CHECK_PROMPT = """You are a meticulous fact-checker for a YouTube Shorts ch
 - If it's wrong or a per-second/per-day conversion is off, correct the number in BOTH "text" and "big_number".
 - If it can't be verified with confidence, rewrite the beat with a different, well-established statistic on the same theme, or remove the beat.
 - Keep "hook", "hook_title", "title" and the opening consistent with any changes.
-Return ONLY the full corrected JSON script in exactly the same schema, plus a top-level "fact_check_notes" string summarising what you changed (or "no changes")."""
+Work through each figure step by step first (show your arithmetic). Then, at the very end, output the full corrected script in exactly the same schema inside a ```json code block, with a top-level "fact_check_notes" string summarising what you changed (or "no changes"). Nothing after the code block."""
 
 
 def _parse_json(text):
-    raw = text.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+    """Parses the JSON in a reply, even if reasoning text comes before it."""
+    import re
+    blocks = re.findall(r"```(?:json)?\s*(\{.*?\})\s*```", text, re.S)
+    if blocks:
+        raw = blocks[-1]
+    else:
+        start, end = text.find("{"), text.rfind("}")
+        raw = text[start:end + 1] if start != -1 and end > start else text
     try:
         return json.loads(raw)
     except json.JSONDecodeError as e:
@@ -116,7 +123,7 @@ def _parse_json(text):
 def _fact_check(client, script):
     msg = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=4000,
+        max_tokens=8000,
         system=FACT_CHECK_PROMPT,
         messages=[{"role": "user", "content": json.dumps(script, ensure_ascii=False)}],
     )
