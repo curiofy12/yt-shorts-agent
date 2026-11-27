@@ -31,7 +31,7 @@ HOOK_TEXT_COLOR = "&H00101010&"   # near-black text
 BAR_HEIGHT = 14
 BAR_COLOR = "&H0033D6FF&"
 
-LABEL_SIZE = 74
+LABEL_SIZE = 88
 LABEL_Y = 900                   # place/date labels sit above the captions
 LABEL_SECONDS = 2.6
 # ---------------------------------------------------------------------------

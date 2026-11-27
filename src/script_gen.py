@@ -57,6 +57,7 @@ Output ONLY valid JSON, no markdown fences, no preamble. Schema:
 {BASE_RULES}
 - 7-10 scenes. Joined together in order, the scenes' "text" fields must equal the narration exactly, word for word
 - image prompts must be drawable: describe what is SEEN, never ask for text, signs with words, maps with labels, or logos
+- one single shot per image: never split screens, side-by-side panels, before/after comparisons, diagrams or cross-sections
 - keep recurring characters visually consistent: describe them the same way in every scene they appear in (e.g. "a tall man in a grey trench coat and fedora")
 - vary the shots: mix wide establishing shots, medium shots and close-ups of a key object
 - labels: use at most 3 per video, mostly on the first scene and when the place or era changes
