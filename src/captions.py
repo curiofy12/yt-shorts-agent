@@ -30,6 +30,10 @@ HOOK_TEXT_COLOR = "&H00101010&"   # near-black text
 
 BAR_HEIGHT = 14
 BAR_COLOR = "&H0033D6FF&"
+
+LABEL_SIZE = 74
+LABEL_Y = 900                   # place/date labels sit above the captions
+LABEL_SECONDS = 2.6
 # ---------------------------------------------------------------------------
 
 W, H = 1080, 1920
@@ -121,7 +125,19 @@ def _progress_bar_event(duration: float):
     return [f"Dialogue: 0,{_ts(0)},{_ts(duration)},Bar,,0,0,0,,{tags}{shape}"]
 
 
-def build_ass(words, hook_title: str, duration: float, output_path: str):
+def _label_events(labels, duration):
+    """labels: list of (start_seconds, text) for place/date tags like 'CHICAGO, 1930'."""
+    events = []
+    for start, text in labels or []:
+        if not text or start >= duration:
+            continue
+        end = min(start + LABEL_SECONDS, duration)
+        tags = f"{{\\an5\\pos({W // 2},{LABEL_Y})\\fad(200,250)}}"
+        events.append(f"Dialogue: 1,{_ts(start)},{_ts(end)},Label,,0,0,0,,{tags}{_clean(text)}")
+    return events
+
+
+def build_ass(words, hook_title: str, duration: float, output_path: str, labels=None):
     header = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -133,6 +149,7 @@ ScaledBorderAndShadow: yes
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Caption,{CAPTION_FONT},{CAPTION_SIZE},{TEXT_COLOR},{TEXT_COLOR},&H00000000&,&H80000000&,0,0,0,0,100,100,1,0,1,8,5,5,80,130,0,1
 Style: Hook,{CAPTION_FONT},{HOOK_SIZE},{HOOK_TEXT_COLOR},{HOOK_TEXT_COLOR},{HOOK_BOX_COLOR},{HOOK_BOX_COLOR},0,0,0,0,100,100,1,0,3,22,0,8,110,110,0,1
+Style: Label,{CAPTION_FONT},{LABEL_SIZE},{TEXT_COLOR},{TEXT_COLOR},&H00000000&,&H80000000&,0,0,0,0,100,100,3,0,1,6,3,5,80,80,0,1
 Style: Bar,Arial,20,{BAR_COLOR},{BAR_COLOR},&H00000000&,&H00000000&,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
 
 [Events]
@@ -141,6 +158,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     events = (
         _progress_bar_event(duration)
         + _hook_event(hook_title, duration)
+        + _label_events(labels, duration)
         + _caption_events(words)
     )
     with open(output_path, "w", encoding="utf-8") as f:

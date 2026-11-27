@@ -11,7 +11,7 @@ import shutil
 from datetime import datetime, timezone
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import DATA_DIR, POSTS_LOG_PATH, WORKDIR
+from config import DATA_DIR, DRY_RUN, POSTS_LOG_PATH, VIDEO_STYLE, WORKDIR
 
 from trends import base_topic, pick_topic
 from stats_store import load_stats
@@ -19,6 +19,8 @@ from script_gen import generate_script
 from voiceover import generate_voiceover
 from visuals import download_clips
 from assemble import build_video
+from illustrations import IllustrationError, generate_scenes
+from illustrated import build_illustrated_video
 from upload import upload_short
 
 
@@ -50,32 +52,61 @@ def run():
         if base_topic(e.get("topic", "")) == base_topic(topic) and e.get("title")
     ][-40:]
 
-    print("[main] generating script...")
-    script = generate_script(topic, avoid_titles=same_topic_titles)
-
     run_dir = os.path.join(WORKDIR, datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S"))
     os.makedirs(run_dir, exist_ok=True)
+
+    style = VIDEO_STYLE
+    print(f"[main] style: {style}")
+    print("[main] generating script...")
+    script = generate_script(topic, avoid_titles=same_topic_titles, style=style)
+
+    image_paths = []
+    if style == "illustrated":
+        try:
+            print(f"[main] drawing {len(script['scenes'])} scenes...")
+            image_paths = generate_scenes(script["scenes"], os.path.join(run_dir, "scenes"))
+        except (IllustrationError, KeyError) as e:
+            # Never miss a post: fall back to the stock-footage style
+            print(f"[main] illustration failed ({e}); falling back to stock footage")
+            style = "stock"
+            script = generate_script(topic, avoid_titles=same_topic_titles, style="stock")
 
     print("[main] generating voiceover...")
     audio_path = os.path.join(run_dir, "narration.mp3")
     words = generate_voiceover(script["narration"], audio_path)
     print(f"[main] got timings for {len(words)} words")
 
-    print("[main] fetching stock clips...")
-    clips_dir = os.path.join(run_dir, "clips")
-    clip_paths = download_clips(script["visual_keywords"], clips_dir)
-
-    print("[main] assembling video...")
     video_path = os.path.join(run_dir, "short.mp4")
     hook_title = script.get("hook_title") or script["title"].split(":")[0][:40]
-    build_video(
-        clip_paths,
-        audio_path,
-        words=words,
-        hook_title=hook_title,
-        narration_text=script["narration"],
-        output_path=video_path,
-    )
+
+    if style == "illustrated":
+        print("[main] assembling illustrated video...")
+        build_illustrated_video(
+            image_paths, script["scenes"], audio_path,
+            words=words, hook_title=hook_title,
+            narration_text=script["narration"], output_path=video_path,
+        )
+    else:
+        print("[main] fetching stock clips...")
+        clip_paths = download_clips(script["visual_keywords"], os.path.join(run_dir, "clips"))
+        print("[main] assembling video...")
+        build_video(
+            clip_paths,
+            audio_path,
+            words=words,
+            hook_title=hook_title,
+            narration_text=script["narration"],
+            output_path=video_path,
+        )
+
+    if DRY_RUN:
+        preview_dir = os.path.join(os.path.dirname(WORKDIR), "preview")
+        os.makedirs(preview_dir, exist_ok=True)
+        shutil.copy(video_path, os.path.join(preview_dir, "short.mp4"))
+        with open(os.path.join(preview_dir, "script.json"), "w") as f:
+            json.dump(script, f, indent=2)
+        print(f"[main] DRY RUN: saved preview, not uploading. title: {script['title']}")
+        return
 
     print("[main] uploading...")
     video_id = upload_short(
@@ -91,6 +122,7 @@ def run():
             "topic": topic,
             "title": script["title"],
             "hook": script["hook"],
+            "style": style,
             "posted_at": datetime.now(timezone.utc).isoformat(),
             "stats": None,  # filled in by weekly_report.py
         }

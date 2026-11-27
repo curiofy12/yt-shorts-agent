@@ -5,6 +5,14 @@ load_dotenv()
 
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
 PEXELS_API_KEY = os.environ.get("PEXELS_API_KEY")
+CLOUDFLARE_ACCOUNT_ID = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "").strip()
+CLOUDFLARE_API_TOKEN = os.environ.get("CLOUDFLARE_API_TOKEN", "").strip()
+
+# "stock" = Pexels footage, "illustrated" = AI cartoon scenes.
+# The workflow sets this per scheduled slot.
+VIDEO_STYLE = os.environ.get("VIDEO_STYLE", "stock").strip() or "stock"
+# Set to "1" to render without uploading (for test runs).
+DRY_RUN = os.environ.get("DRY_RUN", "") == "1"
 YOUTUBE_CLIENT_SECRET_PATH = os.environ.get("YOUTUBE_CLIENT_SECRET_PATH", "client_secret.json")
 YOUTUBE_TOKEN_PATH = os.environ.get("YOUTUBE_TOKEN_PATH", "token.json")
 CHANNEL_NICHE = os.environ.get("CHANNEL_NICHE", "")
@@ -18,7 +26,7 @@ WORKDIR = os.path.join(os.path.dirname(__file__), "workdir")
 
 VIDEO_WIDTH = 1080
 VIDEO_HEIGHT = 1920  # vertical, Shorts format
-TARGET_DURATION_SECONDS = 45  # sweet spot for shorts retention: 30-59s
+TARGET_DURATION_SECONDS = 38  # shorter = more people finish it; finish rate drives Shorts reach
 
 # moviepy 2.x renders captions via PIL and needs an actual font FILE path
 # (not a font name string like "Arial-Bold" as older moviepy allowed).
