@@ -171,7 +171,7 @@ def build_illustrated_video(image_paths, scenes, audio_path, words, hook_title,
     video = VideoClip(make_frame, duration=total).with_fps(FPS)
     cut_times = [s for s, _ in times[1:]]
     video = video.with_audio(
-        _build_audio(narration, total, words=words, cut_times=cut_times, hook_shown=bool(hook_title))
+        _build_audio(narration, total, words=words, sfx_events=[])  # no sound effects in this style
     )
 
     run_dir = os.path.dirname(os.path.abspath(output_path))

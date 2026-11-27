@@ -270,7 +270,7 @@ def build_video(clip_paths, audio_path, words, hook_title, narration_text, outpu
     video = concatenate_videoclips(prepped, method="chain").with_duration(total_duration)
     cut_times = [i * per_clip for i in range(1, len(usable))]
     video = video.with_audio(
-        _build_audio(narration, total_duration, words=words, cut_times=cut_times, hook_shown=bool(hook_title))
+        _build_audio(narration, total_duration, words=words, sfx_events=[])  # no sound effects in this style
     )
 
     run_dir = os.path.dirname(os.path.abspath(output_path))

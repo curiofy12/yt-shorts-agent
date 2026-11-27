@@ -51,7 +51,7 @@ Output ONLY valid JSON, no markdown fences, no preamble. Schema:
 
 {BASE_RULES}
 - 8-10 beats. Joined together in order, the beats' "text" fields must equal the narration exactly, word for word
-- use an icon on about half the beats, only where it clearly matches what's being said
+- use an icon on only 2-3 beats per video, for the most important or visual moments, never on two beats in a row
 - use big_number only when that beat actually states a number, and keep it consistent with the narration
 - whoosh: at most 2-3 per video and never on the first beat; most cuts should be plain
 """
@@ -221,6 +221,15 @@ def generate_script(topic: str, avoid_titles=None, style: str = "stock") -> dict
             if b["whoosh"]:
                 n += 1
                 b["whoosh"] = n <= 3
+        # Icons are accents: at most 3 per video, never on back-to-back beats
+        shown, last = 0, -2
+        for i, b in enumerate(beats):
+            if b["icon"]:
+                if shown >= 3 or i - last < 2:
+                    b["icon"] = ""
+                else:
+                    shown += 1
+                    last = i
         script["beats"] = beats
         script["narration"] = " ".join(b["text"].strip() for b in beats)
         script["visual_keywords"] = [b["search"] for b in beats]

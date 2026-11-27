@@ -285,7 +285,7 @@ def build_globe_video(beats, audio_path, words, hook_title, narration_text, outp
     video = VideoClip(make_frame, duration=total).with_fps(FPS)
     cut_times = [p["start"] for p in plan[1:]]
     video = video.with_audio(
-        _build_audio(narration, total, words=words, cut_times=cut_times, hook_shown=bool(hook_title))
+        _build_audio(narration, total, words=words, sfx_events=[])  # no sound effects in this style
     )
 
     run_dir = os.path.dirname(os.path.abspath(output_path))

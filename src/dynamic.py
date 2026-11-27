@@ -179,15 +179,13 @@ def build_dynamic_video(beats, clip_paths, audio_path, words, hook_title,
 
         return np.asarray(frame.convert("RGB"))
 
-    # Sound effect cues: whoosh on whips, pop when an icon or number lands
+    # Sound effect cues: whoosh on whips, pop when an icon lands
     sfx = []
     for p in plan:
         if p["transition"] == "whip":
             sfx.append((p["start"], "whoosh"))
         if p["icon"]:
             sfx.append((p["start"] + ICON_IN, "pop"))
-        elif p["number"]:
-            sfx.append((p["start"] + NUMBER_IN, "pop"))
 
     video = VideoClip(make_frame, duration=total).with_fps(FPS)
     video = video.with_audio(
