@@ -54,8 +54,9 @@ MUSIC_VOLUME = 0.35
 DUCK_RATIO = 0.6
 PAUSE_BOOST = 1.3
 
-# Sound effects: files in sfx/ starting with "whoosh" play on scene cuts,
-# one starting with "pop" plays as the hook title appears.
+# Sound effects (currently off: the sfx/ folder was removed). To turn them
+# back on, add a sfx/ folder with files starting "whoosh" (played on scene
+# cuts) and/or one starting "pop" (played as the hook title appears).
 SFX_DIR = os.path.join(os.path.dirname(__file__), "sfx")
 SFX_VOLUME = 0.5
 
