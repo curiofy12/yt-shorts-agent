@@ -30,15 +30,30 @@ BASE_RULES = """Rules:
 - LOOP ENDING: the final sentence should flow naturally back into the opening line, so a viewer whose video replays from the start hears one continuous thought (e.g. ending "...and that's why" when the video opens "Scientists still can't explain...")
 - no copyrighted lyrics, no real named private individuals"""
 
-STOCK_PROMPT = f"""You write scripts for faceless YouTube Shorts channels.
+def _stock_prompt():
+    from globe_data import icon_names
+    icons = ", ".join(icon_names())
+    return f"""You write scripts for faceless YouTube Shorts channels. The video cuts between stock footage clips, one per beat, with punchy motion graphics: 3D icons pop onto the screen and striking numbers fly in huge.
 Output ONLY valid JSON, no markdown fences, no preamble. Schema:
 
 {{
 {BASE_SCHEMA},
-  "visual_keywords": ["8-10 concrete stock-footage search terms, one per beat of the narration and in the same order, e.g. 'ocean waves aerial', 'brain scan closeup'"]
+  "beats": [
+    {{
+      "text": "the exact part of the narration spoken during this beat (one short sentence or clause)",
+      "search": "concrete stock-footage search term for what's on screen, e.g. 'ocean waves aerial', 'brain scan closeup'",
+      "icon": "a 3D icon that pops on screen to illustrate this beat, one of: {icons} — or empty string if nothing fits",
+      "big_number": "a striking number from this beat shown huge on screen, max 8 characters with short units (K, M, B, %, km), e.g. '4,000 M', '90%', 'x3' — or empty string",
+      "whoosh": "true only if this beat opens with a big jump that deserves a whoosh: a sudden change of place, era or scale, or a dramatic reveal ('But then...', 'Meanwhile, 4,000 metres down...'); false for ordinary cuts"
+    }}
+  ]
 }}
 
 {BASE_RULES}
+- 8-10 beats. Joined together in order, the beats' "text" fields must equal the narration exactly, word for word
+- use an icon on about half the beats, only where it clearly matches what's being said
+- use big_number only when that beat actually states a number, and keep it consistent with the narration
+- whoosh: at most 2-3 per video and never on the first beat; most cuts should be plain
 """
 
 ILLUSTRATED_PROMPT = f"""You write scripts for a faceless YouTube Shorts channel whose videos are a sequence of flat 2D cartoon illustrations (simple vector characters with big round heads, moody colors), each shown with a slow camera move.
@@ -139,7 +154,7 @@ def generate_script(topic: str, avoid_titles=None, style: str = "stock") -> dict
     elif style == "globe":
         system = _globe_prompt()
     else:
-        system = STOCK_PROMPT
+        system = _stock_prompt()
 
     prompt = f"Topic for today's short: {topic}"
     if avoid_titles:
@@ -182,6 +197,33 @@ def generate_script(topic: str, avoid_titles=None, style: str = "stock") -> dict
             raise ValueError("Script generator returned too few globe beats.")
         script["beats"] = beats
         script["narration"] = " ".join(b["text"].strip() for b in beats)
+
+    if style == "stock":
+        from globe_data import icon_names
+        icons = set(icon_names())
+        beats = []
+        for b in script.get("beats", []):
+            if not b.get("text"):
+                continue
+            b["search"] = (b.get("search") or "").strip() or "nature landscape aerial"
+            b["icon"] = b.get("icon") if b.get("icon") in icons else ""
+            num = str(b.get("big_number") or "").strip()
+            while len(num) > 9 and " " in num:
+                num = num.rsplit(" ", 1)[0]
+            b["big_number"] = num[:9]
+            b["whoosh"] = str(b.get("whoosh")).lower() == "true" and len(beats) > 0
+            beats.append(b)
+        if len(beats) < 3:
+            raise ValueError("Script generator returned too few stock beats.")
+        # Keep whooshes special: at most 3 per video
+        n = 0
+        for b in beats:
+            if b["whoosh"]:
+                n += 1
+                b["whoosh"] = n <= 3
+        script["beats"] = beats
+        script["narration"] = " ".join(b["text"].strip() for b in beats)
+        script["visual_keywords"] = [b["search"] for b in beats]
 
     if style == "illustrated":
         scenes = [s for s in script.get("scenes", []) if s.get("image_prompt")]

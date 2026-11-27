@@ -159,7 +159,30 @@ def _sfx_clips(cut_times, hook_shown):
     return clips
 
 
-def _build_audio(narration, total_duration, words=None, cut_times=(), hook_shown=True):
+def _sfx_from_events(events):
+    """events: list of (time, kind) with kind 'pop' or 'whoosh'."""
+    if not os.path.isdir(SFX_DIR):
+        return []
+    files = sorted(os.listdir(SFX_DIR))
+    by_kind = {
+        kind: [os.path.join(SFX_DIR, f) for f in files
+               if f.lower().startswith(kind) and f.lower().endswith((".mp3", ".wav", ".ogg"))]
+        for kind in ("pop", "whoosh")
+    }
+    clips, counts = [], {"pop": 0, "whoosh": 0}
+    for t, kind in events:
+        pool = by_kind.get(kind) or []
+        if not pool:
+            continue
+        path = pool[counts[kind] % len(pool)]
+        counts[kind] += 1
+        # whooshes start a little early so they peak on the cut
+        start = max(t - (0.3 if kind == "whoosh" else 0.0), 0)
+        clips.append(AudioFileClip(path).with_effects([MultiplyVolume(SFX_VOLUME)]).with_start(start))
+    return clips
+
+
+def _build_audio(narration, total_duration, words=None, cut_times=(), hook_shown=True, sfx_events=None):
     layers = [narration]
 
     music_path = _pick_music_track()
@@ -178,7 +201,10 @@ def _build_audio(narration, total_duration, words=None, cut_times=(), hook_shown
     else:
         print("[assemble] no music in music/, using narration only.")
 
-    layers += _sfx_clips(cut_times, hook_shown)
+    if sfx_events is not None:
+        layers += _sfx_from_events(sfx_events)
+    else:
+        layers += _sfx_clips(cut_times, hook_shown)
     if len(layers) == 1:
         return narration
     return CompositeAudioClip(layers).with_duration(total_duration)

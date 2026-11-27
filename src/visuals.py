@@ -78,3 +78,34 @@ def download_clips(keywords: list, out_dir: str) -> list:
 if __name__ == "__main__":
     clips = download_clips(["ocean waves aerial", "city timelapse night"], "test_clips")
     print(clips)
+
+
+def download_beat_clips(searches: list, out_dir: str) -> list:
+    """
+    One clip per beat, in order. Returns a list the same length as
+    `searches`; a beat whose search found nothing gets None (the assembler
+    then reuses a neighbouring clip).
+    """
+    os.makedirs(out_dir, exist_ok=True)
+    used_ids, paths = set(), []
+    for i, kw in enumerate(searches):
+        path = None
+        try:
+            url = fetch_clip_for_keyword(kw, used_ids)
+            if not url:
+                # Try a simpler search: the last two words usually name the subject
+                url = fetch_clip_for_keyword(" ".join(kw.split()[-2:]), used_ids)
+            if url:
+                path = os.path.join(out_dir, f"clip_{i:02d}.mp4")
+                r = requests.get(url, timeout=60)
+                r.raise_for_status()
+                with open(path, "wb") as f:
+                    f.write(r.content)
+                print(f"[visuals] beat {i + 1}: '{kw}'")
+            else:
+                print(f"[visuals] beat {i + 1}: nothing found for '{kw}'")
+        except requests.RequestException as e:
+            print(f"[visuals] beat {i + 1}: download failed ({e})")
+            path = None
+        paths.append(path)
+    return paths

@@ -17,11 +17,12 @@ from trends import base_topic, pick_globe_topic, pick_topic
 from stats_store import load_stats
 from script_gen import generate_script
 from voiceover import generate_voiceover
-from visuals import download_clips
+from visuals import download_beat_clips, download_clips
 from assemble import build_video
 from illustrations import IllustrationError, generate_scenes
 from illustrated import build_illustrated_video
 from globe import build_globe_video
+from dynamic import build_dynamic_video
 from upload import get_authenticated_service, get_credentials, upload_short
 from engagement import after_upload
 
@@ -95,6 +96,17 @@ def run():
         print("[main] assembling illustrated video...")
         build_illustrated_video(
             image_paths, script["scenes"], audio_path,
+            words=words, hook_title=hook_title,
+            narration_text=script["narration"], output_path=video_path,
+        )
+    elif script.get("beats"):
+        print("[main] fetching a stock clip for each beat...")
+        clip_paths = download_beat_clips(
+            [b["search"] for b in script["beats"]], os.path.join(run_dir, "clips")
+        )
+        print("[main] assembling dynamic stock video...")
+        build_dynamic_video(
+            script["beats"], clip_paths, audio_path,
             words=words, hook_title=hook_title,
             narration_text=script["narration"], output_path=video_path,
         )
