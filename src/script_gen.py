@@ -11,8 +11,8 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import ANTHROPIC_API_KEY, TARGET_DURATION_SECONDS
 import anthropic
 
-# The narrator speaks about 2.85 words per second (default pace +10%)
-TARGET_WORDS = int(TARGET_DURATION_SECONDS * 2.85)
+# Measured: the narrator speaks about 2.45 words per second at +10% speed
+TARGET_WORDS = int(TARGET_DURATION_SECONDS * 2.45)
 MAX_SCENES = 10
 
 BASE_SCHEMA = f"""  "hook": "first 3 seconds, must stop the scroll",
