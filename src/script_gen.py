@@ -13,6 +13,7 @@ import anthropic
 
 # The narrator speaks about 2.85 words per second (default pace +10%)
 TARGET_WORDS = int(TARGET_DURATION_SECONDS * 2.85)
+MAX_SCENES = 10
 
 BASE_SCHEMA = f"""  "hook": "first 3 seconds, must stop the scroll",
   "hook_title": "2-5 word on-screen headline shown at the top for the first 3 seconds, e.g. 'A RIVER UNDER THE OCEAN' — punchy, no punctuation except ? or !",
@@ -56,7 +57,7 @@ Output ONLY valid JSON, no markdown fences, no preamble. Schema:
 }}
 
 {BASE_RULES}
-- 9-12 scenes, so a new image appears every 3-4 seconds. Joined together in order, the scenes' "text" fields must equal the narration exactly, word for word
+- 8-10 scenes (never more than 10), so a new image appears every 3-4 seconds. Joined together in order, the scenes' "text" fields must equal the narration exactly, word for word
 - image prompts must be drawable: describe what is SEEN, never ask for text, signs with words, maps with labels, or logos
 - one single shot per image: never split screens, side-by-side panels, before/after comparisons, diagrams or cross-sections
 - keep recurring characters visually consistent: describe them the same way in every scene they appear in (e.g. "a tall man in a grey trench coat and fedora")
@@ -97,6 +98,12 @@ def generate_script(topic: str, avoid_titles=None, style: str = "stock") -> dict
         scenes = [s for s in script.get("scenes", []) if s.get("image_prompt")]
         if len(scenes) < 3:
             raise ValueError("Script generator returned too few illustrated scenes.")
+        # Cloudflare's free tier allows ~40 images a day; cap scenes so two
+        # illustrated videos a day always fit. Extra scenes merge into the last.
+        if len(scenes) > MAX_SCENES:
+            extra = " ".join(s.get("text", "") for s in scenes[MAX_SCENES:])
+            scenes = scenes[:MAX_SCENES]
+            scenes[-1]["text"] = (scenes[-1].get("text", "") + " " + extra).strip()
         script["scenes"] = scenes
         # The scene texts are what's spoken, so they ARE the narration
         script["narration"] = " ".join(s.get("text", "").strip() for s in scenes).strip() or script["narration"]
