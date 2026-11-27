@@ -10,21 +10,27 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import YOUTUBE_TOKEN_PATH, YOUTUBE_SCOPES
+from config import YOUTUBE_TOKEN_PATH
 
 
-def get_authenticated_service():
-    creds = Credentials.from_authorized_user_file(YOUTUBE_TOKEN_PATH, YOUTUBE_SCOPES)
+def get_credentials():
+    # Use the permissions the token actually has (from token.json). Asking
+    # for more than it was granted would make the refresh fail.
+    creds = Credentials.from_authorized_user_file(YOUTUBE_TOKEN_PATH)
     if creds.expired and creds.refresh_token:
         creds.refresh(Request())
         with open(YOUTUBE_TOKEN_PATH, "w") as f:
             f.write(creds.to_json())
-    return build("youtube", "v3", credentials=creds)
+    return creds
 
 
-def upload_short(video_path, title, description, tags, category_id="22"):
-    """category_id 22 = People & Blogs; change if a different category fits your niche."""
-    youtube = get_authenticated_service()
+def get_authenticated_service(creds=None):
+    return build("youtube", "v3", credentials=creds or get_credentials())
+
+
+def upload_short(video_path, title, description, tags, category_id="27", youtube=None):
+    """category_id 27 = Education (fits a facts channel); 22 = People & Blogs."""
+    youtube = youtube or get_authenticated_service()
 
     # Ensure "#Shorts" is present so YouTube classifies it correctly
     if "#shorts" not in description.lower() and "#shorts" not in title.lower():

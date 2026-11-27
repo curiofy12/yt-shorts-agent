@@ -12,11 +12,12 @@ from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import YOUTUBE_TOKEN_PATH, YOUTUBE_SCOPES
+from config import YOUTUBE_TOKEN_PATH
 
 
 def get_analytics_service():
-    creds = Credentials.from_authorized_user_file(YOUTUBE_TOKEN_PATH, YOUTUBE_SCOPES)
+    # Use the permissions stored in the token; asking for more breaks refresh
+    creds = Credentials.from_authorized_user_file(YOUTUBE_TOKEN_PATH)
     if creds.expired and creds.refresh_token:
         creds.refresh(Request())
     return build("youtubeAnalytics", "v2", credentials=creds)

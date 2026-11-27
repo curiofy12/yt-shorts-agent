@@ -11,15 +11,16 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import ANTHROPIC_API_KEY, TARGET_DURATION_SECONDS
 import anthropic
 
-# The narrator speaks about 2.6 words per second
-TARGET_WORDS = int(TARGET_DURATION_SECONDS * 2.6)
+# The narrator speaks about 2.85 words per second (default pace +10%)
+TARGET_WORDS = int(TARGET_DURATION_SECONDS * 2.85)
 
 BASE_SCHEMA = f"""  "hook": "first 3 seconds, must stop the scroll",
   "hook_title": "2-5 word on-screen headline shown at the top for the first 3 seconds, e.g. 'A RIVER UNDER THE OCEAN' — punchy, no punctuation except ? or !",
   "narration": "full narration script, {TARGET_WORDS - 10} to {TARGET_WORDS} words total (HARD LIMIT — about {TARGET_DURATION_SECONDS} seconds read aloud), written as plain spoken sentences",
   "title": "under 100 chars, curiosity-driven, no clickbait falsehoods",
   "description": "2-3 sentences plus 3-5 relevant hashtags",
-  "tags": ["8-12 relevant tags"]"""
+  "tags": ["8-12 relevant tags"],
+  "comment_question": "a short question posted as the first comment to get viewers talking, under 90 characters, at most one emoji, never 'like and subscribe', e.g. 'Would you swim in it? 🌊'\""""
 
 BASE_RULES = """Rules:
 - narration must be factually accurate; do not invent statistics or fabricate sources
@@ -33,7 +34,7 @@ Output ONLY valid JSON, no markdown fences, no preamble. Schema:
 
 {{
 {BASE_SCHEMA},
-  "visual_keywords": ["3-6 concrete search terms for stock footage matching the narration, e.g. 'ocean waves aerial', 'brain scan closeup'"]
+  "visual_keywords": ["8-10 concrete stock-footage search terms, one per beat of the narration and in the same order, e.g. 'ocean waves aerial', 'brain scan closeup'"]
 }}
 
 {BASE_RULES}
@@ -55,7 +56,7 @@ Output ONLY valid JSON, no markdown fences, no preamble. Schema:
 }}
 
 {BASE_RULES}
-- 7-10 scenes. Joined together in order, the scenes' "text" fields must equal the narration exactly, word for word
+- 9-12 scenes, so a new image appears every 3-4 seconds. Joined together in order, the scenes' "text" fields must equal the narration exactly, word for word
 - image prompts must be drawable: describe what is SEEN, never ask for text, signs with words, maps with labels, or logos
 - one single shot per image: never split screens, side-by-side panels, before/after comparisons, diagrams or cross-sections
 - keep recurring characters visually consistent: describe them the same way in every scene they appear in (e.g. "a tall man in a grey trench coat and fedora")

@@ -49,8 +49,22 @@ FONTS_DIR = os.path.join(os.path.dirname(__file__), "assets", "fonts")
 # one is picked at random per video. 0.35 = noticeable, narration dominant.
 MUSIC_DIR = os.path.join(os.path.dirname(__file__), "music")
 MUSIC_VOLUME = 0.35
+# Music "ducks" to this fraction of MUSIC_VOLUME while the narrator talks,
+# and rises to PAUSE_BOOST x MUSIC_VOLUME in pauses and at the end.
+DUCK_RATIO = 0.6
+PAUSE_BOOST = 1.3
+
+# Sound effects: files in sfx/ starting with "whoosh" play on scene cuts,
+# one starting with "pop" plays as the hook title appears.
+SFX_DIR = os.path.join(os.path.dirname(__file__), "sfx")
+SFX_VOLUME = 0.5
+
+# Needed for playlists and posting comments. auth_setup.py asks for it;
+# tokens made before it was added simply skip those two features.
+MANAGE_SCOPE = "https://www.googleapis.com/auth/youtube.force-ssl"
 
 YOUTUBE_SCOPES = [
+    MANAGE_SCOPE,
     "https://www.googleapis.com/auth/youtube.upload",
     "https://www.googleapis.com/auth/youtube.readonly",
     "https://www.googleapis.com/auth/yt-analytics.readonly",

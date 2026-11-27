@@ -11,12 +11,13 @@ import re
 import edge_tts
 
 VOICE = "en-US-ChristopherNeural"  # try en-US-AriaNeural, en-GB-RyanNeural, etc.
+RATE = "+10%"  # a touch faster than default keeps Shorts feeling snappy
 
 _TICKS_PER_SECOND = 10_000_000  # edge-tts reports offsets in 100-nanosecond units
 
 
 async def _synthesize(text: str, output_path: str, voice: str):
-    communicate = edge_tts.Communicate(text, voice, boundary="WordBoundary")
+    communicate = edge_tts.Communicate(text, voice, rate=RATE, boundary="WordBoundary")
     words = []
     with open(output_path, "wb") as f:
         async for chunk in communicate.stream():

@@ -21,7 +21,8 @@ from visuals import download_clips
 from assemble import build_video
 from illustrations import IllustrationError, generate_scenes
 from illustrated import build_illustrated_video
-from upload import upload_short
+from upload import get_authenticated_service, get_credentials, upload_short
+from engagement import after_upload
 
 
 def load_log():
@@ -109,12 +110,16 @@ def run():
         return
 
     print("[main] uploading...")
+    creds = get_credentials()
+    youtube = get_authenticated_service(creds)
     video_id = upload_short(
         video_path=video_path,
         title=script["title"],
         description=script["description"],
         tags=script["tags"],
+        youtube=youtube,
     )
+    after_upload(youtube, creds, video_id, topic, script.get("comment_question"))
 
     log.append(
         {

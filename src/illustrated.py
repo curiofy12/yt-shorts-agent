@@ -169,7 +169,10 @@ def build_illustrated_video(image_paths, scenes, audio_path, words, hook_title,
         return np.asarray(frame)
 
     video = VideoClip(make_frame, duration=total).with_fps(FPS)
-    video = video.with_audio(_build_audio(narration, total))
+    cut_times = [s for s, _ in times[1:]]
+    video = video.with_audio(
+        _build_audio(narration, total, words=words, cut_times=cut_times, hook_shown=bool(hook_title))
+    )
 
     run_dir = os.path.dirname(os.path.abspath(output_path))
     base_path = os.path.join(run_dir, "base.mp4")

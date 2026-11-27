@@ -27,7 +27,10 @@ from moviepy import (
 from moviepy.audio.fx import AudioLoop, MultiplyVolume
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import FONTS_DIR, MUSIC_DIR, MUSIC_VOLUME, VIDEO_HEIGHT, VIDEO_WIDTH
+from config import (
+    DUCK_RATIO, FONTS_DIR, MUSIC_DIR, MUSIC_VOLUME, PAUSE_BOOST, SFX_DIR, SFX_VOLUME,
+    VIDEO_HEIGHT, VIDEO_WIDTH,
+)
 from captions import build_ass
 from voiceover import estimate_word_timings
 
@@ -112,16 +115,73 @@ def _pick_music_track():
     return os.path.join(MUSIC_DIR, random.choice(tracks)) if tracks else None
 
 
-def _build_audio(narration, total_duration):
+def _music_envelope(words, total_duration):
+    """
+    Music volume over time: dips under the voice, rises a little in pauses
+    and swells at the very end. Returns a function of t (seconds, array ok).
+    """
+    step = 0.02
+    grid = np.arange(0, total_duration + step, step)
+    speaking = np.zeros_like(grid, dtype=bool)
+    for w in words or []:
+        a = max(int((w["start"] - 0.08) / step), 0)
+        b = int((w["end"] + 0.25) / step) + 1
+        speaking[a:b] = True
+    target = np.where(speaking, MUSIC_VOLUME * DUCK_RATIO, MUSIC_VOLUME * PAUSE_BOOST)
+    # Swell over the last 1.2 seconds as the narration wraps up
+    tail = grid > total_duration - 1.2
+    target[tail] = np.maximum(target[tail], MUSIC_VOLUME * PAUSE_BOOST)
+    # Smooth the changes (~200 ms) so it never sounds like a switch
+    k = int(0.2 / step)
+    kernel = np.ones(k) / k
+    smooth = np.convolve(np.pad(target, (k, k), mode="edge"), kernel, mode="same")[k:-k]
+
+    def env(t):
+        return np.interp(t, grid, smooth)
+    return env
+
+
+def _sfx_clips(cut_times, hook_shown):
+    """Whooshes on scene cuts and a pop as the hook card appears."""
+    if not os.path.isdir(SFX_DIR):
+        return []
+    files = os.listdir(SFX_DIR)
+    whooshes = [os.path.join(SFX_DIR, f) for f in files if f.lower().startswith("whoosh")]
+    pops = [os.path.join(SFX_DIR, f) for f in files if f.lower().startswith("pop")]
+    clips = []
+    for i, t in enumerate(cut_times):
+        if whooshes and t > 0.3:
+            # Start slightly before the cut so the swoosh peaks on it
+            clip = AudioFileClip(whooshes[i % len(whooshes)]).with_effects([MultiplyVolume(SFX_VOLUME)])
+            clips.append(clip.with_start(max(t - 0.25, 0)))
+    if pops and hook_shown:
+        clips.append(AudioFileClip(pops[0]).with_effects([MultiplyVolume(SFX_VOLUME)]).with_start(0.05))
+    return clips
+
+
+def _build_audio(narration, total_duration, words=None, cut_times=(), hook_shown=True):
+    layers = [narration]
+
     music_path = _pick_music_track()
-    if not music_path:
+    if music_path:
+        print(f"[assemble] mixing in background music: {os.path.basename(music_path)}")
+        music = AudioFileClip(music_path)
+        music = music.with_effects([AudioLoop(duration=total_duration)]).subclipped(0, total_duration)
+        env = _music_envelope(words, total_duration)
+
+        def duck(get_frame, t):
+            frame = get_frame(t)
+            vol = env(np.asarray(t, dtype=float))
+            return frame * (vol[:, None] if np.ndim(vol) else vol)
+
+        layers.append(music.transform(duck))
+    else:
         print("[assemble] no music in music/, using narration only.")
+
+    layers += _sfx_clips(cut_times, hook_shown)
+    if len(layers) == 1:
         return narration
-    print(f"[assemble] mixing in background music: {os.path.basename(music_path)}")
-    music = AudioFileClip(music_path)
-    music = music.with_effects([AudioLoop(duration=total_duration)])
-    music = music.subclipped(0, total_duration).with_effects([MultiplyVolume(MUSIC_VOLUME)])
-    return CompositeAudioClip([narration, music])
+    return CompositeAudioClip(layers).with_duration(total_duration)
 
 
 def _ffmpeg_binary():
@@ -182,7 +242,10 @@ def build_video(clip_paths, audio_path, words, hook_title, narration_text, outpu
         for i, p in enumerate(usable)
     ]
     video = concatenate_videoclips(prepped, method="chain").with_duration(total_duration)
-    video = video.with_audio(_build_audio(narration, total_duration))
+    cut_times = [i * per_clip for i in range(1, len(usable))]
+    video = video.with_audio(
+        _build_audio(narration, total_duration, words=words, cut_times=cut_times, hook_shown=bool(hook_title))
+    )
 
     run_dir = os.path.dirname(os.path.abspath(output_path))
     base_path = os.path.join(run_dir, "base.mp4")
