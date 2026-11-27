@@ -12,8 +12,9 @@ from datetime import datetime, timezone
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import DATA_DIR, POSTS_LOG_PATH
 
-from analytics import get_video_stats, get_channel_totals
+from analytics import get_analytics_service, get_video_stats, get_channel_totals
 from insights import generate_insights_report
+from stats_store import load_stats, save_stats, with_stats
 
 REPORT_PATH = os.path.join(DATA_DIR, "latest_insights.md")
 DASHBOARD_PATH = os.path.join(os.path.dirname(DATA_DIR), "dashboard.html")
@@ -26,18 +27,25 @@ def load_log():
     return []
 
 
-def save_log(log):
-    with open(POSTS_LOG_PATH, "w") as f:
-        json.dump(log, f, indent=2)
-
-
 def refresh_stats(log):
+    """Fetches lifetime stats for every logged video into video_stats.json."""
+    stats = load_stats()
+    service = get_analytics_service()
+    ok = 0
     for entry in log:
+        vid = entry.get("video_id")
+        if not vid:
+            continue
         try:
-            entry["stats"] = get_video_stats(entry["video_id"])
+            result = get_video_stats(vid, entry.get("posted_at"), service)
+            if "error" not in result:
+                stats[vid] = result
+                ok += 1
         except Exception as e:
-            print(f"[weekly_report] couldn't fetch stats for {entry['video_id']}: {e}")
-    return log
+            print(f"[weekly_report] couldn't fetch stats for {vid}: {e}")
+    print(f"[weekly_report] refreshed stats for {ok} of {len(log)} videos")
+    save_stats(stats)
+    return with_stats(log, stats)
 
 
 def render_dashboard(log, channel_totals, insights_text):
@@ -51,6 +59,7 @@ def render_dashboard(log, channel_totals, insights_text):
           <td>{entry.get('topic', '')}</td>
           <td>{stats.get('views', '-')}</td>
           <td>{stats.get('average_view_duration_sec', '-')}</td>
+          <td>{stats.get('average_view_percentage', '-')}</td>
           <td>{stats.get('subscribers_gained', '-')}</td>
           <td>{stats.get('estimated_revenue_usd', '-')}</td>
         </tr>"""
@@ -87,7 +96,7 @@ def render_dashboard(log, channel_totals, insights_text):
   </div>
 
   <table>
-    <tr><th>Date</th><th>Title</th><th>Topic</th><th>Views</th><th>Avg view (s)</th><th>Subs gained</th><th>Est. revenue</th></tr>
+    <tr><th>Date</th><th>Title</th><th>Topic</th><th>Views</th><th>Avg view (s)</th><th>Avg % watched</th><th>Subs gained</th><th>Est. revenue</th></tr>
     {rows}
   </table>
 
@@ -110,7 +119,6 @@ def run():
 
     print("[weekly_report] refreshing per-video stats...")
     log = refresh_stats(log)
-    save_log(log)
 
     print("[weekly_report] pulling channel totals...")
     try:
@@ -120,7 +128,16 @@ def run():
         channel_totals = {}
 
     print("[weekly_report] generating insights...")
-    insights_text = generate_insights_report(log[-20:])
+    # Recent posts plus the all-time top 10, so the analysis sees both
+    # what's happening now and what has worked best overall.
+    recent = log[-30:]
+    recent_ids = {e.get("video_id") for e in recent}
+    top = sorted(
+        (e for e in log if isinstance(e.get("stats"), dict) and e.get("video_id") not in recent_ids),
+        key=lambda e: e["stats"].get("views", 0),
+        reverse=True,
+    )[:10]
+    insights_text = generate_insights_report(top + recent)
 
     os.makedirs(DATA_DIR, exist_ok=True)
     with open(REPORT_PATH, "w") as f:

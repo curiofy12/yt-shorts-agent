@@ -32,16 +32,23 @@ Rules:
 """
 
 
-def generate_script(topic: str) -> dict:
+def generate_script(topic: str, avoid_titles=None) -> dict:
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+
+    prompt = f"Topic for today's short: {topic}"
+    if avoid_titles:
+        listed = "\n".join(f"- {t}" for t in avoid_titles)
+        prompt += (
+            "\n\nThis channel has already made these videos on this topic. "
+            "Pick a clearly different specific fact or story — not the same "
+            f"subject reworded:\n{listed}"
+        )
 
     message = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=1500,
         system=SYSTEM_PROMPT,
-        messages=[
-            {"role": "user", "content": f"Topic for today's short: {topic}"}
-        ],
+        messages=[{"role": "user", "content": prompt}],
     )
 
     raw = message.content[0].text.strip()

@@ -13,7 +13,8 @@ from datetime import datetime, timezone
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import DATA_DIR, POSTS_LOG_PATH, WORKDIR
 
-from trends import pick_topic
+from trends import base_topic, pick_topic
+from stats_store import load_stats
 from script_gen import generate_script
 from voiceover import generate_voiceover
 from visuals import download_clips
@@ -36,14 +37,21 @@ def save_log(log):
 
 def run():
     log = load_log()
-    recent_topics = [entry["topic"] for entry in log[-60:]]
+    stats = load_stats()
+    recent_topics = [entry["topic"] for entry in log]
 
     print("[main] picking topic...")
-    topic = pick_topic(recent_topics)
+    topic = pick_topic(recent_topics, log=log, stats=stats)
     print(f"[main] topic: {topic}")
 
+    # Every title already made for this topic, so the new one is different
+    same_topic_titles = [
+        e["title"] for e in log
+        if base_topic(e.get("topic", "")) == base_topic(topic) and e.get("title")
+    ][-40:]
+
     print("[main] generating script...")
-    script = generate_script(topic)
+    script = generate_script(topic, avoid_titles=same_topic_titles)
 
     run_dir = os.path.join(WORKDIR, datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S"))
     os.makedirs(run_dir, exist_ok=True)

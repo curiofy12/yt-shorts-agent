@@ -11,6 +11,9 @@ CHANNEL_NICHE = os.environ.get("CHANNEL_NICHE", "")
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 POSTS_LOG_PATH = os.path.join(DATA_DIR, "posts_log.json")
+# Per-video stats live in their own file (written only by the weekly
+# report) so daily posts and the weekly report never edit the same file.
+STATS_PATH = os.path.join(DATA_DIR, "video_stats.json")
 WORKDIR = os.path.join(os.path.dirname(__file__), "workdir")
 
 VIDEO_WIDTH = 1080

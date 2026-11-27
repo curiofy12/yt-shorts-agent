@@ -22,12 +22,24 @@ def get_analytics_service():
     return build("youtubeAnalytics", "v2", credentials=creds)
 
 
-def get_video_stats(video_id, days_back=7):
-    yt_analytics = get_analytics_service()
+def get_video_stats(video_id, posted_at=None, yt_analytics=None):
+    """
+    Lifetime stats for one video: everything from the day it was posted
+    until today. (This used to look at only the last 7 days, which made
+    every older video show 0 views.)
+    """
+    yt_analytics = yt_analytics or get_analytics_service()
     end = date.today()
-    start = end - timedelta(days=days_back)
+    try:
+        start = date.fromisoformat((posted_at or "")[:10]) - timedelta(days=1)
+    except ValueError:
+        start = end - timedelta(days=365)
+    start = min(start, end)
 
-    metrics = "views,estimatedMinutesWatched,averageViewDuration,subscribersGained"
+    metrics = (
+        "views,estimatedMinutesWatched,averageViewDuration,"
+        "averageViewPercentage,subscribersGained"
+    )
     try:
         report = yt_analytics.reports().query(
             ids="channel==MINE",
@@ -37,17 +49,19 @@ def get_video_stats(video_id, days_back=7):
             filters=f"video=={video_id}",
         ).execute()
     except Exception as e:
-        print(f"[analytics] core metrics query failed: {e}")
+        print(f"[analytics] core metrics query failed for {video_id}: {e}")
         return {"video_id": video_id, "error": str(e)}
 
-    row = report.get("rows", [[0, 0, 0, 0]])[0]
+    row = (report.get("rows") or [[0, 0, 0, 0, 0]])[0]
     result = {
         "video_id": video_id,
         "views": row[0],
         "estimated_minutes_watched": row[1],
         "average_view_duration_sec": row[2],
-        "subscribers_gained": row[3],
+        "average_view_percentage": row[3],
+        "subscribers_gained": row[4],
         "estimated_revenue_usd": "N/A (not monetized or data delayed)",
+        "updated": end.isoformat(),
     }
 
     # Revenue query separately — will legitimately fail/zero-out for

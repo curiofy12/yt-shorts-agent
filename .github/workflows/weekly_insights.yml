@@ -32,6 +32,7 @@ jobs:
         run: |
           git config user.name "yt-agent-bot"
           git config user.email "actions@github.com"
-          git add data/posts_log.json data/latest_insights.md dashboard.html
+          git add data/video_stats.json data/latest_insights.md dashboard.html
           git diff --staged --quiet || git commit -m "Weekly insights: $(date -u +%Y-%m-%d)"
+          git pull --rebase origin main
           git push

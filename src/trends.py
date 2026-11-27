@@ -10,6 +10,7 @@ worse than a large, deliberately varied static pool.
 If CHANNEL_NICHE is set in .env, topics are angled toward that niche so
 the channel stays on-brand.
 """
+import math
 import random
 import sys
 import os
@@ -63,41 +64,99 @@ FALLBACK_TOPICS = [
     "a place on Earth that feels like it shouldn't exist",
     "a psychological trick advertisers or media use on you",
     "an ancient technology we still don't fully understand",
+    # Added after the first insights reports: space/physics paradoxes and
+    # high-stakes history were the channel's strongest performers.
+    "a space paradox about speed, time or distance that breaks your intuition",
+    "a physics fact about how your own body is moving through space right now",
+    "something about black holes that sounds impossible but is true",
+    "a fact about the scale of the universe that's hard to believe",
+    "what would actually happen to the human body in space",
+    "a fact about light or time that breaks common sense",
+    "a moment in history when one person's decision saved millions of lives",
+    "a near-disaster from history that almost nobody knows about",
+    "a Cold War close call that almost ended the world",
+    "a small mistake in history that changed the outcome of a war",
+    "a single day in history that changed everything",
+    "a fact about how old something really is that sounds like time travel",
 ]
 
+# How many recent posts a topic must sit out before it can be used again.
+# Each topic is a broad theme and Claude picks a different specific story
+# each time (it's told which titles already exist), so a short cooldown
+# is enough to keep things varied.
+TOPIC_COOLDOWN_POSTS = 12
 
-def get_trending_topics(max_results=10):
-    """
-    Returns a shuffled slice of the curated topic pool.
-    (Live Google Trends pulling was removed after proving consistently
-    unreliable in production -- see module docstring.)
-    """
-    pool = FALLBACK_TOPICS.copy()
-    random.shuffle(pool)
-    return pool[:max_results]
+# Stats younger than this aren't trusted yet (views are still coming in).
+MIN_AGE_DAYS_FOR_SCORING = 3
 
 
-def pick_topic(recent_topics=None):
+def base_topic(topic: str) -> str:
+    """Strips the niche suffix so the same theme is scored as one topic."""
+    return topic.split(" (angle this through:")[0]
+
+
+def topic_weights(log, stats):
     """
-    Picks one topic for today, avoiding repeats from recent_topics
-    (a list of strings from posts_log.json). Picks randomly among the
-    non-recent candidates rather than always taking the first match, so
-    variety doesn't collapse to the same handful of topics over time.
+    Gives each topic a weight based on how its past videos did, so topics
+    that get more views come up more often. Topics with no data yet get a
+    small bonus so new ideas still get tried.
+
+    Uses log(views) so one viral outlier doesn't dominate, and clamps the
+    weights so weak topics still appear now and then (things change).
     """
-    recent_topics = recent_topics or []
-    candidates = get_trending_topics(max_results=len(FALLBACK_TOPICS))
+    from datetime import datetime, timezone
+
+    now = datetime.now(timezone.utc)
+    per_topic = {}
+    for entry in log:
+        s = stats.get(entry.get("video_id"))
+        if not isinstance(s, dict) or "views" not in s:
+            continue
+        try:
+            posted = datetime.fromisoformat(entry["posted_at"])
+        except (KeyError, ValueError):
+            continue
+        if (now - posted).days < MIN_AGE_DAYS_FOR_SCORING:
+            continue
+        per_topic.setdefault(base_topic(entry.get("topic", "")), []).append(
+            math.log1p(max(s.get("views", 0), 0))
+        )
+
+    if not per_topic:
+        return {}
+
+    all_scores = [x for xs in per_topic.values() for x in xs]
+    overall = sum(all_scores) / len(all_scores)
+
+    weights = {}
+    for topic, scores in per_topic.items():
+        # Shrink toward the overall average when a topic has few videos
+        n = len(scores)
+        avg = (sum(scores) + overall * 2) / (n + 2)
+        weights[topic] = min(max(math.exp(avg - overall), 0.3), 4.0)
+    return weights
+
+
+def pick_topic(recent_topics=None, log=None, stats=None):
+    """
+    Picks one topic for the next video: skips topics used in the last few
+    posts, then chooses randomly with better-performing topics weighted
+    more heavily.
+    """
+    recent = {base_topic(t) for t in (recent_topics or [])[-TOPIC_COOLDOWN_POSTS:]}
+    weights = topic_weights(log or [], stats or {})
+
+    available = [t for t in FALLBACK_TOPICS if t not in recent] or FALLBACK_TOPICS
+    w = [weights.get(t, 1.5) for t in available]  # 1.5 = untested bonus
+    topic = random.choices(available, weights=w, k=1)[0]
+
+    if weights:
+        best = sorted(weights.items(), key=lambda kv: -kv[1])[:3]
+        print("[trends] strongest topics so far: " + "; ".join(f"{t} (x{v:.1f})" for t, v in best))
 
     if CHANNEL_NICHE:
-        candidates = [f"{t} (angle this through: {CHANNEL_NICHE})" for t in candidates]
-
-    available = [t for t in candidates if t not in recent_topics]
-
-    if available:
-        return random.choice(available)
-
-    # Every topic in the pool has been used recently (pool exhausted) --
-    # just pick randomly rather than deterministically repeating #1.
-    return random.choice(candidates) if candidates else random.choice(FALLBACK_TOPICS)
+        topic = f"{topic} (angle this through: {CHANNEL_NICHE})"
+    return topic
 
 
 if __name__ == "__main__":
