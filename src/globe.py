@@ -174,14 +174,21 @@ def build_globe_video(beats, audio_path, words, hook_title, narration_text, outp
     # Plan each beat: camera target, icon positions and pop-in times
     plan = []
     prev_cam = None
+    prev_view = None
     for i, b in enumerate(beats):
         start, end = times[i]
         space = b.get("view") == "space"
-        cam = _camera_for(world, "world" if space else b.get("view", "world"))
+        view = "world" if space else b.get("view", "world")
+        # Back-to-back whole-world beats alternate sides so the map keeps moving
+        if view == "world" and prev_view == "world":
+            view = "world_west"
+        prev_view = view
+        cam = _camera_for(world, view)
         if prev_cam is None:
             prev_cam = (cam[0], cam[1], max(cam[2] * 0.85, 1.0))  # open with a slow push in
         box = world.window(*cam)
-        n = int(b.get("count") or 0) if b.get("icon") else 0
+        # The space view shows the 3D Earth, so no little icons on top of it
+        n = int(b.get("count") or 0) if (b.get("icon") and not space) else 0
         sea = b.get("icon") in SEA_ICONS
         pts = _scatter(world, box, n, sea, rng) if n else []
         wants_ripples = b.get("effect") == "ripples" and (not b.get("icon") or b.get("icon") in IMPACT_ICONS)
